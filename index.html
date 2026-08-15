@@ -1854,7 +1854,7 @@
                 <a id="modalEmail" href="mailto:email@iitism.ac.in" class="text-xs text-sky-400 hover:underline flex items-center gap-1">
                     <i data-lucide="mail" class="w-4 h-4"></i> Contact Candidate
                 </a>
-                <button onclick="downloadResume('Candidate')" class="py-2 px-4 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs rounded-xl transition">
+                <button onclick="downloadResume(document.getElementById('modalName').innerText)" class="py-2 px-4 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs rounded-xl transition">
                     Download CV
                 </button>
             </div>
@@ -1874,9 +1874,33 @@
 
     <!-- INTERACTIVE JAVASCRIPT LOGIC -->
     <script>
-        // Initialize Lucide Icons
+        // List of candidate names (normalized lowercase, space replaced by underscore) who have uploaded resumes
+        const availableResumes = ['ankur_mondal', 'moh_irshad', 'piyush_kumar', 'yogesh_kumar'];
+
+        // Initialize and setup buttons
         document.addEventListener('DOMContentLoaded', () => {
             if (window.lucide) lucide.createIcons();
+
+            // Style resume buttons based on availability
+            document.querySelectorAll('#studentGrid .student-card').forEach(card => {
+                const nameHeader = card.querySelector('h4');
+                if (nameHeader) {
+                    const name = nameHeader.innerText;
+                    const normalized = name.toLowerCase().trim().replace(/\s+/g, '_');
+                    const resumeBtn = card.querySelector('button[onclick*="downloadResume"]');
+                    if (resumeBtn) {
+                        if (availableResumes.includes(normalized)) {
+                            resumeBtn.title = "View Candidate Resume (PDF)";
+                        } else {
+                            // Resume not uploaded yet. Style it as "Request CV"
+                            resumeBtn.className = "border border-slate-700 hover:bg-slate-800 hover:border-slate-600 text-slate-400 font-semibold text-xs px-3 py-1.5 rounded-lg flex items-center gap-1 transition";
+                            resumeBtn.innerHTML = `<i data-lucide="mail" class="w-3.5 h-3.5 text-slate-500"></i> Request CV`;
+                            resumeBtn.setAttribute('onclick', `event.stopPropagation(); requestResume('${name.replace(/'/g, "\\'")}')`);
+                        }
+                    }
+                }
+            });
+            if (window.lucide) lucide.createIcons(); // Re-initialize icons for the new request icons
         });
 
         // Mode Switching
@@ -1953,6 +1977,21 @@
                 modalIcon.style.display = 'none';
             }
 
+            // Update modal download button based on availability
+            const modalDownloadBtn = document.querySelector('#studentBioModal button[onclick*="downloadResume"]');
+            if (modalDownloadBtn) {
+                const normalized = name.toLowerCase().trim().replace(/\s+/g, '_');
+                if (availableResumes.includes(normalized)) {
+                    modalDownloadBtn.innerText = "Download CV";
+                    modalDownloadBtn.className = "py-2 px-4 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs rounded-xl transition";
+                    modalDownloadBtn.setAttribute('onclick', `downloadResume('${name.replace(/'/g, "\\'")}')`);
+                } else {
+                    modalDownloadBtn.innerText = "Request CV";
+                    modalDownloadBtn.className = "py-2 px-4 border border-slate-700 hover:bg-slate-800 text-slate-400 font-bold text-xs rounded-xl transition";
+                    modalDownloadBtn.setAttribute('onclick', `closeStudentBio(); requestResume('${name.replace(/'/g, "\\'")}')`);
+                }
+            }
+
             document.getElementById('studentBioModal').classList.remove('hidden');
         }
 
@@ -1963,7 +2002,23 @@
         }
 
         function downloadResume(candidateName) {
-            alert(`Initiating PDF resume download for ${candidateName} (Fuel & Energy Engineering, IIT ISM Dhanbad).`);
+            if (!candidateName || candidateName === 'Candidate') return;
+            const normalized = candidateName.toLowerCase().trim().replace(/\s+/g, '_');
+            
+            if (availableResumes.includes(normalized)) {
+                // Open the PDF resume in a new tab
+                window.open(`resumes/${normalized}.pdf`, '_blank');
+            } else {
+                alert(`Resume for ${candidateName} has not been uploaded yet. Please request it via the placement cell.`);
+            }
+        }
+
+        function requestResume(candidateName) {
+            const contactSection = document.getElementById('contact');
+            if (contactSection) {
+                contactSection.scrollIntoView({ behavior: 'smooth' });
+                alert(`Resume for ${candidateName} is not yet uploaded.\n\nYou have been scrolled to the Placement Contact section to request the CV Book or coordinate with the CDC.`);
+            }
         }
 
         function triggerPdfExport() {
