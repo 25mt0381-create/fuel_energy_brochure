@@ -496,6 +496,7 @@
                         <button onclick="filterDomain('oilgas', this)" class="filter-btn bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-semibold px-3.5 py-2 rounded-xl transition">Oil & Gas / Refining</button>
                         <button onclick="filterDomain('ccus', this)" class="filter-btn bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-semibold px-3.5 py-2 rounded-xl transition">CCUS & ESG</button>
                         <button onclick="filterDomain('modeling', this)" class="filter-btn bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-semibold px-3.5 py-2 rounded-xl transition">CFD & Simulation</button>
+                        <button onclick="filterDomain('wte', this)" class="filter-btn bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-semibold px-3.5 py-2 rounded-xl transition">Waste-to-Energy</button>
                     </div>
                 </div>
 
@@ -1016,7 +1017,7 @@
     <!-- INTERACTIVE JAVASCRIPT LOGIC -->
     <script>
         // List of candidate names (normalized lowercase, space replaced by underscore) who have uploaded resumes
-        const availableResumes = ['ankit_kumar', 'ankur_mondal', 'kumar_aayush', 'md_riyaul_haque', 'moh_irshad', 'piyush_kumar', 'yogesh_kumar'];
+        const availableResumes = ['ankit_kumar', 'ankur_mondal', 'kumar_aayush', 'md_riyaul_haque', 'moh_irshad', 'piyush_kumar', 'utkarsh_kumar_dubey', 'yogesh_kumar'];
 
         // Fetch and load candidate profiles dynamically from students.json
         async function loadStudents() {
@@ -1047,12 +1048,14 @@
                         else if (student.domain === 'oilgas') borderColor = 'border-amber-500';
                         else if (student.domain === 'ccus') borderColor = 'border-blue-500';
                         else if (student.domain === 'modeling') borderColor = 'border-purple-500';
+                        else if (student.domain === 'wte') borderColor = 'border-teal-500';
 
                         let btnBg = 'bg-slate-700 hover:bg-slate-600';
                         if (student.domain === 'greenh2') btnBg = 'bg-emerald-600 hover:bg-emerald-500';
                         else if (student.domain === 'oilgas') btnBg = 'bg-amber-600 hover:bg-amber-500';
                         else if (student.domain === 'ccus') btnBg = 'bg-blue-600 hover:bg-blue-500';
                         else if (student.domain === 'modeling') btnBg = 'bg-purple-600 hover:bg-purple-500';
+                        else if (student.domain === 'wte') btnBg = 'bg-teal-600 hover:bg-teal-500';
 
                         const card = document.createElement('div');
                         card.className = `student-card bg-slate-900 border border-slate-800 rounded-2xl p-6 shadow-md card-hover flex flex-col justify-between cursor-pointer`;
@@ -1109,6 +1112,7 @@
                         else if (student.domain === 'oilgas') { initialBg = 'bg-amber-50'; initialText = 'text-amber-600'; bookletBorder = 'border-amber-500'; }
                         else if (student.domain === 'ccus') { initialBg = 'bg-blue-50'; initialText = 'text-blue-600'; bookletBorder = 'border-blue-500'; }
                         else if (student.domain === 'modeling') { initialBg = 'bg-purple-50'; initialText = 'text-purple-600'; bookletBorder = 'border-purple-500'; }
+                        else if (student.domain === 'wte') { initialBg = 'bg-teal-50'; initialText = 'text-teal-600'; bookletBorder = 'border-teal-500'; }
 
                         const bCard = document.createElement('div');
                         bCard.className = 'p-3 bg-slate-50 rounded-xl border border-slate-200 flex items-start gap-3';
