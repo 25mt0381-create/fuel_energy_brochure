@@ -125,6 +125,17 @@
     <!-- VIEW MODE 1: INTERACTIVE DIGITAL WEB PORTAL -->
     <div id="view-portal" class="flex-1 bg-slate-900 text-slate-100">
 
+        <!-- FULL-BLEED CAMPUS VIDEO BACKGROUND / BANNER (ism.mp4) -->
+        <section class="relative w-full overflow-hidden no-print bg-slate-950">
+            <video autoplay loop muted playsinline class="w-full h-[320px] sm:h-[460px] lg:h-[580px] object-cover block">
+                <source src="ism.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <!-- Seamless gradient transitions to header and hero below -->
+            <div class="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-brand-dark to-transparent pointer-events-none"></div>
+            <div class="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-brand-dark to-transparent pointer-events-none"></div>
+        </section>
+
         <!-- HERO SECTION -->
         <section class="relative bg-brand-dark text-white min-h-[88vh] flex items-center overflow-hidden py-16 lg:py-0">
             <div class="absolute inset-0 z-0">
@@ -187,9 +198,11 @@
                             <div class="absolute -top-3 -right-3 bg-amber-500 text-slate-950 font-bold text-xs uppercase tracking-wider py-1 px-3 rounded-full shadow">
                                 Top Tier IIT
                             </div>
-                            <img src="https://images.unsplash.com/photo-1541888946425-d0fbb186a5b3?auto=format&fit=crop&w=800&q=80" 
-                                 alt="IIT ISM Campus Infrastructure" 
-                                 class="w-full h-44 object-cover rounded-xl mb-4">
+                            <div class="w-full h-44 bg-slate-950 rounded-xl mb-4 flex items-center justify-center p-3 border border-slate-800">
+                                <img src="ISM logo.png" 
+                                     alt="IIT ISM Dhanbad" 
+                                     class="h-28 w-28 object-contain drop-shadow">
+                            </div>
                             <h3 class="font-heading text-lg font-bold text-white mb-1">Energy Leadership & Innovation</h3>
                             <p class="text-xs text-slate-300 leading-relaxed">
                                 Combining decades of mineral & energy processing mastery with cutting-edge clean tech research, green hydrogen systems, and carbon capture technologies.
