@@ -167,10 +167,10 @@
     {
         "name": "Utkarsh Kumar Dubey",
         "degree": "M.Tech Fuel & Energy Engg.",
-        "domain": "ccus",
-        "domainLabel": "Decarbonization Pathways",
-        "thesis": "Integration of Renewable Energy in Energy-Intensive Industries",
-        "skills": "Renewable Integration, LCA, Energy Policy",
+        "domain": "wte",
+	"domainLabel": "Waste-to-Energy",
+        "thesis": "Kinetic And Synergistic Analysis Of Catalytic Co-Pyrolysis Of Biomass And Plastic",
+        "skills": "Kinetic Modeling, Synergistic Analysis, Catalyst Synthesis, Thermogravimetric Analysis",
         "email": "25mt0603@iitism.ac.in",
         "gate": "GATE Qualified / IIT Dhanbad",
         "keywords": "utkarsh kumar dubey renewable energy integration lca decarbonization pathways policy"
