@@ -1024,6 +1024,14 @@
             return trimmed;
         }
 
+        // Helper to resolve profile picture relative path or url from students.json
+        function getImageUrl(imagePath) {
+            if (!imagePath || typeof imagePath !== 'string') return null;
+            const trimmed = imagePath.trim();
+            if (!trimmed) return null;
+            return trimmed;
+        }
+
         // Fetch and load candidate profiles dynamically from students.json
         async function loadStudents() {
             try {
@@ -1044,7 +1052,7 @@
 
                 students.forEach((student, index) => {
                     const initials = student.name.split(' ').map(n => n[0]).join('').substring(0, 2);
-                    const imageFilename = student.name.toLowerCase().trim().replace(/\s+/g, '_') + '.jpg';
+                    const imageUrl = getImageUrl(student.image);
                     const resumeUrl = getResumeUrl(student.resume);
 
                     // 1. Interactive Grid Card Rendering
@@ -1069,7 +1077,7 @@
                         card.setAttribute('data-keywords', student.keywords || '');
                         card.onclick = () => openStudentBio(
                             student.name, student.degree, student.domainLabel, 
-                            student.thesis, student.skills, student.email, student.gate, student.resume
+                            student.thesis, student.skills, student.email, student.gate, student.resume, student.image
                         );
 
                         let resumeButtonHtml = '';
@@ -1087,12 +1095,21 @@
                             `;
                         }
 
+                        let imageHtml = '';
+                        if (imageUrl) {
+                            imageHtml = `
+                                <img src="${imageUrl}" alt="${student.name}" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');">
+                                <span class="text-xl font-bold text-slate-400 uppercase hidden">${initials}</span>
+                            `;
+                        } else {
+                            imageHtml = `<span class="text-xl font-bold text-slate-400 uppercase">${initials}</span>`;
+                        }
+
                         card.innerHTML = `
                             <div>
                                 <div class="flex items-center gap-4 mb-4">
                                     <div class="w-14 h-14 rounded-full bg-slate-800 border-2 ${borderColor} shadow flex items-center justify-center overflow-hidden shrink-0">
-                                        <img src="student_images/${imageFilename}" alt="${student.name}" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');">
-                                        <span class="text-xl font-bold text-slate-400 uppercase hidden">${initials}</span>
+                                        ${imageHtml}
                                     </div>
                                     <div>
                                         <h4 class="font-heading text-base font-bold text-white">${student.name}</h4>
@@ -1133,12 +1150,21 @@
                         else if (student.domain === 'modeling') { initialBg = 'bg-purple-50'; initialText = 'text-purple-600'; bookletBorder = 'border-purple-500'; }
                         else if (student.domain === 'wte') { initialBg = 'bg-teal-50'; initialText = 'text-teal-600'; bookletBorder = 'border-teal-500'; }
 
+                        let bImageHtml = '';
+                        if (imageUrl) {
+                            bImageHtml = `
+                                <img src="${imageUrl}" alt="${student.name}" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');">
+                                <span class="${initialText} font-bold uppercase text-base hidden">${initials}</span>
+                            `;
+                        } else {
+                            bImageHtml = `<span class="${initialText} font-bold uppercase text-base">${initials}</span>`;
+                        }
+
                         const bCard = document.createElement('div');
                         bCard.className = 'p-3 bg-slate-50 rounded-xl border border-slate-200 flex items-start gap-3';
                         bCard.innerHTML = `
                             <div class="w-12 h-12 rounded-full ${initialBg} border ${bookletBorder} flex items-center justify-center shrink-0 overflow-hidden">
-                                <img src="student_images/${imageFilename}" alt="${student.name}" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');">
-                                <span class="${initialText} font-bold uppercase text-base hidden">${initials}</span>
+                                ${bImageHtml}
                             </div>
                             <div>
                                 <h3 class="font-bold text-slate-900 text-sm">${student.name}</h3>
@@ -1217,7 +1243,7 @@
         }
 
         // Student Bio Modal Functions
-        function openStudentBio(name, degree, domain, thesis, skills, email, gate, resume) {
+        function openStudentBio(name, degree, domain, thesis, skills, email, gate, resume, image) {
             document.getElementById('modalName').innerText = name;
             document.getElementById('modalDegree').innerText = degree;
             document.getElementById('modalDomain').innerText = domain;
@@ -1229,11 +1255,19 @@
             // Load student profile picture dynamically in modal
             const modalImg = document.getElementById('modalImage');
             const modalIcon = document.getElementById('modalIcon');
+            const imageUrl = getImageUrl(image);
             if (modalImg && modalIcon) {
-                const filename = name.toLowerCase().trim().replace(/\s+/g, '_') + '.jpg';
-                modalImg.src = 'student_images/' + filename;
-                modalImg.style.display = 'block';
-                modalIcon.style.display = 'none';
+                if (imageUrl) {
+                    modalImg.src = imageUrl;
+                    modalImg.style.display = 'block';
+                    modalImg.classList.remove('hidden');
+                    modalIcon.style.display = 'none';
+                } else {
+                    modalImg.src = '';
+                    modalImg.style.display = 'none';
+                    modalImg.classList.add('hidden');
+                    modalIcon.style.display = 'block';
+                }
             }
 
             // Update modal download button based on resume path in JSON

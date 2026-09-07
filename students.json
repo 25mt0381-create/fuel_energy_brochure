@@ -9,6 +9,7 @@
         "email": "25mt0055@iitism.ac.in",
         "gate": "GATE Qualified / IIT Dhanbad",
         "resume": "",
+        "image": "",
         "keywords": "amarjith manjoo green hydrogen biomass gasification aspen hysys chemical"
     },
     {
@@ -21,6 +22,7 @@
         "email": "25mt0074@iitism.ac.in",
         "gate": "GATE Qualified / IIT Dhanbad",
         "resume": "resumes/ankit_kumar.pdf",
+        "image": "",
         "keywords": "ankit kumar petroleum refining crude distillation cdu aspen plus mechanical"
     },
     {
@@ -33,6 +35,7 @@
         "email": "25mt0078@iitism.ac.in",
         "gate": "GATE Qualified / IIT Dhanbad",
         "resume": "resumes/ankur_mondal.pdf",
+        "image": "",
         "keywords": "ankur mondal ccus carbon capture lca esg openlca chemical"
     },
     {
@@ -45,6 +48,7 @@
         "email": "25mt0177@iitism.ac.in",
         "gate": "GATE Qualified / IIT Dhanbad",
         "resume": "",
+        "image": "",
         "keywords": "girish vastrakar cfd fluent fuel cell electrolyzer pem comsol mechanical"
     },
     {
@@ -57,6 +61,7 @@
         "email": "25mt0211@iitism.ac.in",
         "gate": "GATE Qualified / IIT Dhanbad",
         "resume": "",
+        "image": "",
         "keywords": "jai ram vishwakarma hydrocracking catalyst kinetic modeling powder xrd petroleum"
     },
     {
@@ -69,6 +74,7 @@
         "email": "25mt0223@iitism.ac.in",
         "gate": "GATE Qualified / IIT Dhanbad",
         "resume": "",
+        "image": "",
         "keywords": "kamesh rautiya biofuels hydrotreated vegetable oil hvo SAF aviation fuel"
     },
     {
@@ -81,6 +87,7 @@
         "email": "25mt0247@iitism.ac.in",
         "gate": "GATE Qualified / IIT Dhanbad",
         "resume": "resumes/kumar_aayush.pdf",
+        "image": "",
         "keywords": "kumar aayush energy audit process optimization thermal power aspen plus matlab"
     },
     {
@@ -93,6 +100,7 @@
         "email": "25mt0255@iitism.ac.in",
         "gate": "GATE Qualified / IIT Dhanbad",
         "resume": "",
+        "image": "",
         "keywords": "lucky kumar dev fgd flue gas desulfurization emission control tga dsc"
     },
     {
@@ -105,6 +113,7 @@
         "email": "25mt0271@iitism.ac.in",
         "gate": "GATE Qualified / IIT Dhanbad",
         "resume": "resumes/md_riyaul_haque.pdf",
+        "image": "",
         "keywords": "md riyaul haque natural gas sweetening dehydration aspen hysys thermodynamics"
     },
     {
@@ -117,6 +126,7 @@
         "email": "25mt0285@iitism.ac.in",
         "gate": "GATE Qualified / IIT Dhanbad",
         "resume": "resumes/moh_irshad.pdf",
+        "image": "",
         "keywords": "moh irshad green hydrogen fuel cells electrodes alkaline electrolysis"
     },
     {
@@ -129,6 +139,7 @@
         "email": "25mt0338@iitism.ac.in",
         "gate": "GATE Qualified / IIT Dhanbad",
         "resume": "resumes/piyush_kumar.pdf",
+        "image": "",
         "keywords": "piyush kumar cfd fluid mechanics multiphase flow ansys fluent reactors"
     },
     {
@@ -141,6 +152,7 @@
         "email": "25mt0375@iitism.ac.in",
         "gate": "GATE Qualified / IIT Dhanbad",
         "resume": "",
+        "image": "",
         "keywords": "rahul dac direct air capture esg audit matlab techno-economic ccus"
     },
     {
@@ -153,6 +165,7 @@
         "email": "25mt0381@iitism.ac.in",
         "gate": "GATE Qualified / IIT Dhanbad",
         "resume": "",
+        "image": "",
         "keywords": "rahul sarkar catalyst deactivation fcc fluid catalytic cracking process engineering"
     },
     {
@@ -165,6 +178,7 @@
         "email": "25mt0461@iitism.ac.in",
         "gate": "GATE Qualified / IIT Dhanbad",
         "resume": "",
+        "image": "",
         "keywords": "sandeep kumar lignocellulosic biomass pyrolysis liquid fuels gc-ms ftir bio-refineries"
     },
     {
@@ -177,6 +191,7 @@
         "email": "25mt0483@iitism.ac.in",
         "gate": "GATE Qualified / IIT Dhanbad",
         "resume": "",
+        "image": "",
         "keywords": "saurav anand dynamic simulation process control distillation columns aspen dynamics"
     },
     {
@@ -189,6 +204,7 @@
         "email": "25mt0603@iitism.ac.in",
         "gate": "GATE Qualified / IIT Dhanbad",
         "resume": "resumes/utkarsh_kumar_dubey.pdf",
+        "image": "",
         "keywords": "utkarsh kumar dubey waste to energy catalytic co-pyrolysis biomass plastic kinetic modeling thermogravimetric analysis wte"
     },
     {
@@ -201,6 +217,7 @@
         "email": "25mt0604@iitism.ac.in",
         "gate": "GATE Qualified / IIT Dhanbad",
         "resume": "",
+        "image": "",
         "keywords": "utsav kumar ranjan heavy oil upgrading eor simulation reservoir engineering enhanced recovery"
     },
     {
@@ -213,6 +230,7 @@
         "email": "25mt0635@iitism.ac.in",
         "gate": "GATE Qualified / IIT Dhanbad",
         "resume": "resumes/yogesh_kumar.pdf",
+        "image": "student_images/yogesh_kumar.jpg",
         "keywords": "yogesh kumar solar thermal syngas biomass gasification thermodynamic modeling"
     }
 ]
