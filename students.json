@@ -210,15 +210,15 @@
     {
         "name": "Utsav Kumar Ranjan",
         "degree": "M.Tech Fuel & Energy Engg.",
-        "domain": "oilgas",
-        "domainLabel": "Heavy Oil Upgrading",
-        "thesis": "Evaluation of Thermal Enhanced Oil Recovery Techniques",
-        "skills": "Heavy Oil, EOR Simulation, Reservoir Engineering",
+        "domain": "wte",
+        "domainLabel": "Waste-to-Energy, Hydrogen Production",
+        "thesis": "Sustainable valorisation of waste biomass for production of Hydrogen and functional carbon material",
+        "skills": "* Fluid Mechanics & Flow Analysis, ANSYS – Thermal & CFD Simulation, Energy Systems Modelling & Analysis, Gasification & Pyrolysis, Hydrogen Production & Storage, Life Cycle Assessment (LCA)",
         "email": "25mt0604@iitism.ac.in",
         "gate": "GATE Qualified / IIT Dhanbad",
         "resume": "resumes/utsav_rajan.pdf",
         "image": "student_images/utsav.jpeg",
-        "keywords": "utsav kumar ranjan heavy oil upgrading eor simulation reservoir engineering enhanced recovery"
+        "keywords": "utsav kumar ranjan waste to energy wte hydrogen production biomass valorisation functional carbon gasification pyrolysis ansys cfd lca"
     },
     {
         "name": "Yogesh Kumar",
