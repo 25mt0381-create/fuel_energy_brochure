@@ -996,7 +996,7 @@
                 <a id="modalEmail" href="mailto:email@iitism.ac.in" class="text-xs text-sky-400 hover:underline flex items-center gap-1">
                     <i data-lucide="mail" class="w-4 h-4"></i> Contact Candidate
                 </a>
-                <button onclick="downloadResume(document.getElementById('modalName').innerText)" class="py-2 px-4 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs rounded-xl transition">
+                <button id="modalDownloadBtn" class="py-2 px-4 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs rounded-xl transition">
                     Download CV
                 </button>
             </div>
@@ -1016,8 +1016,13 @@
 
     <!-- INTERACTIVE JAVASCRIPT LOGIC -->
     <script>
-        // List of candidate names (normalized lowercase, space replaced by underscore) who have uploaded resumes
-        const availableResumes = ['ankit_kumar', 'ankur_mondal', 'kumar_aayush', 'md_riyaul_haque', 'moh_irshad', 'piyush_kumar', 'utkarsh_kumar_dubey', 'yogesh_kumar'];
+        // Helper to resolve resume relative path or url from students.json
+        function getResumeUrl(resumePath) {
+            if (!resumePath || typeof resumePath !== 'string') return null;
+            const trimmed = resumePath.trim();
+            if (!trimmed) return null;
+            return trimmed;
+        }
 
         // Fetch and load candidate profiles dynamically from students.json
         async function loadStudents() {
@@ -1040,6 +1045,7 @@
                 students.forEach((student, index) => {
                     const initials = student.name.split(' ').map(n => n[0]).join('').substring(0, 2);
                     const imageFilename = student.name.toLowerCase().trim().replace(/\s+/g, '_') + '.jpg';
+                    const resumeUrl = getResumeUrl(student.resume);
 
                     // 1. Interactive Grid Card Rendering
                     if (grid) {
@@ -1060,11 +1066,26 @@
                         const card = document.createElement('div');
                         card.className = `student-card bg-slate-900 border border-slate-800 rounded-2xl p-6 shadow-md card-hover flex flex-col justify-between cursor-pointer`;
                         card.setAttribute('data-domain', student.domain);
-                        card.setAttribute('data-keywords', student.keywords);
+                        card.setAttribute('data-keywords', student.keywords || '');
                         card.onclick = () => openStudentBio(
                             student.name, student.degree, student.domainLabel, 
-                            student.thesis, student.skills, student.email, student.gate
+                            student.thesis, student.skills, student.email, student.gate, student.resume
                         );
+
+                        let resumeButtonHtml = '';
+                        if (resumeUrl) {
+                            resumeButtonHtml = `
+                                <button onclick="event.stopPropagation(); downloadResume('${student.name.replace(/'/g, "\\'")}', '${resumeUrl.replace(/'/g, "\\'")}')" title="View Candidate Resume (PDF)" class="${btnBg} text-white font-semibold text-xs px-3 py-1.5 rounded-lg flex items-center gap-1 transition shadow">
+                                    <i data-lucide="download" class="w-3.5 h-3.5"></i> Resume
+                                </button>
+                            `;
+                        } else {
+                            resumeButtonHtml = `
+                                <button onclick="event.stopPropagation(); requestResume('${student.name.replace(/'/g, "\\'")}')" class="border border-slate-700 hover:bg-slate-800 hover:border-slate-600 text-slate-400 font-semibold text-xs px-3 py-1.5 rounded-lg flex items-center gap-1 transition">
+                                    <i data-lucide="mail" class="w-3.5 h-3.5 text-slate-500"></i> Request CV
+                                </button>
+                            `;
+                        }
 
                         card.innerHTML = `
                             <div>
@@ -1090,9 +1111,7 @@
                             </div>
                             <div class="pt-4 border-t border-slate-800 flex items-center justify-between no-print">
                                 <span class="text-xs text-amber-400 font-semibold hover:text-amber-300 transition">View Bio</span>
-                                <button onclick="event.stopPropagation(); downloadResume('${student.name}')" class="${btnBg} text-white font-semibold text-xs px-3 py-1.5 rounded-lg flex items-center gap-1 transition shadow">
-                                    <i data-lucide="download" class="w-3.5 h-3.5"></i> Resume
-                                </button>
+                                ${resumeButtonHtml}
                             </div>
                         `;
                         grid.appendChild(card);
@@ -1132,8 +1151,6 @@
                     }
                 });
 
-                // Set up button visual state based on resume availability
-                setupResumeButtons();
                 if (window.lucide) lucide.createIcons();
             } catch (error) {
                 console.error("Error loading candidate directory:", error);
@@ -1144,28 +1161,6 @@
         document.addEventListener('DOMContentLoaded', () => {
             loadStudents();
         });
-
-        // Setup resume buttons
-        function setupResumeButtons() {
-            document.querySelectorAll('#studentGrid .student-card').forEach(card => {
-                const nameHeader = card.querySelector('h4');
-                if (nameHeader) {
-                    const name = nameHeader.innerText;
-                    const normalized = name.toLowerCase().trim().replace(/\s+/g, '_');
-                    const resumeBtn = card.querySelector('button[onclick*="downloadResume"]');
-                    if (resumeBtn) {
-                        if (availableResumes.includes(normalized)) {
-                            resumeBtn.title = "View Candidate Resume (PDF)";
-                        } else {
-                            // Resume not uploaded yet. Style it as "Request CV"
-                            resumeBtn.className = "border border-slate-700 hover:bg-slate-800 hover:border-slate-600 text-slate-400 font-semibold text-xs px-3 py-1.5 rounded-lg flex items-center gap-1 transition";
-                            resumeBtn.innerHTML = `<i data-lucide="mail" class="w-3.5 h-3.5 text-slate-500"></i> Request CV`;
-                            resumeBtn.setAttribute('onclick', `event.stopPropagation(); requestResume('${name.replace(/'/g, "\\'")}')`);
-                        }
-                    }
-                }
-            });
-        }
 
         // Mode Switching
         function switchView(mode) {
@@ -1222,7 +1217,7 @@
         }
 
         // Student Bio Modal Functions
-        function openStudentBio(name, degree, domain, thesis, skills, email, gate) {
+        function openStudentBio(name, degree, domain, thesis, skills, email, gate, resume) {
             document.getElementById('modalName').innerText = name;
             document.getElementById('modalDegree').innerText = degree;
             document.getElementById('modalDomain').innerText = domain;
@@ -1241,18 +1236,18 @@
                 modalIcon.style.display = 'none';
             }
 
-            // Update modal download button based on availability
-            const modalDownloadBtn = document.querySelector('#studentBioModal button[onclick*="downloadResume"]');
+            // Update modal download button based on resume path in JSON
+            const modalDownloadBtn = document.getElementById('modalDownloadBtn');
+            const resumeUrl = getResumeUrl(resume);
             if (modalDownloadBtn) {
-                const normalized = name.toLowerCase().trim().replace(/\s+/g, '_');
-                if (availableResumes.includes(normalized)) {
+                if (resumeUrl) {
                     modalDownloadBtn.innerText = "Download CV";
                     modalDownloadBtn.className = "py-2 px-4 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs rounded-xl transition";
-                    modalDownloadBtn.setAttribute('onclick', `downloadResume('${name.replace(/'/g, "\\'")}')`);
+                    modalDownloadBtn.onclick = () => downloadResume(name, resumeUrl);
                 } else {
                     modalDownloadBtn.innerText = "Request CV";
                     modalDownloadBtn.className = "py-2 px-4 border border-slate-700 hover:bg-slate-800 text-slate-400 font-bold text-xs rounded-xl transition";
-                    modalDownloadBtn.setAttribute('onclick', `closeStudentBio(); requestResume('${name.replace(/'/g, "\\'")}')`);
+                    modalDownloadBtn.onclick = () => { closeStudentBio(); requestResume(name); };
                 }
             }
 
@@ -1265,13 +1260,12 @@
             if (modalImg) modalImg.src = '';
         }
 
-        function downloadResume(candidateName) {
+        function downloadResume(candidateName, resumeUrl) {
             if (!candidateName || candidateName === 'Candidate') return;
-            const normalized = candidateName.toLowerCase().trim().replace(/\s+/g, '_');
-            
-            if (availableResumes.includes(normalized)) {
+            const url = getResumeUrl(resumeUrl);
+            if (url) {
                 // Open the PDF resume in a new tab
-                window.open(`resumes/${normalized}.pdf`, '_blank');
+                window.open(url, '_blank');
             } else {
                 alert(`Resume for ${candidateName} has not been uploaded yet. Please request it via the placement cell.`);
             }
