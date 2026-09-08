@@ -132,15 +132,15 @@
     {
         "name": "Piyush Kumar",
         "degree": "M.Tech Fuel & Energy Engg.",
-        "domain": "modeling",
-        "domainLabel": "CFD & Fluid Mechanics",
-        "thesis": "Computational Fluid Dynamics Modeling of Multiphase Flow in Reactors",
-        "skills": "ANSYS Fluent, Multiphysics, Reactor Design",
+        "domain": "bioenergy",
+	"domainLabel": "Thermochemical Processing & Combustion Kinetics",
+        "thesis": "Investigating Co-Firing Characteristics of Pulverized Coal with Raw and Torrefied Biomass: Thermochemical Upgrading, Combustion Kinetics, and Emission Profiles",
+        "skills": "Python, MATLAB, SolidWorks, TGA, Proximate & Ultimate Analysis, Bio-Fuel Production",
         "email": "25mt0338@iitism.ac.in",
         "gate": "GATE Qualified / IIT Dhanbad",
         "resume": "resumes/piyush_kumar.pdf",
         "image": "",
-        "keywords": "piyush kumar cfd fluid mechanics multiphase flow ansys fluent reactors"
+        "keywords": "piyush kumar bioenergy thermochemical processing combustion kinetics biomass coal co-firing torrefaction tga python matlab solidworks"
     },
     {
         "name": "Rahul",
