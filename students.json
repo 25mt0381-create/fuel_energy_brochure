@@ -223,14 +223,14 @@
     {
         "name": "Yogesh Kumar",
         "degree": "M.Tech Fuel & Energy Engg.",
-        "domain": "greenh2",
-        "domainLabel": "Solar Thermal & Syngas",
-        "thesis": "Design of Solar-Assisted Biomass Gasification for Syngas Production",
-        "skills": "Solar Thermal, Gasification, Thermodynamic Modeling",
+        "domain": "Energy storage",
+        "domainLabel": "Energy Storage, Materials Characterization",
+        "thesis": "Metal oxide and graphene based supercapacitor by using  FJH based synthesis",
+        "skills": "Raman spectroscopy, SEM, TEM, BET, XPS, FTIR",
         "email": "25mt0635@iitism.ac.in",
         "gate": "GATE Qualified / IIT Dhanbad",
         "resume": "resumes/yogesh_kumar.pdf",
         "image": "student_images/yogesh_kumar.jpg",
-        "keywords": "yogesh kumar solar thermal syngas biomass gasification thermodynamic modeling"
+        "keywords": "yogesh kumar energy storage supercapacitors metal oxide graphene flash joule heating raman spectroscopy sem tem bet xps ftir materials characterization"
     }
 ]

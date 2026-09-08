@@ -127,13 +127,27 @@
 
         <!-- FULL-BLEED CAMPUS VIDEO BACKGROUND / BANNER (ism.mp4) -->
         <section class="relative w-full overflow-hidden no-print bg-slate-950">
-            <video autoplay loop muted playsinline class="w-full h-[320px] sm:h-[460px] lg:h-[580px] object-cover block">
+            <video id="campus-video" autoplay loop muted playsinline class="w-full h-[320px] sm:h-[460px] lg:h-[580px] object-cover block">
                 <source src="ism.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
             <!-- Seamless gradient transitions to header and hero below -->
             <div class="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-brand-dark to-transparent pointer-events-none"></div>
             <div class="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-brand-dark to-transparent pointer-events-none"></div>
+
+            <!-- Top Right Ending Text Overlay -->
+            <div id="video-ending-text" class="absolute top-6 right-6 sm:top-8 sm:right-10 lg:top-10 lg:right-14 z-20 transition-all duration-700 opacity-0 translate-y-3 pointer-events-none max-w-xs sm:max-w-md text-right">
+                <div class="inline-block bg-slate-950/85 backdrop-blur-md border border-slate-700/80 rounded-2xl p-4 sm:p-5 shadow-2xl">
+                    <h3 class="font-heading font-extrabold text-base sm:text-lg lg:text-xl text-white tracking-tight leading-snug">
+                        Indian Institute of Technology <br class="hidden sm:inline" />
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-emerald-400">(ISM) Dhanbad</span>
+                    </h3>
+                    <p class="text-[11px] sm:text-xs text-slate-300 mt-1 font-medium leading-tight">
+                        Dept. of Fuel, Minerals & Metallurgical Engineering <br class="hidden sm:inline" />
+                        <span class="text-amber-400 font-semibold">• Centenary Era (1926–2026)</span>
+                    </p>
+                </div>
+            </div>
         </section>
 
         <!-- HERO SECTION -->
@@ -1333,6 +1347,26 @@
         function handleRecruiterSubmit(e) {
             e.preventDefault();
             alert("Thank you! Your JNF & CV Book request has been submitted to the CDC Placement Cell at IIT (ISM) Dhanbad.");
+        }
+
+        // Animate top-right text when campus video is about to end
+        const campusVideo = document.getElementById('campus-video');
+        const videoEndingText = document.getElementById('video-ending-text');
+
+        if (campusVideo && videoEndingText) {
+            campusVideo.addEventListener('timeupdate', () => {
+                if (campusVideo.duration) {
+                    // Show when approaching end (last 6 seconds)
+                    const timeRemaining = campusVideo.duration - campusVideo.currentTime;
+                    if (timeRemaining <= 6 && campusVideo.currentTime > 5) {
+                        videoEndingText.classList.remove('opacity-0', 'translate-y-3');
+                        videoEndingText.classList.add('opacity-100', 'translate-y-0');
+                    } else {
+                        videoEndingText.classList.remove('opacity-100', 'translate-y-0');
+                        videoEndingText.classList.add('opacity-0', 'translate-y-3');
+                    }
+                }
+            });
         }
     </script>
 </body>
