@@ -145,15 +145,15 @@
     {
         "name": "Rahul",
         "degree": "M.Tech Fuel & Energy Engg.",
-        "domain": "ccus",
-        "domainLabel": "CCUS & ESG Strategy",
-        "thesis": "Techno-Economic Evaluation of Direct Air Capture (DAC) Technologies",
-        "skills": "Direct Air Capture, ESG Audit, MATLAB",
+        "domain": " Computational Fluid Dynamics",
+        "domainLabel": "Dry Beneficiation of Coal, CFD, Fluidized Bed Operation, Density based segregation, Sustainability",
+        "thesis": "Dry beneficiation of coal using magnetically assisted vibrating gas fluidised bed",
+        "skills": "Ansys Fluent, AutoCAD, Catia, Microsoft Excel, Word, PPT, LaTeX",
         "email": "25mt0375@iitism.ac.in",
         "gate": "GATE Qualified / IIT Dhanbad",
-        "resume": "",
+        "resume": "resumes/Rahul_25MT0375.pdf",
         "image": "",
-        "keywords": "rahul dac direct air capture esg audit matlab techno-economic ccus"
+        "keywords": "rahul cfd coal dry beneficiation fluidized bed ansys fluent autocad sustainability"
     },
     {
         "name": "Rahul Sarkar",
