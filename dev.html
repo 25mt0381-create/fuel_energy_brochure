@@ -1,0 +1,1373 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fuel & Energy Engineering | IIT (ISM) Dhanbad - Placement Portal & Booklet</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            navy: '#0B1B3D',
+                            dark: '#050c1a',
+                            blue: '#1E40AF',
+                            gold: '#D97706',
+                            goldlight: '#F59E0B',
+                            teal: '#0D9488',
+                            emerald: '#059669',
+                            slate: '#0F172A'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif'],
+                        serifHeading: ['Cinzel', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @media print {
+            .no-print { display: none !important; }
+            body { background: white !important; color: black !important; padding: 0 !important; }
+            .shadow-xl, .shadow-2xl, .shadow-lg, .shadow-md { box-shadow: none !important; }
+            .border { border-color: #cbd5e1 !important; }
+            
+            /* Booklet Print Setup */
+            .book-page {
+                page-break-after: always !important;
+                page-break-inside: avoid !important;
+                height: 100vh !important;
+                max-height: 11in !important;
+                width: 100% !important;
+                padding: 2.5rem !important;
+                border: 1px solid #e2e8f0 !important;
+                box-sizing: border-box !important;
+            }
+        }
+
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(5, 12, 26, 0.95) 0%, rgba(11, 27, 61, 0.90) 50%, rgba(5, 150, 105, 0.75) 100%);
+        }
+
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-4px);
+        }
+
+        .book-shadow {
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04), 0 0 0 1px rgba(0,0,0,0.05);
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-100 font-sans antialiased selection:bg-amber-500 selection:text-white flex flex-col min-h-screen">
+
+    <!-- TOP NAVIGATION BAR (No-print) -->
+    <header class="sticky top-0 z-50 bg-brand-dark/95 backdrop-blur-md text-white border-b border-slate-800 no-print">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Institute Branding -->
+                <div class="flex items-center gap-3 cursor-pointer" onclick="switchView('portal')">
+                    <img src="ISM logo.png" alt="IIT ISM Logo" class="w-16 h-16 sm:w-20 sm:h-20 object-contain">
+                    <div>
+                        <h1 class="font-heading text-lg font-bold tracking-tight text-white leading-tight">IIT (ISM) DHANBAD</h1>
+                        <p class="text-xs text-emerald-400 font-medium">Dept. of Fuel, Minerals & Metallurgical Engineering</p>
+                    </div>
+                </div>
+
+                <!-- Nav Links for Web Portal Mode -->
+                <nav id="portal-nav" class="hidden lg:flex items-center space-x-6 text-xs font-semibold uppercase tracking-wider text-slate-300">
+                    <a href="#about" class="hover:text-amber-400 transition-colors">About</a>
+                    <a href="#curriculum" class="hover:text-amber-400 transition-colors">Curriculum</a>
+                    <a href="#labs" class="hover:text-amber-400 transition-colors">Labs & R&D</a>
+                    <a href="#stats" class="hover:text-amber-400 transition-colors">Placement Stats</a>
+                    <a href="#students" class="text-amber-400 hover:text-amber-300 transition-colors flex items-center gap-1.5 font-bold">
+                        <i data-lucide="graduation-cap" class="w-4 h-4"></i> Batch Directory
+                    </a>
+                    <a href="#recruiters" class="hover:text-amber-400 transition-colors">Recruiters</a>
+                    <a href="#contact" class="hover:text-amber-400 transition-colors">Contact CDC</a>
+                </nav>
+
+                <!-- Mode Selector & Print Buttons -->
+                <div class="flex items-center gap-2 sm:gap-3">
+                    <div class="bg-slate-950 p-1 rounded-xl border border-slate-800 flex items-center text-xs font-semibold">
+                        <button onclick="switchView('portal')" id="btn-mode-portal" class="px-3 py-1.5 rounded-lg bg-amber-600 text-white shadow transition-all">
+                            🌐 Portal
+                        </button>
+                        <button onclick="switchView('booklet')" id="btn-mode-booklet" class="px-3 py-1.5 rounded-lg text-slate-400 hover:text-white transition-all">
+                            📖 Printable Booklet
+                        </button>
+                    </div>
+
+                    <button onclick="triggerPdfExport()" class="bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-xs px-3.5 py-2.5 rounded-xl transition-all shadow-md flex items-center gap-2">
+                        <i data-lucide="printer" class="w-4 h-4"></i>
+                        <span class="hidden md:inline">Export PDF</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- VIEW MODE 1: INTERACTIVE DIGITAL WEB PORTAL -->
+    <div id="view-portal" class="flex-1 bg-slate-900 text-slate-100">
+
+        <!-- FULL-BLEED CAMPUS VIDEO BACKGROUND / BANNER (ism.mp4) -->
+        <section class="relative w-full overflow-hidden no-print bg-slate-950">
+            <video id="campus-video" autoplay loop muted playsinline class="w-full h-[320px] sm:h-[460px] lg:h-[580px] object-cover block">
+                <source src="ism.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <!-- Seamless gradient transitions to header and hero below -->
+            <div class="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-brand-dark to-transparent pointer-events-none"></div>
+            <div class="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-brand-dark to-transparent pointer-events-none"></div>
+
+            <!-- Top Right Ending Text Overlay -->
+            <div id="video-ending-text" class="absolute top-6 right-6 sm:top-8 sm:right-10 lg:top-10 lg:right-14 z-20 transition-all duration-700 opacity-0 translate-y-3 pointer-events-none max-w-xs sm:max-w-md text-right">
+                <div class="inline-block bg-slate-950/85 backdrop-blur-md border border-slate-700/80 rounded-2xl p-4 sm:p-5 shadow-2xl">
+                    <h3 class="font-heading font-extrabold text-base sm:text-lg lg:text-xl text-white tracking-tight leading-snug">
+                        Indian Institute of Technology <br class="hidden sm:inline" />
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-emerald-400">(ISM) Dhanbad</span>
+                    </h3>
+                    <p class="text-[11px] sm:text-xs text-slate-300 mt-1 font-medium leading-tight">
+                        Dept. of Fuel, Minerals & Metallurgical Engineering <br class="hidden sm:inline" />
+                        <span class="text-amber-400 font-semibold">• Centenary Era (1926–2026)</span>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- HERO SECTION -->
+        <section class="relative bg-brand-dark text-white min-h-[88vh] flex items-center overflow-hidden py-16 lg:py-0">
+            <div class="absolute inset-0 z-0">
+                <img src="https://images.unsplash.com/photo-1581094288338-2314dddb7ece?auto=format&fit=crop&w=2000&q=80" 
+                     alt="Energy Engineering Research & Refinery Facility" 
+                     class="w-full h-full object-cover">
+                <div class="absolute inset-0 hero-gradient"></div>
+            </div>
+
+            <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 w-full">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    <div class="lg:col-span-8 space-y-6">
+                        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/20 border border-emerald-400/30 text-emerald-300 text-xs sm:text-sm font-semibold tracking-wide uppercase">
+                            <i data-lucide="zap" class="w-4 h-4 text-amber-400"></i>
+                            M.Tech Program & Placement Brochure 2026
+                        </div>
+                        
+                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-heading font-extrabold text-white tracking-tight leading-none">
+                            FUEL & ENERGY <br/>
+                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-emerald-300 to-teal-200">ENGINEERING</span>
+                        </h1>
+                        
+                        <p class="text-base sm:text-lg text-slate-200 max-w-2xl font-light leading-relaxed">
+                            Pioneering technical solutions across petroleum refining, natural gas processing, green hydrogen, biofuel synthesis, CCUS, and decarbonization technology from India's premier energy institute.
+                        </p>
+
+                        <!-- Key Metrics Banner -->
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 pt-6 border-t border-slate-700/60">
+                            <div class="bg-white/5 border border-white/10 rounded-xl p-3.5 backdrop-blur-sm">
+                                <div class="font-heading text-2xl sm:text-3xl font-bold text-amber-400">1926</div>
+                                <div class="text-[11px] sm:text-xs text-slate-300 mt-0.5">Century-Old Heritage</div>
+                            </div>
+                            <div class="bg-white/5 border border-white/10 rounded-xl p-3.5 backdrop-blur-sm">
+                                <div class="font-heading text-2xl sm:text-3xl font-bold text-emerald-400">100%</div>
+                                <div class="text-[11px] sm:text-xs text-slate-300 mt-0.5">GATE Qualified Talent</div>
+                            </div>
+                            <div class="bg-white/5 border border-white/10 rounded-xl p-3.5 backdrop-blur-sm">
+                                <div class="font-heading text-2xl sm:text-3xl font-bold text-cyan-400">15+</div>
+                                <div class="text-[11px] sm:text-xs text-slate-300 mt-0.5">Advanced R&D Labs</div>
+                            </div>
+                            <div class="bg-white/5 border border-white/10 rounded-xl p-3.5 backdrop-blur-sm">
+                                <div class="font-heading text-2xl sm:text-3xl font-bold text-yellow-300">IIT</div>
+                                <div class="text-[11px] sm:text-xs text-slate-300 mt-0.5">National Importance</div>
+                            </div>
+                        </div>
+
+                        <div class="pt-4 flex flex-wrap gap-4 no-print">
+                            <a href="#students" class="bg-emerald-600 hover:bg-emerald-500 text-white font-semibold px-6 py-3 rounded-xl flex items-center gap-2 transition shadow-lg shadow-emerald-900/30">
+                                <i data-lucide="users" class="w-4 h-4"></i> Explore Graduating Batch
+                            </a>
+                            <button onclick="switchView('booklet')" class="bg-amber-600 hover:bg-amber-500 text-white font-semibold px-6 py-3 rounded-xl flex items-center gap-2 transition shadow-lg shadow-amber-600/20">
+                                <i data-lucide="book-open" class="w-4 h-4"></i> View Printable Book Brochure
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Campus Visual Highlight Card -->
+                    <div class="lg:col-span-4 hidden lg:block">
+                        <div class="relative bg-slate-900/80 border border-slate-700/80 rounded-2xl p-5 shadow-2xl backdrop-blur-md">
+                            <div class="absolute -top-3 -right-3 bg-amber-500 text-slate-950 font-bold text-xs uppercase tracking-wider py-1 px-3 rounded-full shadow">
+                                Top Tier IIT
+                            </div>
+                            <div class="w-full h-44 bg-slate-950 rounded-xl mb-4 flex items-center justify-center p-3 border border-slate-800">
+                                <img src="ISM logo.png" 
+                                     alt="IIT ISM Dhanbad" 
+                                     class="h-28 w-28 object-contain drop-shadow">
+                            </div>
+                            <h3 class="font-heading text-lg font-bold text-white mb-1">Energy Leadership & Innovation</h3>
+                            <p class="text-xs text-slate-300 leading-relaxed">
+                                Combining decades of mineral & energy processing mastery with cutting-edge clean tech research, green hydrogen systems, and carbon capture technologies.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 1: ABOUT DEPARTMENT & HOD MESSAGE -->
+        <section id="about" class="py-20 bg-slate-950 border-t border-slate-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-xs font-bold uppercase tracking-widest text-emerald-400 mb-2">Academic Excellence</h2>
+                    <h3 class="text-3xl sm:text-4xl font-heading font-extrabold text-white">Department of Fuel, Minerals & Metallurgical Engineering</h3>
+                    <div class="w-20 h-1 bg-amber-500 mx-auto mt-4 rounded-full"></div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <!-- Department Overview -->
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="p-3 bg-emerald-500/10 text-emerald-400 rounded-xl mt-1 shrink-0 border border-emerald-500/20">
+                                <i data-lucide="building-2" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-heading text-xl font-bold text-white mb-1">A Century of Energy Engineering</h4>
+                                <p class="text-slate-300 text-sm leading-relaxed">
+                                    Established at Indian Institute of Technology (ISM) Dhanbad, the Department is one of India's premier centers for technical education and industrial R&D in energy processing, hydrocarbon refining, and clean technology integration.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="p-3 bg-amber-500/10 text-amber-400 rounded-xl mt-1 shrink-0 border border-amber-500/20">
+                                <i data-lucide="flame" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-heading text-xl font-bold text-white mb-1">Fuel & Energy Engineering Vision</h4>
+                                <p class="text-slate-300 text-sm leading-relaxed">
+                                    The M.Tech program addresses the global dual challenge: ensuring reliable energy security while accelerating net-zero decarbonization. Postgraduates master both conventional fossil fuel processing and next-generation clean tech solutions.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="p-3 bg-blue-500/10 text-blue-400 rounded-xl mt-1 shrink-0 border border-blue-500/20">
+                                <i data-lucide="target" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-heading text-xl font-bold text-white mb-1">Industry-Integrated Rigor</h4>
+                                <p class="text-slate-300 text-sm leading-relaxed">
+                                    Combining rigorous thermodynamics, reaction kinetics, and process simulation with hands-on industrial projects, characterization labs, and computational modeling.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- HOD Message Card -->
+                    <div class="bg-slate-900 text-white rounded-2xl p-8 relative overflow-hidden shadow-2xl border border-slate-800">
+                        <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-emerald-500/10 rounded-full filter blur-2xl pointer-events-none"></div>
+                        
+                        <div class="flex items-center gap-4 mb-6">
+                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80" 
+                                 alt="Head of Department" 
+                                 class="w-16 h-16 rounded-full object-cover border-2 border-amber-400 shrink-0">
+                            <div>
+                                <h4 class="font-heading text-lg font-bold text-white">Message from Department Head</h4>
+                                <p class="text-xs text-amber-400 font-medium">Dept. of Fuel, Minerals & Metallurgical Engg.</p>
+                                <p class="text-xs text-slate-400">IIT (ISM) Dhanbad</p>
+                            </div>
+                        </div>
+
+                        <blockquote class="text-slate-300 text-sm italic leading-relaxed mb-6">
+                            "The global energy landscape is undergoing an unprecedented transition. Our Fuel & Energy Engineering postgraduates are uniquely equipped to navigate this shift—combining deep expertise in petroleum, natural gas, and thermal power with cutting-edge mastery over Green Hydrogen, biomass conversion, and CCUS."
+                        </blockquote>
+
+                        <div class="flex items-center justify-between text-xs text-slate-400 border-t border-slate-800 pt-4">
+                            <span>Academic Session 2025–2026</span>
+                            <span class="text-emerald-400 font-semibold flex items-center gap-1">
+                                <i data-lucide="check-circle-2" class="w-4 h-4"></i> Ready for Placements
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: ACADEMIC CURRICULUM & KNOWLEDGE PILLARS -->
+        <section id="curriculum" class="py-20 bg-slate-900">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-xs font-bold uppercase tracking-widest text-amber-400 mb-2">Core Knowledge Pillars</h2>
+                    <h3 class="text-3xl sm:text-4xl font-heading font-extrabold text-white">Comprehensive Curriculum & Specializations</h3>
+                    <p class="text-slate-400 text-sm mt-3">Tailored to meet the technical demands of Oil & Gas PSUs, Clean Tech MNCs, Refineries, and Energy Advisory Firms.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Pillar 1 -->
+                    <div class="bg-slate-950 rounded-2xl p-6 shadow-md card-hover border border-slate-800 flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 bg-amber-500/10 text-amber-400 rounded-xl flex items-center justify-center mb-6 font-bold border border-amber-500/20">
+                                <i data-lucide="fuel" class="w-6 h-6"></i>
+                            </div>
+                            <h4 class="font-heading text-lg font-bold text-white mb-3">Conventional Fuel & Refining</h4>
+                            <ul class="space-y-2 text-xs text-slate-300 mb-6">
+                                <li class="flex items-center gap-2"><i data-lucide="chevron-right" class="w-3.5 h-3.5 text-amber-400"></i> Petroleum Refining Engineering</li>
+                                <li class="flex items-center gap-2"><i data-lucide="chevron-right" class="w-3.5 h-3.5 text-amber-400"></i> Crude Oil & Natural Gas Processing</li>
+                                <li class="flex items-center gap-2"><i data-lucide="chevron-right" class="w-3.5 h-3.5 text-amber-400"></i> Combustion Tech & Thermal Power</li>
+                                <li class="flex items-center gap-2"><i data-lucide="chevron-right" class="w-3.5 h-3.5 text-amber-400"></i> Coal Characterization & Beneficiation</li>
+                            </ul>
+                        </div>
+                        <span class="text-[11px] font-semibold text-amber-400 bg-amber-950/60 border border-amber-800/60 px-3 py-1 rounded-full self-start">Hydrocarbons & Refining</span>
+                    </div>
+
+                    <!-- Pillar 2 -->
+                    <div class="bg-slate-950 rounded-2xl p-6 shadow-md card-hover border border-slate-800 flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 bg-emerald-500/10 text-emerald-400 rounded-xl flex items-center justify-center mb-6 font-bold border border-emerald-500/20">
+                                <i data-lucide="leaf" class="w-6 h-6"></i>
+                            </div>
+                            <h4 class="font-heading text-lg font-bold text-white mb-3">Clean Tech & Green Hydrogen</h4>
+                            <ul class="space-y-2 text-xs text-slate-300 mb-6">
+                                <li class="flex items-center gap-2"><i data-lucide="chevron-right" class="w-3.5 h-3.5 text-emerald-400"></i> Green Hydrogen Production & Storage</li>
+                                <li class="flex items-center gap-2"><i data-lucide="chevron-right" class="w-3.5 h-3.5 text-emerald-400"></i> Biofuels & Bio-Refinery Systems</li>
+                                <li class="flex items-center gap-2"><i data-lucide="chevron-right" class="w-3.5 h-3.5 text-emerald-400"></i> Fuel Cell Technology & Solar Thermal</li>
+                                <li class="flex items-center gap-2"><i data-lucide="chevron-right" class="w-3.5 h-3.5 text-emerald-400"></i> Synthetic Fuels & Biomass Pyrolysis</li>
+                            </ul>
+                        </div>
+                        <span class="text-[11px] font-semibold text-emerald-400 bg-emerald-950/60 border border-emerald-800/60 px-3 py-1 rounded-full self-start">Energy Transition</span>
+                    </div>
+
+                    <!-- Pillar 3 -->
+                    <div class="bg-slate-950 rounded-2xl p-6 shadow-md card-hover border border-slate-800 flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 bg-blue-500/10 text-blue-400 rounded-xl flex items-center justify-center mb-6 font-bold border border-blue-500/20">
+                                <i data-lucide="cloud-rain" class="w-6 h-6"></i>
+                            </div>
+                            <h4 class="font-heading text-lg font-bold text-white mb-3">Decarbonization & CCUS</h4>
+                            <ul class="space-y-2 text-xs text-slate-300 mb-6">
+                                <li class="flex items-center gap-2"><i data-lucide="chevron-right" class="w-3.5 h-3.5 text-blue-400"></i> Carbon Capture, Utilization & Storage</li>
+                                <li class="flex items-center gap-2"><i data-lucide="chevron-right" class="w-3.5 h-3.5 text-blue-400"></i> Industrial Emission Control</li>
+                                <li class="flex items-center gap-2"><i data-lucide="chevron-right" class="w-3.5 h-3.5 text-blue-400"></i> Life Cycle Assessment (LCA)</li>
+                                <li class="flex items-center gap-2"><i data-lucide="chevron-right" class="w-3.5 h-3.5 text-blue-400"></i> Carbon Footprint & ESG Auditing</li>
+                            </ul>
+                        </div>
+                        <span class="text-[11px] font-semibold text-blue-400 bg-blue-950/60 border border-blue-800/60 px-3 py-1 rounded-full self-start">Sustainability</span>
+                    </div>
+
+                    <!-- Pillar 4 -->
+                    <div class="bg-slate-950 rounded-2xl p-6 shadow-md card-hover border border-slate-800 flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 bg-purple-500/10 text-purple-400 rounded-xl flex items-center justify-center mb-6 font-bold border border-purple-500/20">
+                                <i data-lucide="cpu" class="w-6 h-6"></i>
+                            </div>
+                            <h4 class="font-heading text-lg font-bold text-white mb-3">Process Simulation & Analytics</h4>
+                            <ul class="space-y-2 text-xs text-slate-300 mb-6">
+                                <li class="flex items-center gap-2"><i data-lucide="chevron-right" class="w-3.5 h-3.5 text-purple-400"></i> Aspen Plus / Aspen HYSYS Modeling</li>
+                                <li class="flex items-center gap-2"><i data-lucide="chevron-right" class="w-3.5 h-3.5 text-purple-400"></i> Computational Fluid Dynamics (ANSYS)</li>
+                                <li class="flex items-center gap-2"><i data-lucide="chevron-right" class="w-3.5 h-3.5 text-purple-400"></i> Energy Audit & Process Optimization</li>
+                                <li class="flex items-center gap-2"><i data-lucide="chevron-right" class="w-3.5 h-3.5 text-purple-400"></i> MATLAB & Techno-Economic Analysis</li>
+                            </ul>
+                        </div>
+                        <span class="text-[11px] font-semibold text-purple-400 bg-purple-950/60 border border-purple-800/60 px-3 py-1 rounded-full self-start">Digital & Simulation</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: WORLD-CLASS LABORATORIES & INFRASTRUCTURE -->
+        <section id="labs" class="py-20 bg-slate-950 border-t border-slate-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-xs font-bold uppercase tracking-widest text-emerald-400 mb-2">Research & Testing Infrastructure</h2>
+                    <h3 class="text-3xl sm:text-4xl font-heading font-extrabold text-white">Advanced Laboratory Facilities</h3>
+                    <p class="text-slate-400 text-sm mt-3">Hands-on characterization, analytical chemistry, and simulation suites standard in energy engineering research.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Lab Card 1 -->
+                    <div class="group bg-slate-900 text-white rounded-2xl overflow-hidden shadow-lg border border-slate-800 transition transform hover:-translate-y-1">
+                        <div class="h-48 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=800&q=80" 
+                                 alt="Fuel Testing Lab" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent"></div>
+                            <span class="absolute top-4 left-4 bg-amber-500 text-slate-950 text-xs font-bold px-2.5 py-1 rounded-md">Analytical Suite</span>
+                        </div>
+                        <div class="p-6">
+                            <h4 class="font-heading text-lg font-bold text-white mb-2">Fuel Characterization & Testing Lab</h4>
+                            <p class="text-xs text-slate-300 leading-relaxed mb-4">
+                                Bomb Calorimetry, Proximate & Ultimate Analyzers, Flash/Fire Point Apparatus, Viscometers, and Rheology setups for solid, liquid, and gaseous fuels.
+                            </p>
+                            <div class="text-xs font-semibold text-emerald-400 flex items-center gap-1">
+                                <i data-lucide="check" class="w-4 h-4"></i> ASTM Standard Testing
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Lab Card 2 -->
+                    <div class="group bg-slate-900 text-white rounded-2xl overflow-hidden shadow-lg border border-slate-800 transition transform hover:-translate-y-1">
+                        <div class="h-48 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=800&q=80" 
+                                 alt="Instrumental Analysis Suite" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent"></div>
+                            <span class="absolute top-4 left-4 bg-emerald-500 text-slate-950 text-xs font-bold px-2.5 py-1 rounded-md">Advanced Instrumentation</span>
+                        </div>
+                        <div class="p-6">
+                            <h4 class="font-heading text-lg font-bold text-white mb-2">Central Analytical Facility</h4>
+                            <p class="text-xs text-slate-300 leading-relaxed mb-4">
+                                GC-MS, Thermogravimetric Analysis (TGA-DSC), Fourier Transform Infrared Spectroscopy (FTIR), Powder XRD, and SEM for catalyst & fuel microstructure.
+                            </p>
+                            <div class="text-xs font-semibold text-emerald-400 flex items-center gap-1">
+                                <i data-lucide="check" class="w-4 h-4"></i> High-End Surface Analytics
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Lab Card 3 -->
+                    <div class="group bg-slate-900 text-white rounded-2xl overflow-hidden shadow-lg border border-slate-800 transition transform hover:-translate-y-1">
+                        <div class="h-48 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=800&q=80" 
+                                 alt="Process Simulation Lab" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent"></div>
+                            <span class="absolute top-4 left-4 bg-cyan-500 text-slate-950 text-xs font-bold px-2.5 py-1 rounded-md">Computational Hub</span>
+                        </div>
+                        <div class="p-6">
+                            <h4 class="font-heading text-lg font-bold text-white mb-2">Process Modeling & Simulation Lab</h4>
+                            <p class="text-xs text-slate-300 leading-relaxed mb-4">
+                                Dedicated high-performance workstations equipped with licensed Aspen Plus, Aspen HYSYS, ANSYS Fluent, MATLAB, and open-source energy tools.
+                            </p>
+                            <div class="text-xs font-semibold text-emerald-400 flex items-center gap-1">
+                                <i data-lucide="check" class="w-4 h-4"></i> Industry-Standard Software
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: PLACEMENT ANALYTICS & STATS -->
+        <section id="stats" class="py-20 bg-slate-900 border-t border-slate-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-xs font-bold uppercase tracking-widest text-amber-400 mb-2">Placement Analytics</h2>
+                    <h3 class="text-3xl sm:text-4xl font-heading font-extrabold text-white">Domain Distribution & Career Impact</h3>
+                    <p class="text-slate-400 text-sm mt-3">Postgraduate recruitment across core oil & gas PSUs, global energy consultancies, clean hydrogen pioneers, and EPC firms.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-6 text-center">
+                    <div class="p-6 bg-slate-950 rounded-2xl border border-slate-800">
+                        <div class="text-4xl font-black text-amber-400 font-heading mb-1">45%</div>
+                        <div class="text-xs font-bold text-white uppercase tracking-wider">Oil & Gas / PSUs</div>
+                        <p class="text-[11px] text-slate-400 mt-2">Process engineering, refinery CDU/VDU modeling, and pipeline operations.</p>
+                    </div>
+
+                    <div class="p-6 bg-slate-950 rounded-2xl border border-slate-800">
+                        <div class="text-4xl font-black text-emerald-400 font-heading mb-1">25%</div>
+                        <div class="text-xs font-bold text-white uppercase tracking-wider">Clean Tech & Green H₂</div>
+                        <p class="text-[11px] text-slate-400 mt-2">Biomass gasification, electrolyzers, biofuels, and SAF aviation fuels.</p>
+                    </div>
+
+                    <div class="p-6 bg-slate-950 rounded-2xl border border-slate-800">
+                        <div class="text-4xl font-black text-cyan-400 font-heading mb-1">20%</div>
+                        <div class="text-xs font-bold text-white uppercase tracking-wider">Energy Advisory & ESG</div>
+                        <p class="text-[11px] text-slate-400 mt-2">Techno-economic modeling, carbon markets, and LCA sustainability auditing.</p>
+                    </div>
+
+                    <div class="p-6 bg-slate-950 rounded-2xl border border-slate-800">
+                        <div class="text-4xl font-black text-purple-400 font-heading mb-1">10%</div>
+                        <div class="text-xs font-bold text-white uppercase tracking-wider">EPC & Simulation</div>
+                        <p class="text-[11px] text-slate-400 mt-2">Plant layout, process safety, CFD analysis, and utility optimization.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: GRADUATING BATCH DIRECTORY -->
+        <section id="students" class="py-20 bg-slate-950 border-t border-slate-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-semibold tracking-wide uppercase mb-3">
+                        <i data-lucide="users" class="w-4 h-4 text-amber-400"></i> M.Tech Batch 2025–2027
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-heading font-extrabold text-white">Graduating Candidate Directory</h2>
+                    <p class="text-slate-400 text-sm mt-3">Click on any profile to view full thesis details, software proficiencies, GATE credentials, and contact links.</p>
+                </div>
+
+                <!-- Search & Filter Controls -->
+                <div class="bg-slate-900 p-4 rounded-2xl border border-slate-800 mb-10 flex flex-col md:flex-row items-center justify-between gap-4">
+                    <!-- Search Input -->
+                    <div class="relative w-full md:w-80">
+                        <i data-lucide="search" class="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400"></i>
+                        <input type="text" id="studentSearchInput" onkeyup="filterStudents()" placeholder="Search candidate, skill, software, thesis..." class="w-full pl-10 pr-4 py-2.5 bg-slate-950 border border-slate-800 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-amber-500 text-slate-200">
+                    </div>
+
+                    <!-- Category Filter Buttons -->
+                    <div class="flex flex-wrap items-center gap-2 w-full md:w-auto" id="filterButtons">
+                        <button onclick="filterDomain('all', this)" class="filter-btn active bg-amber-600 text-white text-xs font-semibold px-3.5 py-2 rounded-xl transition">All Candidates</button>
+                        <button onclick="filterDomain('greenh2', this)" class="filter-btn bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-semibold px-3.5 py-2 rounded-xl transition">Green H₂ & Clean Tech</button>
+                        <button onclick="filterDomain('oilgas', this)" class="filter-btn bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-semibold px-3.5 py-2 rounded-xl transition">Oil & Gas / Refining</button>
+                        <button onclick="filterDomain('ccus', this)" class="filter-btn bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-semibold px-3.5 py-2 rounded-xl transition">CCUS & ESG</button>
+                        <button onclick="filterDomain('modeling', this)" class="filter-btn bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-semibold px-3.5 py-2 rounded-xl transition">CFD & Simulation</button>
+                        <button onclick="filterDomain('wte', this)" class="filter-btn bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-semibold px-3.5 py-2 rounded-xl transition">Waste-to-Energy</button>
+                    </div>
+                </div>
+
+                <!-- Sabhi 18 naye students ki list yahan se shuru hoti hai -->
+                <!-- Student Profiles Grid -->
+                <div id="studentGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Cards will be populated dynamically from students.json -->
+                </div>
+        </section>
+
+        <!-- SECTION 6: RECRUITERS ECOSYSTEM WALL -->
+        <section id="recruiters" class="py-20 bg-slate-900 border-t border-slate-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-xs font-bold uppercase tracking-widest text-emerald-400 mb-2">Industry Ecosystem</h2>
+                    <h3 class="text-3xl sm:text-4xl font-heading font-extrabold text-white">Key Recruiters & Industry Partners</h3>
+                    <p class="text-slate-400 text-sm mt-3">Prominent energy organizations hiring IIT (ISM) Dhanbad talent.</p>
+                </div>
+
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 text-center font-bold text-slate-300 text-xs sm:text-sm">
+                    <div class="bg-slate-950 p-5 rounded-xl border border-slate-800 hover:border-emerald-500 transition">IndianOil (IOCL)</div>
+                    <div class="bg-slate-950 p-5 rounded-xl border border-slate-800 hover:border-emerald-500 transition">ONGC</div>
+                    <div class="bg-slate-950 p-5 rounded-xl border border-slate-800 hover:border-emerald-500 transition">GAIL (India)</div>
+                    <div class="bg-slate-950 p-5 rounded-xl border border-slate-800 hover:border-emerald-500 transition">BPCL</div>
+                    <div class="bg-slate-950 p-5 rounded-xl border border-slate-800 hover:border-emerald-500 transition">Reliance Industries</div>
+                    <div class="bg-slate-950 p-5 rounded-xl border border-slate-800 hover:border-emerald-500 transition">Vedanta / Cairn</div>
+                    <div class="bg-slate-950 p-5 rounded-xl border border-slate-800 hover:border-emerald-500 transition">TotalEnergies</div>
+                    <div class="bg-slate-950 p-5 rounded-xl border border-slate-800 hover:border-emerald-500 transition">Saudi Aramco</div>
+                    <div class="bg-slate-950 p-5 rounded-xl border border-slate-800 hover:border-emerald-500 transition">bp</div>
+                    <div class="bg-slate-950 p-5 rounded-xl border border-slate-800 hover:border-emerald-500 transition">ExxonMobil</div>
+                    <div class="bg-slate-950 p-5 rounded-xl border border-slate-800 hover:border-emerald-500 transition">Honeywell</div>
+                    <div class="bg-slate-950 p-5 rounded-xl border border-slate-800 hover:border-emerald-500 transition">Engineers India (EIL)</div>
+                    <div class="bg-slate-950 p-5 rounded-xl border border-slate-800 hover:border-emerald-500 transition">Wood Mackenzie</div>
+                    <div class="bg-slate-950 p-5 rounded-xl border border-slate-800 hover:border-emerald-500 transition">BloombergNEF</div>
+                    <div class="bg-slate-950 p-5 rounded-xl border border-slate-800 hover:border-emerald-500 transition">BCG</div>
+                    <div class="bg-slate-950 p-5 rounded-xl border border-slate-800 hover:border-emerald-500 transition">EY India</div>
+                    <div class="bg-slate-950 p-5 rounded-xl border border-slate-800 hover:border-emerald-500 transition">JSW Energy</div>
+                    <div class="bg-slate-950 p-5 rounded-xl border border-slate-800 hover:border-emerald-500 transition">Nayara Energy</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 7: CONTACT PLACEMENT CELL -->
+        <section id="contact" class="py-20 bg-slate-950 text-white border-t border-slate-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    
+                    <div class="lg:col-span-6 space-y-6">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 bg-amber-500/10 border border-amber-500/30 text-amber-400 rounded-full text-xs font-bold uppercase tracking-wider">
+                            <i data-lucide="building" class="w-3.5 h-3.5"></i> Career Development Centre
+                        </div>
+                        <h2 class="text-3xl sm:text-4xl font-heading font-extrabold text-white">Connect with Our Placement Team</h2>
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            We welcome campus recruitment teams, energy PSUs, multinational energy firms, and clean tech startups to engage with our M.Tech Fuel & Energy Engineering batch.
+                        </p>
+
+                        <div class="space-y-4 pt-2">
+                            <div class="flex items-start gap-3 bg-slate-900 p-4 rounded-xl border border-slate-800">
+                                <i data-lucide="user-check" class="w-5 h-5 text-amber-400 shrink-0 mt-0.5"></i>
+                                <div>
+                                    <div class="text-xs font-bold text-white">Head of Department (FMME)</div>
+                                    <div class="text-xs text-slate-300 mt-0.5">Prof. (Dr.) A. K. Singh</div>
+                                    <div class="text-xs text-slate-400">Email: hod_fme@iitism.ac.in | Tel: +91 (326) 223-5240</div>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-3 bg-slate-900 p-4 rounded-xl border border-slate-800">
+                                <i data-lucide="mail" class="w-5 h-5 text-emerald-400 shrink-0 mt-0.5"></i>
+                                <div>
+                                    <div class="text-xs font-bold text-white">Career Development Centre (CDC)</div>
+                                    <div class="text-xs text-slate-300 mt-0.5">Executive Placement Officer</div>
+                                    <div class="text-xs text-slate-400">Email: placement@iitism.ac.in / cdc@iitism.ac.in</div>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-3 bg-slate-900 p-4 rounded-xl border border-slate-800">
+                                <i data-lucide="map-pin" class="w-5 h-5 text-rose-400 shrink-0 mt-0.5"></i>
+                                <div>
+                                    <div class="text-xs font-bold text-white">Department Location</div>
+                                    <div class="text-xs text-slate-300 mt-0.5">Dept. of Fuel, Minerals & Metallurgical Engineering</div>
+                                    <div class="text-xs text-slate-400">Indian Institute of Technology (ISM), Dhanbad - 826004, Jharkhand, India</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick JNF Request Form -->
+                    <div class="lg:col-span-6 bg-slate-900 p-6 sm:p-8 rounded-3xl border border-slate-800 shadow-2xl">
+                        <h3 class="font-heading text-xl font-bold text-white mb-2">Request JNF & Full Batch CV Book</h3>
+                        <p class="text-xs text-slate-400 mb-6">Fill in your organization details to receive the official Job Notification Form (JNF) and complete student directory.</p>
+
+                        <form onsubmit="handleRecruiterSubmit(event)" class="space-y-4 text-xs">
+                            <div>
+                                <label class="block text-slate-300 font-semibold mb-1">Company / Organization Name</label>
+                                <input type="text" required placeholder="e.g. Indian Oil Corporation Ltd. / Reliance" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-3 text-white focus:border-amber-500 focus:outline-none">
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-slate-300 font-semibold mb-1">HR / Contact Person</label>
+                                    <input type="text" required placeholder="Full Name" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-3 text-white focus:border-amber-500 focus:outline-none">
+                                </div>
+                                <div>
+                                    <label class="block text-slate-300 font-semibold mb-1">Official Email</label>
+                                    <input type="email" required placeholder="hr@company.com" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-3 text-white focus:border-amber-500 focus:outline-none">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-slate-300 font-semibold mb-1">Target Hiring Domain</label>
+                                <select class="w-full bg-slate-950 border border-slate-800 rounded-xl p-3 text-white focus:border-amber-500 focus:outline-none">
+                                    <option>Oil & Gas / Refining Operations</option>
+                                    <option>Green Hydrogen & Bio-Refineries</option>
+                                    <option>Carbon Capture (CCUS) & ESG Advisory</option>
+                                    <option>Process Simulation & CFD Modeling</option>
+                                    <option>Full Batch Campus Placement Drive</option>
+                                </select>
+                            </div>
+
+                            <button type="submit" class="w-full py-3 bg-amber-600 hover:bg-amber-500 text-white font-bold rounded-xl transition shadow-lg shadow-amber-600/20 text-xs uppercase tracking-wider">
+                                Request JNF & Batch CV Book
+                            </button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- VIEW MODE 2: PRINTABLE MULTI-PAGE BOOKLET (BOOK-TYPE BROCHURE) -->
+    <div id="view-booklet" class="hidden bg-slate-800 py-12 px-4 sm:px-6 lg:px-8">
+        
+        <div class="max-w-4xl mx-auto space-y-12">
+            
+            <!-- Notice Banner -->
+            <div class="bg-amber-500/10 border border-amber-500/30 p-4 rounded-2xl text-amber-200 text-xs flex items-center justify-between no-print">
+                <div class="flex items-center gap-2">
+                    <i data-lucide="book-open" class="w-4 h-4 text-amber-400"></i>
+                    <span>Official Multi-Page Placement Booklet View (Formatted for A4 Printing & PDF Download)</span>
+                </div>
+                <button onclick="triggerPdfExport()" class="bg-amber-600 text-white font-bold px-4 py-2 rounded-xl">
+                    Export as PDF Booklet
+                </button>
+            </div>
+
+            <!-- BOOKLET PAGE 1: FRONT COVER -->
+            <div class="book-page bg-gradient-to-br from-slate-950 via-brand-dark to-sky-950 text-white rounded-2xl p-10 flex flex-col justify-between border border-slate-700 min-h-[1000px] book-shadow relative overflow-hidden">
+                <div class="absolute top-0 left-0 right-0 h-3 bg-gradient-to-r from-amber-400 via-emerald-400 to-cyan-400"></div>
+
+                <!-- Top Institute Crest -->
+                <div class="flex items-center justify-between border-b border-slate-800 pb-6">
+                    <div class="flex items-center gap-4">
+                        <img src="ISM logo.png" alt="IIT ISM Logo" class="w-24 h-24 sm:w-32 sm:h-32 object-contain">
+                        <div>
+                            <h2 class="font-serifHeading text-xl font-bold tracking-wider text-white">INDIAN INSTITUTE OF TECHNOLOGY</h2>
+                            <p class="text-xs text-amber-400 font-semibold tracking-widest uppercase">DHANBAD • ESTABLISHED 1926</p>
+                        </div>
+                    </div>
+                    <span class="text-xs bg-emerald-500/20 text-emerald-300 font-bold px-3 py-1 rounded-full border border-emerald-400/30">
+                        NIRF Top Tier
+                    </span>
+                </div>
+
+                <!-- Main Cover Title -->
+                <div class="my-12">
+                    <p class="text-xs font-extrabold uppercase tracking-widest text-amber-400 mb-3">PLACEMENT BROCHURE 2025–2026</p>
+                    <h1 class="font-serifHeading text-5xl font-black text-white leading-none tracking-tight mb-4">
+                        FUEL & ENERGY <br>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-emerald-300 to-cyan-300">ENGINEERING</span>
+                    </h1>
+                    <p class="text-sm text-slate-300 max-w-xl font-light leading-relaxed mt-4">
+                        Department of Fuel, Mineral and Metallurgical Engineering
+                    </p>
+                    <div class="w-24 h-1.5 bg-emerald-500 mt-6 rounded-full"></div>
+                </div>
+
+                <!-- Cover Footer -->
+                <div class="border-t border-slate-800 pt-6 flex items-center justify-between text-xs text-slate-400">
+                    <div>
+                        <div class="font-bold text-white">M.Tech Postgraduates</div>
+                        <div>Career Development Centre (CDC)</div>
+                    </div>
+                    <div class="text-right">
+                        <div class="font-mono text-amber-400 font-bold">www.iitism.ac.in</div>
+                        <div>Dhanbad, Jharkhand, India</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BOOKLET PAGE 2: LEADERSHIP DESK & LEGACY -->
+            <div class="book-page bg-white text-slate-900 rounded-2xl p-10 flex flex-col justify-between border border-slate-200 min-h-[1000px] book-shadow">
+                <div>
+                    <div class="flex items-center justify-between border-b border-slate-200 pb-4 mb-8">
+                        <span class="text-xs font-bold text-emerald-700 uppercase tracking-widest">Page 02 • Institutional Vision</span>
+                        <span class="text-xs text-slate-400">IIT (ISM) Dhanbad</span>
+                    </div>
+
+                    <h2 class="font-serifHeading text-2xl font-bold text-slate-900 mb-6">Leadership Desk & Legacy</h2>
+
+                    <div class="space-y-6 text-xs text-slate-600 leading-relaxed">
+                        <div class="p-5 bg-slate-50 rounded-2xl border border-slate-200">
+                            <h3 class="font-heading text-sm font-bold text-slate-900 mb-2">About IIT (ISM) Dhanbad</h3>
+                            <p>
+                                Founded in 1926 as the Indian School of Mines and converted into an Institute of National Importance under the IIT framework, IIT (ISM) Dhanbad has been at the forefront of natural resource development, energy extraction, and technological advancement for a century.
+                            </p>
+                        </div>
+
+                        <div class="p-5 bg-amber-50/60 rounded-2xl border border-amber-200">
+                            <h3 class="font-heading text-sm font-bold text-slate-900 mb-1">Message from Department Head</h3>
+                            <p class="text-[11px] text-amber-800 font-medium mb-3">Dept. of Fuel, Minerals & Metallurgical Engineering</p>
+                            <p class="italic text-slate-700">
+                                "The M.Tech program in Fuel & Energy Engineering was designed to equip postgraduates with dual competencies—mastery over legacy hydrocarbon refining systems alongside cutting-edge expertise in green hydrogen, biofuels, and carbon capture (CCUS). Our candidates bring analytical precision, computational modeling skills, and practical lab experience."
+                            </p>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-4 pt-4">
+                            <div class="p-4 bg-slate-100 rounded-xl">
+                                <div class="font-bold text-slate-900 text-sm">100% GATE Intake</div>
+                                <div class="text-[11px] text-slate-500 mt-0.5">Top percentile nationwide selection</div>
+                            </div>
+                            <div class="p-4 bg-slate-100 rounded-xl">
+                                <div class="font-bold text-slate-900 text-sm">1-Year R&D Thesis</div>
+                                <div class="text-[11px] text-slate-500 mt-0.5">Industry-aligned master's research</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="border-t border-slate-200 pt-4 flex justify-between text-[11px] text-slate-400">
+                    <span>Fuel & Energy Engineering Brochure</span>
+                    <span>Page 02</span>
+                </div>
+            </div>
+
+            <!-- BOOKLET PAGE 3: ACADEMIC CURRICULUM -->
+            <div class="book-page bg-white text-slate-900 rounded-2xl p-10 flex flex-col justify-between border border-slate-200 min-h-[1000px] book-shadow">
+                <div>
+                    <div class="flex items-center justify-between border-b border-slate-200 pb-4 mb-8">
+                        <span class="text-xs font-bold text-amber-700 uppercase tracking-widest">Page 03 • Academic Curriculum</span>
+                        <span class="text-xs text-slate-400">Coursework Structure</span>
+                    </div>
+
+                    <h2 class="font-serifHeading text-2xl font-bold text-slate-900 mb-6">Coursework & Technical Specializations</h2>
+
+                    <div class="grid grid-cols-2 gap-6 text-xs mb-6">
+                        <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
+                            <h3 class="font-bold text-slate-900 mb-2 text-sm">Semester I & II (Core Subjects)</h3>
+                            <ul class="space-y-1.5 text-slate-600">
+                                <li>• Advanced Petroleum Refining Engineering</li>
+                                <li>• Combustion & Thermal Plant Engineering</li>
+                                <li>• Clean Coal Technology & Beneficiation</li>
+                                <li>• Non-Conventional Energy & Fuel Cells</li>
+                                <li>• Biofuel Engineering & Biomass Pyrolysis</li>
+                                <li>• Process Modeling & ASPEN HYSYS</li>
+                            </ul>
+                        </div>
+
+                        <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
+                            <h3 class="font-bold text-slate-900 mb-2 text-sm">Semester III & IV (Master's Thesis)</h3>
+                            <ul class="space-y-1.5 text-slate-600">
+                                <li>• Year-long Experimental & Computational Project</li>
+                                <li>• Green Hydrogen Electrolyzer Thermal Analysis</li>
+                                <li>• Amine-Based Post-Combustion CCUS Design</li>
+                                <li>• Sustainable Aviation Fuel (SAF) Optimization</li>
+                                <li>• CFD Modeling of Fuel Cell Stack Mechanics</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="p-4 bg-emerald-50 rounded-xl border border-emerald-200 text-xs text-slate-700">
+                        <strong class="text-emerald-900 block mb-1">Software & Computational Tools Mastery:</strong>
+                        Aspen Plus • Aspen HYSYS • ANSYS Fluent (CFD) • MATLAB • OpenLCA (Life Cycle Assessment) • COMSOL Multiphysics
+                    </div>
+                </div>
+
+                <div class="border-t border-slate-200 pt-4 flex justify-between text-[11px] text-slate-400">
+                    <span>Fuel & Energy Engineering Brochure</span>
+                    <span>Page 03</span>
+                </div>
+            </div>
+
+            <!-- BOOKLET PAGE 4: R&D LABS & TESTING FACILITIES -->
+            <div class="book-page bg-white text-slate-900 rounded-2xl p-10 flex flex-col justify-between border border-slate-200 min-h-[1000px] book-shadow">
+                <div>
+                    <div class="flex items-center justify-between border-b border-slate-200 pb-4 mb-8">
+                        <span class="text-xs font-bold text-cyan-700 uppercase tracking-widest">Page 04 • Infrastructure</span>
+                        <span class="text-xs text-slate-400">R&D Facilities</span>
+                    </div>
+
+                    <h2 class="font-serifHeading text-2xl font-bold text-slate-900 mb-6">Advanced Testing & Characterization Labs</h2>
+
+                    <div class="space-y-4 text-xs">
+                        <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
+                            <h3 class="font-bold text-slate-900 text-sm">1. Fuel Testing & Calorimetry Suite</h3>
+                            <p class="text-slate-600 mt-1">Bomb Calorimeters, Proximate/Ultimate Analyzers, Flash & Fire Point Testing, Kinematic Viscometers for ASTM-standard liquid and solid fuel characterization.</p>
+                        </div>
+
+                        <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
+                            <h3 class="font-bold text-slate-900 text-sm">2. Central Analytical Instrumentation Facility</h3>
+                            <p class="text-slate-600 mt-1">Gas Chromatography-Mass Spectrometry (GC-MS), Thermogravimetric Analysis (TGA-DSC), FTIR Spectrometer, Powder XRD, and Scanning Electron Microscopy (SEM).</p>
+                        </div>
+
+                        <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
+                            <h3 class="font-bold text-slate-900 text-sm">3. Process Simulation & CFD Workstations</h3>
+                            <p class="text-slate-600 mt-1">High-performance computing cluster running licensed chemical process flowsheeting and fluid mechanics modeling tools.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="border-t border-slate-200 pt-4 flex justify-between text-[11px] text-slate-400">
+                    <span>Fuel & Energy Engineering Brochure</span>
+                    <span>Page 04</span>
+                </div>
+            </div>
+
+            <!-- BOOKLET PAGE 5: CANDIDATE DIRECTORY (PART 1) -->
+            <div class="book-page bg-white text-slate-900 rounded-2xl p-10 flex flex-col justify-between border border-slate-200 min-h-[1000px] book-shadow">
+                <div>
+                    <div class="flex items-center justify-between border-b border-slate-200 pb-4 mb-6">
+                        <span class="text-xs font-bold text-amber-700 uppercase tracking-widest">Page 05 • Candidate Directory</span>
+                        <span class="text-xs text-slate-400">M.Tech Batch 2025–2027</span>
+                    </div>
+
+                    <h2 class="font-serifHeading text-2xl font-bold text-slate-900 mb-6">Graduating Student Profiles (1/3)</h2>
+
+                    <div id="bookletGrid1" class="grid grid-cols-2 gap-4 text-xs">
+                        <!-- Dynamic booklet profiles -->
+                    </div>
+                </div>
+
+                <div class="border-t border-slate-200 pt-4 flex justify-between text-[11px] text-slate-400">
+                    <span>Fuel & Energy Engineering Brochure</span>
+                    <span>Page 05</span>
+                </div>
+            </div>
+
+            <!-- BOOKLET PAGE 6: CANDIDATE DIRECTORY (PART 2) -->
+            <div class="book-page bg-white text-slate-900 rounded-2xl p-10 flex flex-col justify-between border border-slate-200 min-h-[1000px] book-shadow">
+                <div>
+                    <div class="flex items-center justify-between border-b border-slate-200 pb-4 mb-6">
+                        <span class="text-xs font-bold text-amber-700 uppercase tracking-widest">Page 06 • Candidate Directory</span>
+                        <span class="text-xs text-slate-400">M.Tech Batch 2025–2027</span>
+                    </div>
+
+                    <h2 class="font-serifHeading text-2xl font-bold text-slate-900 mb-6">Graduating Student Profiles (2/3)</h2>
+
+                    <div id="bookletGrid2" class="grid grid-cols-2 gap-4 text-xs">
+                        <!-- Dynamic booklet profiles -->
+                    </div>
+                </div>
+
+                <div class="border-t border-slate-200 pt-4 flex justify-between text-[11px] text-slate-400">
+                    <span>Fuel & Energy Engineering Brochure</span>
+                    <span>Page 06</span>
+                </div>
+            </div>
+
+            <!-- BOOKLET PAGE 7: CANDIDATE DIRECTORY (PART 3) -->
+            <div class="book-page bg-white text-slate-900 rounded-2xl p-10 flex flex-col justify-between border border-slate-200 min-h-[1000px] book-shadow">
+                <div>
+                    <div class="flex items-center justify-between border-b border-slate-200 pb-4 mb-6">
+                        <span class="text-xs font-bold text-amber-700 uppercase tracking-widest">Page 07 • Candidate Directory</span>
+                        <span class="text-xs text-slate-400">M.Tech Batch 2025–2027</span>
+                    </div>
+
+                    <h2 class="font-serifHeading text-2xl font-bold text-slate-900 mb-6">Graduating Student Profiles (3/3)</h2>
+
+                    <div id="bookletGrid3" class="grid grid-cols-2 gap-4 text-xs">
+                        <!-- Dynamic booklet profiles -->
+                    </div>
+                </div>
+
+                <div class="border-t border-slate-200 pt-4 flex justify-between text-[11px] text-slate-400">
+                    <span>Fuel & Energy Engineering Brochure</span>
+                    <span>Page 07</span>
+                </div>
+            </div>
+
+            <!-- BOOKLET PAGE 8: RECRUITER WALL & PLACEMENT PROCEDURE -->
+            <div class="book-page bg-white text-slate-900 rounded-2xl p-10 flex flex-col justify-between border border-slate-200 min-h-[1000px] book-shadow">
+                <div>
+                    <div class="flex items-center justify-between border-b border-slate-200 pb-4 mb-6">
+                        <span class="text-xs font-bold text-emerald-700 uppercase tracking-widest">Page 08 • Recruitment Ecosystem</span>
+                        <span class="text-xs text-slate-400">CDC Guidelines</span>
+                    </div>
+
+                    <h2 class="font-serifHeading text-2xl font-bold text-slate-900 mb-6">Prominent Recruiters & Process</h2>
+
+                    <div class="grid grid-cols-3 gap-2 text-center text-xs font-bold text-slate-700 mb-6">
+                        <div class="p-3 bg-slate-100 rounded-lg">IndianOil (IOCL)</div>
+                        <div class="p-3 bg-slate-100 rounded-lg">ONGC</div>
+                        <div class="p-3 bg-slate-100 rounded-lg">GAIL (India)</div>
+                        <div class="p-3 bg-slate-100 rounded-lg">Reliance Industries</div>
+                        <div class="p-3 bg-slate-100 rounded-lg">TotalEnergies</div>
+                        <div class="p-3 bg-slate-100 rounded-lg">Wood Mackenzie</div>
+                        <div class="p-3 bg-slate-100 rounded-lg">Engineers India (EIL)</div>
+                        <div class="p-3 bg-slate-100 rounded-lg">Honeywell</div>
+                        <div class="p-3 bg-slate-100 rounded-lg">BCG / EY</div>
+                    </div>
+
+                    <div class="p-4 bg-slate-50 rounded-xl border border-slate-200 text-xs">
+                        <h3 class="font-bold text-slate-900 mb-2">Campus Recruitment Procedure:</h3>
+                        <ol class="list-decimal list-inside space-y-1 text-slate-600">
+                            <li>Recruiter submits Job Notification Form (JNF) via email or CDC portal.</li>
+                            <li>Pre-Placement Talk (PPT) scheduled online or on-campus in Dhanbad.</li>
+                            <li>Shortlisting based on CV / GATE credentials followed by interview rounds.</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="border-t border-slate-200 pt-4 flex justify-between text-[11px] text-slate-400">
+                    <span>Fuel & Energy Engineering Brochure</span>
+                    <span>Page 08</span>
+                </div>
+            </div>
+
+            <!-- BOOKLET PAGE 9: BACK COVER & CONTACTS -->
+            <div class="book-page bg-slate-950 text-white rounded-2xl p-10 flex flex-col justify-between border border-slate-800 min-h-[1000px] book-shadow">
+                <div class="border-b border-slate-800 pb-6">
+                    <span class="text-xs font-bold text-amber-400 uppercase tracking-widest">Back Cover</span>
+                    <h2 class="font-serifHeading text-3xl font-bold text-white mt-2">Career Development Centre</h2>
+                    <p class="text-xs text-slate-300 mt-1">Indian Institute of Technology (ISM) Dhanbad</p>
+                </div>
+
+                <div class="my-auto space-y-6 text-xs text-slate-300">
+                    <div class="p-4 bg-slate-900 rounded-xl border border-slate-800">
+                        <strong class="text-white block mb-1">Head of Department:</strong>
+                        Prof. (Dr.) A. K. Singh<br>
+                        Email: hod_fme@iitism.ac.in | Tel: +91 (326) 223-5240
+                    </div>
+
+                    <div class="p-4 bg-slate-900 rounded-xl border border-slate-800">
+                        <strong class="text-white block mb-1">Career Development Centre (CDC):</strong>
+                        Executive Officer / Training & Placement Officer<br>
+                        Email: placement@iitism.ac.in / cdc@iitism.ac.in
+                    </div>
+
+                    <div class="p-4 bg-slate-900 rounded-xl border border-slate-800">
+                        <strong class="text-white block mb-1">Postal Address:</strong>
+                        Dept. of Fuel, Minerals & Metallurgical Engineering,<br>
+                        IIT (ISM) Dhanbad - 826004, Jharkhand, India.
+                    </div>
+                </div>
+
+                <div class="border-t border-slate-800 pt-4 text-center text-xs text-slate-500">
+                    © 2026 IIT (ISM) Dhanbad • All Rights Reserved
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- CANDIDATE BIO MODAL -->
+    <div id="studentBioModal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-md z-50 hidden flex items-center justify-center p-4 no-print">
+        <div class="bg-slate-900 border border-slate-800 text-white rounded-3xl max-w-lg w-full p-6 relative shadow-2xl space-y-4">
+            <button onclick="closeStudentBio()" class="absolute top-4 right-4 text-slate-400 hover:text-white">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+
+            <div class="flex items-center gap-4">
+                <div class="w-14 h-14 rounded-full bg-amber-500/20 border border-amber-500 text-amber-400 flex items-center justify-center font-bold text-xl overflow-hidden shrink-0">
+                    <img id="modalImage" src="" alt="Student Photo" class="w-full h-full object-cover hidden" onerror="this.style.display='none'; document.getElementById('modalIcon').style.display='block';">
+                    <i id="modalIcon" data-lucide="user" class="w-8 h-8"></i>
+                </div>
+                <div>
+                    <h3 id="modalName" class="font-heading text-xl font-bold text-white">Name</h3>
+                    <p id="modalDegree" class="text-xs text-slate-400 font-medium">B.Tech Degree</p>
+                    <span id="modalDomain" class="inline-block mt-1 bg-emerald-950 text-emerald-400 text-[10px] font-bold px-2 py-0.5 rounded border border-emerald-800">
+                        Domain
+                    </span>
+                </div>
+            </div>
+
+            <div class="p-3 bg-slate-950 rounded-xl border border-slate-800 space-y-1">
+                <div class="text-[11px] font-bold text-amber-400 uppercase">GATE Credentials</div>
+                <div id="modalGate" class="text-xs text-slate-200">GATE Info</div>
+            </div>
+
+            <div>
+                <div class="text-xs font-bold text-slate-300 mb-1">M.Tech Thesis Research:</div>
+                <p id="modalThesis" class="text-xs text-slate-300 leading-relaxed bg-slate-950 p-3 rounded-xl border border-slate-800">
+                    Thesis Name
+                </p>
+            </div>
+
+            <div>
+                <div class="text-xs font-bold text-slate-300 mb-1">Software & Lab Proficiencies:</div>
+                <p id="modalSkills" class="text-xs text-emerald-400 font-mono bg-slate-950 p-2.5 rounded-xl border border-slate-800">
+                    Skills Array
+                </p>
+            </div>
+
+            <div class="pt-2 flex items-center justify-between">
+                <a id="modalEmail" href="mailto:email@iitism.ac.in" class="text-xs text-sky-400 hover:underline flex items-center gap-1">
+                    <i data-lucide="mail" class="w-4 h-4"></i> Contact Candidate
+                </a>
+                <button id="modalDownloadBtn" class="py-2 px-4 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs rounded-xl transition">
+                    Download CV
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER (No-print) -->
+    <footer class="bg-brand-dark border-t border-slate-800 text-slate-400 py-8 text-xs no-print mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-3">
+                <img src="ISM logo.png" alt="IIT ISM Logo" class="w-10 h-10 sm:w-12 sm:h-12 object-contain">
+                <span class="text-white font-semibold">Department of Fuel, Minerals & Metallurgical Engineering • IIT (ISM) Dhanbad</span>
+            </div>
+            <div>© 2026 Fuel & Energy Engineering Placement Committee</div>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE JAVASCRIPT LOGIC -->
+    <script>
+        // Helper to resolve resume relative path or url from students.json
+        function getResumeUrl(resumePath) {
+            if (!resumePath || typeof resumePath !== 'string') return null;
+            const trimmed = resumePath.trim();
+            if (!trimmed) return null;
+            return trimmed;
+        }
+
+        // Helper to resolve profile picture relative path or url from students.json
+        function getImageUrl(imagePath) {
+            if (!imagePath || typeof imagePath !== 'string') return null;
+            const trimmed = imagePath.trim();
+            if (!trimmed) return null;
+            return trimmed;
+        }
+
+        // Fetch and load candidate profiles dynamically from students.json
+        async function loadStudents() {
+            try {
+                const response = await fetch('students.json');
+                if (!response.ok) throw new Error('Failed to load student data');
+                const students = await response.json();
+
+                const grid = document.getElementById('studentGrid');
+                if (grid) grid.innerHTML = '';
+
+                const bGrid1 = document.getElementById('bookletGrid1');
+                const bGrid2 = document.getElementById('bookletGrid2');
+                const bGrid3 = document.getElementById('bookletGrid3');
+
+                if (bGrid1) bGrid1.innerHTML = '';
+                if (bGrid2) bGrid2.innerHTML = '';
+                if (bGrid3) bGrid3.innerHTML = '';
+
+                students.forEach((student, index) => {
+                    const initials = student.name.split(' ').map(n => n[0]).join('').substring(0, 2);
+                    const imageUrl = getImageUrl(student.image);
+                    const resumeUrl = getResumeUrl(student.resume);
+
+                    // 1. Interactive Grid Card Rendering
+                    if (grid) {
+                        let borderColor = 'border-slate-800';
+                        if (student.domain === 'greenh2') borderColor = 'border-emerald-500';
+                        else if (student.domain === 'oilgas') borderColor = 'border-amber-500';
+                        else if (student.domain === 'ccus') borderColor = 'border-blue-500';
+                        else if (student.domain === 'modeling') borderColor = 'border-purple-500';
+                        else if (student.domain === 'wte') borderColor = 'border-teal-500';
+
+                        let btnBg = 'bg-slate-700 hover:bg-slate-600';
+                        if (student.domain === 'greenh2') btnBg = 'bg-emerald-600 hover:bg-emerald-500';
+                        else if (student.domain === 'oilgas') btnBg = 'bg-amber-600 hover:bg-amber-500';
+                        else if (student.domain === 'ccus') btnBg = 'bg-blue-600 hover:bg-blue-500';
+                        else if (student.domain === 'modeling') btnBg = 'bg-purple-600 hover:bg-purple-500';
+                        else if (student.domain === 'wte') btnBg = 'bg-teal-600 hover:bg-teal-500';
+
+                        const card = document.createElement('div');
+                        card.className = `student-card bg-slate-900 border border-slate-800 rounded-2xl p-6 shadow-md card-hover flex flex-col justify-between cursor-pointer`;
+                        card.setAttribute('data-domain', student.domain);
+                        card.setAttribute('data-keywords', student.keywords || '');
+                        card.onclick = () => openStudentBio(
+                            student.name, student.degree, student.domainLabel, 
+                            student.thesis, student.skills, student.email, student.gate, student.resume, student.image
+                        );
+
+                        let resumeButtonHtml = '';
+                        if (resumeUrl) {
+                            resumeButtonHtml = `
+                                <button onclick="event.stopPropagation(); downloadResume('${student.name.replace(/'/g, "\\'")}', '${resumeUrl.replace(/'/g, "\\'")}')" title="View Candidate Resume (PDF)" class="${btnBg} text-white font-semibold text-xs px-3 py-1.5 rounded-lg flex items-center gap-1 transition shadow">
+                                    <i data-lucide="download" class="w-3.5 h-3.5"></i> Resume
+                                </button>
+                            `;
+                        } else {
+                            resumeButtonHtml = `
+                                <button onclick="event.stopPropagation(); requestResume('${student.name.replace(/'/g, "\\'")}')" class="border border-slate-700 hover:bg-slate-800 hover:border-slate-600 text-slate-400 font-semibold text-xs px-3 py-1.5 rounded-lg flex items-center gap-1 transition">
+                                    <i data-lucide="mail" class="w-3.5 h-3.5 text-slate-500"></i> Request CV
+                                </button>
+                            `;
+                        }
+
+                        let imageHtml = '';
+                        if (imageUrl) {
+                            imageHtml = `
+                                <img src="${imageUrl}" alt="${student.name}" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');">
+                                <span class="text-xl font-bold text-slate-400 uppercase hidden">${initials}</span>
+                            `;
+                        } else {
+                            imageHtml = `<span class="text-xl font-bold text-slate-400 uppercase">${initials}</span>`;
+                        }
+
+                        card.innerHTML = `
+                            <div>
+                                <div class="flex items-center gap-4 mb-4">
+                                    <div class="w-14 h-14 rounded-full bg-slate-800 border-2 ${borderColor} shadow flex items-center justify-center overflow-hidden shrink-0">
+                                        ${imageHtml}
+                                    </div>
+                                    <div>
+                                        <h4 class="font-heading text-base font-bold text-white">${student.name}</h4>
+                                        <p class="text-[11px] text-slate-400 font-medium">${student.degree}</p>
+                                        <span class="inline-block mt-1 bg-slate-950/80 text-emerald-300 text-[10px] font-bold px-2 py-0.5 rounded-md border ${borderColor}">
+                                            ${student.domainLabel}
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="space-y-2 mb-5">
+                                    <div>
+                                        <p class="text-[10px] font-bold uppercase text-slate-500">Core Expertise</p>
+                                        <p class="text-xs text-slate-200 font-semibold leading-snug">${student.thesis}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pt-4 border-t border-slate-800 flex items-center justify-between no-print">
+                                <span class="text-xs text-amber-400 font-semibold hover:text-amber-300 transition">View Bio</span>
+                                ${resumeButtonHtml}
+                            </div>
+                        `;
+                        grid.appendChild(card);
+                    }
+
+                    // 2. Printable Booklet Grid Card Rendering
+                    let targetBGrid = null;
+                    if (index < 6) targetBGrid = bGrid1;
+                    else if (index < 12) targetBGrid = bGrid2;
+                    else if (index < 18) targetBGrid = bGrid3;
+
+                    if (targetBGrid) {
+                        let initialBg = 'bg-slate-50';
+                        let initialText = 'text-slate-600';
+                        let bookletBorder = 'border-slate-500';
+                        if (student.domain === 'greenh2') { initialBg = 'bg-emerald-50'; initialText = 'text-emerald-600'; bookletBorder = 'border-emerald-500'; }
+                        else if (student.domain === 'oilgas') { initialBg = 'bg-amber-50'; initialText = 'text-amber-600'; bookletBorder = 'border-amber-500'; }
+                        else if (student.domain === 'ccus') { initialBg = 'bg-blue-50'; initialText = 'text-blue-600'; bookletBorder = 'border-blue-500'; }
+                        else if (student.domain === 'modeling') { initialBg = 'bg-purple-50'; initialText = 'text-purple-600'; bookletBorder = 'border-purple-500'; }
+                        else if (student.domain === 'wte') { initialBg = 'bg-teal-50'; initialText = 'text-teal-600'; bookletBorder = 'border-teal-500'; }
+
+                        let bImageHtml = '';
+                        if (imageUrl) {
+                            bImageHtml = `
+                                <img src="${imageUrl}" alt="${student.name}" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');">
+                                <span class="${initialText} font-bold uppercase text-base hidden">${initials}</span>
+                            `;
+                        } else {
+                            bImageHtml = `<span class="${initialText} font-bold uppercase text-base">${initials}</span>`;
+                        }
+
+                        const bCard = document.createElement('div');
+                        bCard.className = 'p-3 bg-slate-50 rounded-xl border border-slate-200 flex items-start gap-3';
+                        bCard.innerHTML = `
+                            <div class="w-12 h-12 rounded-full ${initialBg} border ${bookletBorder} flex items-center justify-center shrink-0 overflow-hidden">
+                                ${bImageHtml}
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-slate-900 text-sm">${student.name}</h3>
+                                <p class="text-[11px] text-slate-500">${student.domainLabel}</p>
+                                <p class="text-slate-700 font-semibold mt-1">Core: ${student.thesis}</p>
+                                <p class="text-[10px] text-slate-500 mt-1">Skills: ${student.skills}</p>
+                            </div>
+                        `;
+                        targetBGrid.appendChild(bCard);
+                    }
+                });
+
+                if (window.lucide) lucide.createIcons();
+            } catch (error) {
+                console.error("Error loading candidate directory:", error);
+            }
+        }
+
+        // Initialize and trigger dynamic loading
+        document.addEventListener('DOMContentLoaded', () => {
+            loadStudents();
+        });
+
+        // Mode Switching
+        function switchView(mode) {
+            const portal = document.getElementById('view-portal');
+            const booklet = document.getElementById('view-booklet');
+
+            const btnPortal = document.getElementById('btn-mode-portal');
+            const btnBooklet = document.getElementById('btn-mode-booklet');
+
+            portal.classList.add('hidden');
+            booklet.classList.add('hidden');
+
+            btnPortal.className = "px-3 py-1.5 rounded-lg text-slate-400 hover:text-white transition-all";
+            btnBooklet.className = "px-3 py-1.5 rounded-lg text-slate-400 hover:text-white transition-all";
+
+            if (mode === 'portal') {
+                portal.classList.remove('hidden');
+                btnPortal.className = "px-3 py-1.5 rounded-lg bg-amber-600 text-white shadow transition-all";
+            } else if (mode === 'booklet') {
+                booklet.classList.remove('hidden');
+                btnBooklet.className = "px-3 py-1.5 rounded-lg bg-amber-600 text-white shadow transition-all";
+            }
+
+            if (window.lucide) lucide.createIcons();
+        }
+
+        // Student Search & Filter
+        let activeDomain = 'all';
+
+        function filterDomain(domain, btnElement) {
+            activeDomain = domain;
+            document.querySelectorAll('#filterButtons .filter-btn').forEach(btn => {
+                btn.className = "filter-btn bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-semibold px-3.5 py-2 rounded-xl transition";
+            });
+            btnElement.className = "filter-btn active bg-amber-600 text-white text-xs font-semibold px-3.5 py-2 rounded-xl transition";
+            filterStudents();
+        }
+
+        function filterStudents() {
+            const query = document.getElementById('studentSearchInput').value.toLowerCase().trim();
+            const cards = document.querySelectorAll('#studentGrid .student-card');
+
+            cards.forEach(card => {
+                const domainMatch = (activeDomain === 'all') || (card.getAttribute('data-domain') === activeDomain);
+                const keywords = card.getAttribute('data-keywords').toLowerCase();
+                const textMatch = !query || keywords.includes(query);
+
+                if (domainMatch && textMatch) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+        }
+
+        // Student Bio Modal Functions
+        function openStudentBio(name, degree, domain, thesis, skills, email, gate, resume, image) {
+            document.getElementById('modalName').innerText = name;
+            document.getElementById('modalDegree').innerText = degree;
+            document.getElementById('modalDomain').innerText = domain;
+            document.getElementById('modalThesis').innerText = thesis;
+            document.getElementById('modalSkills').innerText = skills;
+            document.getElementById('modalGate').innerText = gate;
+            document.getElementById('modalEmail').href = 'mailto:' + email;
+
+            // Load student profile picture dynamically in modal
+            const modalImg = document.getElementById('modalImage');
+            const modalIcon = document.getElementById('modalIcon');
+            const imageUrl = getImageUrl(image);
+            if (modalImg && modalIcon) {
+                if (imageUrl) {
+                    modalImg.src = imageUrl;
+                    modalImg.style.display = 'block';
+                    modalImg.classList.remove('hidden');
+                    modalIcon.style.display = 'none';
+                } else {
+                    modalImg.src = '';
+                    modalImg.style.display = 'none';
+                    modalImg.classList.add('hidden');
+                    modalIcon.style.display = 'block';
+                }
+            }
+
+            // Update modal download button based on resume path in JSON
+            const modalDownloadBtn = document.getElementById('modalDownloadBtn');
+            const resumeUrl = getResumeUrl(resume);
+            if (modalDownloadBtn) {
+                if (resumeUrl) {
+                    modalDownloadBtn.innerText = "Download CV";
+                    modalDownloadBtn.className = "py-2 px-4 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs rounded-xl transition";
+                    modalDownloadBtn.onclick = () => downloadResume(name, resumeUrl);
+                } else {
+                    modalDownloadBtn.innerText = "Request CV";
+                    modalDownloadBtn.className = "py-2 px-4 border border-slate-700 hover:bg-slate-800 text-slate-400 font-bold text-xs rounded-xl transition";
+                    modalDownloadBtn.onclick = () => { closeStudentBio(); requestResume(name); };
+                }
+            }
+
+            document.getElementById('studentBioModal').classList.remove('hidden');
+        }
+
+        function closeStudentBio() {
+            document.getElementById('studentBioModal').classList.add('hidden');
+            const modalImg = document.getElementById('modalImage');
+            if (modalImg) modalImg.src = '';
+        }
+
+        function downloadResume(candidateName, resumeUrl) {
+            if (!candidateName || candidateName === 'Candidate') return;
+            const url = getResumeUrl(resumeUrl);
+            if (url) {
+                // Open the PDF resume in a new tab
+                window.open(url, '_blank');
+            } else {
+                alert(`Resume for ${candidateName} has not been uploaded yet. Please request it via the placement cell.`);
+            }
+        }
+
+        function requestResume(candidateName) {
+            const contactSection = document.getElementById('contact');
+            if (contactSection) {
+                contactSection.scrollIntoView({ behavior: 'smooth' });
+                alert(`Resume for ${candidateName} is not yet uploaded.\n\nYou have been scrolled to the Placement Contact section to request the CV Book or coordinate with the CDC.`);
+            }
+        }
+
+        function triggerPdfExport() {
+            window.print();
+        }
+
+        function handleRecruiterSubmit(e) {
+            e.preventDefault();
+            alert("Thank you! Your JNF & CV Book request has been submitted to the CDC Placement Cell at IIT (ISM) Dhanbad.");
+        }
+
+        // Animate top-right text when campus video is about to end
+        const campusVideo = document.getElementById('campus-video');
+        const videoEndingText = document.getElementById('video-ending-text');
+
+        if (campusVideo && videoEndingText) {
+            campusVideo.addEventListener('timeupdate', () => {
+                if (campusVideo.duration) {
+                    // Show when approaching end (last 6 seconds)
+                    const timeRemaining = campusVideo.duration - campusVideo.currentTime;
+                    if (timeRemaining <= 6 && campusVideo.currentTime > 5) {
+                        videoEndingText.classList.remove('opacity-0', 'translate-y-3');
+                        videoEndingText.classList.add('opacity-100', 'translate-y-0');
+                    } else {
+                        videoEndingText.classList.remove('opacity-100', 'translate-y-0');
+                        videoEndingText.classList.add('opacity-0', 'translate-y-3');
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>
