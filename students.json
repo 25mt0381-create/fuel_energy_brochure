@@ -178,7 +178,7 @@
         "email": "25MT0461@iitism.ac.in",
         "gate": "GATE Qualified / IIT Dhanbad",
         "resume": "resumes/sandeep_resume_ism.pdf",
-        "image": "",
+        "image": "student_images/sandeep.jpeg",
         "keywords": "sandeep kumar lignocellulosic biomass pyrolysis liquid fuels gc-ms ftir bio-refineries"
     },
     {
@@ -191,7 +191,7 @@
         "email": "25mt0483@iitism.ac.in",
         "gate": "GATE Qualified / IIT Dhanbad",
         "resume": "resumes/Saurav_Anand_Resume.pdf",
-        "image": "",
+        "image": "student_images/saurav.jpeg",
         "keywords": "saurav anand dynamic simulation process control distillation columns aspen dynamics"
     },
     {
@@ -230,7 +230,7 @@
         "email": "25mt0635@iitism.ac.in",
         "gate": "GATE Qualified / IIT Dhanbad",
         "resume": "resumes/yogesh_kumar.pdf",
-        "image": "student_images/yogesh_kumar.jpg",
+        "image": "student_images/yogesh.jpeg",
         "keywords": "yogesh kumar energy storage supercapacitors metal oxide graphene flash joule heating raman spectroscopy sem tem bet xps ftir materials characterization"
     }
 ]

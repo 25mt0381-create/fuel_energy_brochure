@@ -96,11 +96,11 @@
 </head>
 
 <body
-    class="bg-slate-50 text-slate-900 font-sans antialiased selection:bg-red-500 selection:text-white flex flex-col min-h-screen">
+    class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-red-500 selection:text-white flex flex-col min-h-screen">
 
     <!-- TOP NAVIGATION BAR (No-print) -->
     <header
-        class="sticky top-0 z-50 bg-white/95 backdrop-blur-md text-slate-900 border-b border-slate-200 no-print shadow-sm">
+        class="sticky top-0 z-50 bg-white/95 backdrop-blur-md text-slate-800 border-b border-slate-200 no-print shadow-sm">
         <div class="max-w-[100rem] mx-auto px-2 sm:px-4 lg:px-6">
             <div class="flex items-center justify-between py-2 sm:py-3 gap-2 xl:gap-4">
 
@@ -113,7 +113,7 @@
                             onerror="this.src='https://upload.wikimedia.org/wikipedia/en/thumb/e/e9/Indian_Institute_of_Technology_%28Indian_School_of_Mines%29%2C_Dhanbad_Logo.png/220px-Indian_Institute_of_Technology_%28Indian_School_of_Mines%29%2C_Dhanbad_Logo.png'">
                         <div class="hidden sm:block shrink-0">
                             <h1
-                                class="font-heading text-xl sm:text-2xl xl:text-3xl font-extrabold tracking-tight text-slate-900 leading-tight whitespace-nowrap">
+                                class="font-heading text-xl sm:text-2xl xl:text-3xl font-extrabold tracking-tight text-slate-800 leading-tight whitespace-nowrap">
                                 IIT (ISM) DHANBAD</h1>
                             <p
                                 class="text-[11px] sm:text-[13px] xl:text-sm text-red-700 font-semibold whitespace-nowrap">
@@ -125,16 +125,16 @@
                 <!-- Center: Nav Links for Web Portal Mode -->
                 <nav id="portal-nav"
                     class="hidden lg:flex flex-1 justify-center items-center space-x-3 xl:space-x-5 text-[10px] xl:text-[11px] font-bold uppercase tracking-wider text-slate-600">
-                    <a href="#about" class="hover:text-red-600 transition-colors whitespace-nowrap">About</a>
-                    <a href="#curriculum" class="hover:text-red-600 transition-colors whitespace-nowrap">Curriculum</a>
-                    <a href="#labs" class="hover:text-red-600 transition-colors whitespace-nowrap">Labs</a>
-                    <a href="#stats" class="hover:text-red-600 transition-colors whitespace-nowrap">Placement Stats</a>
+                    <a href="#about" class="hover:text-blue-700 transition-colors whitespace-nowrap">About</a>
+                    <a href="#curriculum" class="hover:text-blue-700 transition-colors whitespace-nowrap">Curriculum</a>
+                    <a href="#labs" class="hover:text-blue-700 transition-colors whitespace-nowrap">Labs</a>
+                    <a href="#stats" class="hover:text-blue-700 transition-colors whitespace-nowrap">Placement Stats</a>
                     <a href="#students"
-                        class="text-red-600 hover:text-red-500 transition-colors flex items-center gap-1 whitespace-nowrap">
+                        class="text-blue-700 hover:text-red-500 transition-colors flex items-center gap-1 whitespace-nowrap">
                         <i data-lucide="graduation-cap" class="w-3.5 h-3.5 xl:w-4 xl:h-4"></i> Batch Directory
                     </a>
-                    <a href="#recruiters" class="hover:text-red-600 transition-colors whitespace-nowrap">Recruiters</a>
-                    <a href="#contact" class="hover:text-red-600 transition-colors whitespace-nowrap">Contact CDC</a>
+                    <a href="#recruiters" class="hover:text-blue-700 transition-colors whitespace-nowrap">Recruiters</a>
+                    <a href="#contact" class="hover:text-blue-700 transition-colors whitespace-nowrap">Contact CDC</a>
                 </nav>
 
                 <!-- Right: Mode Selector & Print Buttons -->
@@ -143,11 +143,11 @@
                         <div
                             class="bg-slate-100 p-1 rounded-xl border border-slate-200 flex items-center text-[10px] xl:text-xs font-semibold">
                             <button onclick="switchView('portal')" id="btn-mode-portal"
-                                class="px-2.5 py-1.5 xl:px-3 xl:py-2 rounded-lg bg-red-600 text-white shadow transition-all flex items-center gap-1.5 whitespace-nowrap">
+                                class="px-2.5 py-1.5 xl:px-3 xl:py-2 rounded-lg bg-gradient-to-r from-blue-700 to-teal-600 text-white shadow transition-all flex items-center gap-1.5 whitespace-nowrap">
                                 <span>🌐</span> Portal
                             </button>
                             <button onclick="switchView('booklet')" id="btn-mode-booklet"
-                                class="px-2.5 py-1.5 xl:px-3 xl:py-2 rounded-lg text-slate-500 hover:text-slate-900 transition-all flex items-center gap-1.5 whitespace-nowrap">
+                                class="px-2.5 py-1.5 xl:px-3 xl:py-2 rounded-lg text-slate-500 hover:text-slate-800 transition-all flex items-center gap-1.5 whitespace-nowrap">
                                 <span>📖</span> Printable Booklet
                             </button>
                         </div>
@@ -159,7 +159,7 @@
     </header>
 
     <!-- VIEW MODE 1: INTERACTIVE DIGITAL WEB PORTAL -->
-    <div id="view-portal" class="flex-1 bg-slate-50 text-slate-900">
+    <div id="view-portal" class="flex-1 bg-slate-50 text-slate-800">
 
         <!-- FULL-BLEED CAMPUS VIDEO BACKGROUND / BANNER (ism.mp4) -->
         <section class="relative w-full overflow-hidden no-print bg-slate-200">
@@ -176,14 +176,14 @@
                 <div
                     class="inline-block bg-white/85 backdrop-blur-md border border-slate-200/80 rounded-2xl p-4 sm:p-5 shadow-2xl">
                     <h3
-                        class="font-heading font-extrabold text-base sm:text-lg lg:text-xl text-slate-900 tracking-tight leading-snug">
+                        class="font-heading font-extrabold text-base sm:text-lg lg:text-xl text-slate-800 tracking-tight leading-snug">
                         Indian Institute of Technology <br class="hidden sm:inline" />
                         <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-orange-500">(ISM)
                             Dhanbad</span>
                     </h3>
                     <p class="text-[11px] sm:text-xs text-slate-600 mt-1 font-medium leading-tight">
                         Dept. of Fuel, Minerals & Metallurgical Engineering <br class="hidden sm:inline" />
-                        <span class="text-red-600 font-semibold">• Centenary Era (1926–2026)</span>
+                        <span class="text-blue-700 font-semibold">• Centenary Era (1926–2026)</span>
                     </p>
                 </div>
             </div>
@@ -191,7 +191,7 @@
 
         <!-- HERO SECTION -->
         <section
-            class="relative bg-white text-slate-900 min-h-[88vh] flex items-center overflow-hidden py-16 lg:py-0 border-b border-slate-200">
+            class="relative bg-white text-slate-800 min-h-[88vh] flex items-center overflow-hidden py-16 lg:py-0 border-b border-slate-200">
             <div class="absolute inset-0 z-0">
                 <img src="https://images.unsplash.com/photo-1581094288338-2314dddb7ece?auto=format&fit=crop&w=2000&q=80"
                     alt="Energy Engineering Research & Refinery Facility"
@@ -203,13 +203,13 @@
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                     <div class="lg:col-span-8 space-y-6">
                         <div
-                            class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-red-100 border border-red-200 text-red-800 text-xs sm:text-sm font-semibold tracking-wide uppercase">
-                            <i data-lucide="zap" class="w-4 h-4 text-orange-600"></i>
+                            class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-red-100 border border-blue-200 text-red-800 text-xs sm:text-sm font-semibold tracking-wide uppercase">
+                            <i data-lucide="zap" class="w-4 h-4 text-teal-700"></i>
                             M.Tech Program & Placement Brochure 2026
                         </div>
 
                         <h1
-                            class="text-4xl sm:text-5xl lg:text-6xl font-heading font-extrabold text-slate-900 tracking-tight leading-none">
+                            class="text-4xl sm:text-5xl lg:text-6xl font-heading font-extrabold text-slate-800 tracking-tight leading-none">
                             FUEL & ENERGY <br />
                             <span
                                 class="text-transparent bg-clip-text bg-gradient-to-r from-red-600 via-orange-500 to-amber-500">ENGINEERING</span>
@@ -224,26 +224,26 @@
                         <!-- Key Metrics Banner -->
                         <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 pt-6 border-t border-slate-200">
                             <div class="bg-slate-50 border border-slate-200 rounded-xl p-3.5 shadow-sm">
-                                <div class="font-heading text-2xl sm:text-3xl font-bold text-red-600">1926</div>
+                                <div class="font-heading text-2xl sm:text-3xl font-bold text-blue-700">1926</div>
                                 <div class="text-[11px] sm:text-xs text-slate-500 mt-0.5">Century-Old Heritage</div>
                             </div>
                             <div class="bg-slate-50 border border-slate-200 rounded-xl p-3.5 shadow-sm">
-                                <div class="font-heading text-2xl sm:text-3xl font-bold text-orange-600">100%</div>
+                                <div class="font-heading text-2xl sm:text-3xl font-bold text-teal-700">100%</div>
                                 <div class="text-[11px] sm:text-xs text-slate-500 mt-0.5">GATE Qualified Talent</div>
                             </div>
                             <div class="bg-slate-50 border border-slate-200 rounded-xl p-3.5 shadow-sm">
-                                <div class="font-heading text-2xl sm:text-3xl font-bold text-amber-600">15+</div>
+                                <div class="font-heading text-2xl sm:text-3xl font-bold text-cyan-700">15+</div>
                                 <div class="text-[11px] sm:text-xs text-slate-500 mt-0.5">Advanced R&D Labs</div>
                             </div>
                             <div class="bg-slate-50 border border-slate-200 rounded-xl p-3.5 shadow-sm">
-                                <div class="font-heading text-2xl sm:text-3xl font-bold text-rose-600">IIT</div>
+                                <div class="font-heading text-2xl sm:text-3xl font-bold text-indigo-700">IIT</div>
                                 <div class="text-[11px] sm:text-xs text-slate-500 mt-0.5">National Importance</div>
                             </div>
                         </div>
 
                         <div class="pt-4 flex flex-wrap gap-4 no-print">
                             <a href="#students"
-                                class="bg-red-600 hover:bg-red-700 text-white font-semibold px-6 py-3 rounded-xl flex items-center gap-2 transition shadow-lg shadow-red-200">
+                                class="bg-gradient-to-r from-blue-700 to-teal-600 hover:from-blue-800 hover:to-teal-700 text-white font-semibold px-6 py-3 rounded-xl flex items-center gap-2 transition shadow-lg shadow-blue-900/20">
                                 <i data-lucide="users" class="w-4 h-4"></i> Explore Graduating Batch
                             </a>
                             <button onclick="switchView('booklet')"
@@ -257,7 +257,7 @@
                     <div class="lg:col-span-4 hidden lg:block">
                         <div class="relative bg-white border border-slate-200 rounded-2xl p-5 shadow-xl">
                             <div
-                                class="absolute -top-3 -right-3 bg-red-600 text-white font-bold text-xs uppercase tracking-wider py-1 px-3 rounded-full shadow">
+                                class="absolute -top-3 -right-3 bg-gradient-to-r from-blue-700 to-teal-600 text-white font-bold text-xs uppercase tracking-wider py-1 px-3 rounded-full shadow">
                                 Top Tier IIT
                             </div>
                             <div
@@ -265,7 +265,7 @@
                                 <img src="IIT_ISM_heritage.jpg" alt="IIT ISM Heritage"
                                     class="w-full h-full object-cover">
                             </div>
-                            <h3 class="font-heading text-lg font-bold text-slate-900 mb-1">Energy Leadership &
+                            <h3 class="font-heading text-lg font-bold text-slate-800 mb-1">Energy Leadership &
                                 Innovation</h3>
                             <p class="text-xs text-slate-600 leading-relaxed">
                                 Combining decades of fuel energy processing mastery with cutting-edge clean tech
@@ -278,11 +278,12 @@
         </section>
 
         <!-- SECTION 1: ABOUT DEPARTMENT & HOD MESSAGE -->
-        <section id="about" class="py-20 bg-slate-100 border-b border-slate-200">
+        <section id="about"
+            class="py-20 bg-gradient-to-br from-slate-100 via-blue-50 to-indigo-50 border-b border-blue-200">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center max-w-3xl mx-auto mb-16">
-                    <h2 class="text-xs font-bold uppercase tracking-widest text-red-600 mb-2">Academic Excellence</h2>
-                    <h3 class="text-3xl sm:text-4xl font-heading font-extrabold text-slate-900">Department of Fuel,
+                    <h2 class="text-xs font-bold uppercase tracking-widest text-blue-700 mb-2">Academic Excellence</h2>
+                    <h3 class="text-3xl sm:text-4xl font-heading font-extrabold text-slate-800">Department of Fuel,
                         Minerals & Metallurgical Engineering</h3>
                     <div class="w-20 h-1 bg-orange-500 mx-auto mt-4 rounded-full"></div>
                 </div>
@@ -291,7 +292,7 @@
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
                     <!-- HOD Message Card -->
                     <div
-                        class="bg-white text-slate-900 rounded-2xl p-6 relative overflow-hidden shadow-xl border border-slate-200 flex flex-col">
+                        class="bg-white text-slate-800 rounded-2xl p-6 relative overflow-hidden shadow-xl border border-slate-200 flex flex-col">
                         <div
                             class="absolute -right-10 -bottom-10 w-40 h-40 bg-red-100 rounded-full filter blur-2xl pointer-events-none">
                         </div>
@@ -301,9 +302,9 @@
                                 class="w-14 h-14 rounded-full object-cover border-2 border-red-500 shrink-0"
                                 onerror="this.src='https://ui-avatars.com/api/?name=HOD&background=fecaca&color=dc2626'">
                             <div>
-                                <h4 class="font-heading text-lg font-bold text-slate-900">Message from Department Head
+                                <h4 class="font-heading text-lg font-bold text-slate-800">Message from Department Head
                                 </h4>
-                                <p class="text-xs text-red-600 font-bold">Dept. of Fuel, Minerals & Metallurgical Engg.
+                                <p class="text-xs text-blue-700 font-bold">Dept. of Fuel, Minerals & Metallurgical Engg.
                                 </p>
                                 <p class="text-[10px] text-slate-500">IIT (ISM) Dhanbad</p>
                             </div>
@@ -322,7 +323,7 @@
                         <div
                             class="flex items-center justify-between text-[11px] sm:text-xs text-slate-500 border-t border-slate-200 pt-3 mt-auto relative z-10">
                             <span>Academic Session 2026–2027</span>
-                            <span class="text-red-600 font-bold flex items-center gap-1">
+                            <span class="text-blue-700 font-bold flex items-center gap-1">
                                 <i data-lucide="check-circle-2" class="w-3.5 h-3.5"></i> Ready for Placements
                             </span>
                         </div>
@@ -330,7 +331,7 @@
 
                     <!-- Fuel & Energy Head Message Card -->
                     <div
-                        class="bg-white text-slate-900 rounded-2xl p-6 relative overflow-hidden shadow-xl border border-slate-200 flex flex-col">
+                        class="bg-white text-slate-800 rounded-2xl p-6 relative overflow-hidden shadow-xl border border-slate-200 flex flex-col">
                         <div
                             class="absolute -right-10 -bottom-10 w-40 h-40 bg-orange-100 rounded-full filter blur-2xl pointer-events-none">
                         </div>
@@ -341,9 +342,9 @@
                                 <img src="shalini_maam.jpg" alt="Professor" class="w-full h-full object-cover">
                             </div>
                             <div>
-                                <h4 class="font-heading text-lg font-bold text-slate-900">Message from Professor
+                                <h4 class="font-heading text-lg font-bold text-slate-800">Message from Professor
                                 </h4>
-                                <p class="text-xs text-orange-600 font-bold">Fuel & Energy Engineering
+                                <p class="text-xs text-teal-700 font-bold">Fuel & Energy Engineering
                                 </p>
                                 <p class="text-[10px] text-slate-500">IIT (ISM) Dhanbad</p>
                             </div>
@@ -359,7 +360,7 @@
                         <div
                             class="flex items-center justify-between text-[11px] sm:text-xs text-slate-500 border-t border-slate-200 pt-3 mt-auto relative z-10">
                             <span>Fuel & Energy Branch</span>
-                            <span class="text-orange-600 font-bold flex items-center gap-1">
+                            <span class="text-teal-700 font-bold flex items-center gap-1">
                                 <i data-lucide="zap" class="w-3.5 h-3.5"></i> Innovating the Future
                             </span>
                         </div>
@@ -371,10 +372,10 @@
                     <!-- Card 1 -->
                     <div
                         class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 hover:shadow-md transition-shadow">
-                        <div class="p-3 bg-red-100 text-red-600 rounded-xl mb-5 inline-flex border border-red-200">
+                        <div class="p-3 bg-red-100 text-blue-700 rounded-xl mb-5 inline-flex border border-blue-200">
                             <i data-lucide="building-2" class="w-6 h-6"></i>
                         </div>
-                        <h4 class="font-heading text-xl font-bold text-slate-900 mb-3">50 Years of Fuel
+                        <h4 class="font-heading text-xl font-bold text-slate-800 mb-3">50 Years of Fuel
                             Engineering</h4>
                         <p class="text-slate-600 text-sm leading-relaxed">
                             Established at Indian Institute of Technology (ISM) Dhanbad, the Department is one
@@ -388,10 +389,10 @@
                     <div
                         class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 hover:shadow-md transition-shadow">
                         <div
-                            class="p-3 bg-orange-100 text-orange-600 rounded-xl mb-5 inline-flex border border-orange-200">
+                            class="p-3 bg-orange-100 text-teal-700 rounded-xl mb-5 inline-flex border border-orange-200">
                             <i data-lucide="flame" class="w-6 h-6"></i>
                         </div>
-                        <h4 class="font-heading text-xl font-bold text-slate-900 mb-3">Fuel & Energy Engineering
+                        <h4 class="font-heading text-xl font-bold text-slate-800 mb-3">Fuel & Energy Engineering
                             Vision</h4>
                         <p class="text-slate-600 text-sm leading-relaxed">
                             Pioneering technical and interdisciplinary research across conventional coal
@@ -404,11 +405,10 @@
                     <!-- Card 3 -->
                     <div
                         class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 hover:shadow-md transition-shadow">
-                        <div
-                            class="p-3 bg-amber-100 text-amber-600 rounded-xl mb-5 inline-flex border border-amber-200">
+                        <div class="p-3 bg-amber-100 text-cyan-700 rounded-xl mb-5 inline-flex border border-amber-200">
                             <i data-lucide="target" class="w-6 h-6"></i>
                         </div>
-                        <h4 class="font-heading text-xl font-bold text-slate-900 mb-3">Industry-Integrated Rigor</h4>
+                        <h4 class="font-heading text-xl font-bold text-slate-800 mb-3">Industry-Integrated Rigor</h4>
                         <p class="text-slate-600 text-sm leading-relaxed">
                             Combining rigorous thermodynamics, reaction kinetics, and process simulation with
                             hands-on industrial projects, characterization labs, and computational modeling.
@@ -419,12 +419,13 @@
         </section>
 
         <!-- SECTION 2: ACADEMIC CURRICULUM & KNOWLEDGE PILLARS -->
-        <section id="curriculum" class="py-20 bg-slate-50 border-b border-slate-200">
+        <section id="curriculum"
+            class="py-20 bg-gradient-to-tr from-blue-100 via-slate-100 to-teal-50 border-b border-blue-200">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center max-w-3xl mx-auto mb-16">
-                    <h2 class="text-xs font-bold uppercase tracking-widest text-orange-600 mb-2">Core Knowledge Pillars
+                    <h2 class="text-xs font-bold uppercase tracking-widest text-teal-700 mb-2">Core Knowledge Pillars
                     </h2>
-                    <h3 class="text-3xl sm:text-4xl font-heading font-extrabold text-slate-900">Comprehensive Curriculum
+                    <h3 class="text-3xl sm:text-4xl font-heading font-extrabold text-slate-800">Comprehensive Curriculum
                         & Specializations</h3>
                     <p class="text-slate-600 text-sm mt-3">Tailored to meet the technical demands of Oil & Gas PSUs,
                         Clean Tech MNCs, Refineries, and Energy Advisory Firms.</p>
@@ -436,10 +437,10 @@
                         class="bg-slate-50 rounded-2xl p-6 shadow-sm card-hover border border-slate-200 flex flex-col justify-between">
                         <div>
                             <div
-                                class="w-12 h-12 bg-red-100 text-red-600 rounded-xl flex items-center justify-center mb-6 font-bold border border-red-200">
+                                class="w-12 h-12 bg-red-100 text-blue-700 rounded-xl flex items-center justify-center mb-6 font-bold border border-blue-200">
                                 <i data-lucide="fuel" class="w-6 h-6"></i>
                             </div>
-                            <h4 class="font-heading text-lg font-bold text-slate-900 mb-3">Conventional Fuel &
+                            <h4 class="font-heading text-lg font-bold text-slate-800 mb-3">Conventional Fuel &
                                 Processing
                             </h4>
                             <ul class="space-y-2 text-xs text-slate-600 mb-6 font-medium">
@@ -463,10 +464,10 @@
                         class="bg-slate-50 rounded-2xl p-6 shadow-sm card-hover border border-slate-200 flex flex-col justify-between">
                         <div>
                             <div
-                                class="w-12 h-12 bg-orange-100 text-orange-600 rounded-xl flex items-center justify-center mb-6 font-bold border border-orange-200">
+                                class="w-12 h-12 bg-orange-100 text-teal-700 rounded-xl flex items-center justify-center mb-6 font-bold border border-orange-200">
                                 <i data-lucide="leaf" class="w-6 h-6"></i>
                             </div>
-                            <h4 class="font-heading text-lg font-bold text-slate-900 mb-3">Clean Tech & Green Hydrogen
+                            <h4 class="font-heading text-lg font-bold text-slate-800 mb-3">Clean Tech & Green Hydrogen
                             </h4>
                             <ul class="space-y-2 text-xs text-slate-600 mb-6 font-medium">
                                 <li class="flex items-center gap-2"><i data-lucide="chevron-right"
@@ -492,10 +493,10 @@
                         class="bg-slate-50 rounded-2xl p-6 shadow-sm card-hover border border-slate-200 flex flex-col justify-between">
                         <div>
                             <div
-                                class="w-12 h-12 bg-amber-100 text-amber-600 rounded-xl flex items-center justify-center mb-6 font-bold border border-amber-200">
+                                class="w-12 h-12 bg-amber-100 text-cyan-700 rounded-xl flex items-center justify-center mb-6 font-bold border border-amber-200">
                                 <i data-lucide="cloud-rain" class="w-6 h-6"></i>
                             </div>
-                            <h4 class="font-heading text-lg font-bold text-slate-900 mb-3">Decarbonization & CCUS</h4>
+                            <h4 class="font-heading text-lg font-bold text-slate-800 mb-3">Decarbonization & CCUS</h4>
                             <ul class="space-y-2 text-xs text-slate-600 mb-6 font-medium">
                                 <li class="flex items-center gap-2"><i data-lucide="chevron-right"
                                         class="w-3.5 h-3.5 text-amber-500"></i> Carbon Capture, Utilization & Storage
@@ -517,10 +518,10 @@
                         class="bg-slate-50 rounded-2xl p-6 shadow-sm card-hover border border-slate-200 flex flex-col justify-between">
                         <div>
                             <div
-                                class="w-12 h-12 bg-rose-100 text-rose-600 rounded-xl flex items-center justify-center mb-6 font-bold border border-rose-200">
+                                class="w-12 h-12 bg-rose-100 text-indigo-700 rounded-xl flex items-center justify-center mb-6 font-bold border border-rose-200">
                                 <i data-lucide="cpu" class="w-6 h-6"></i>
                             </div>
-                            <h4 class="font-heading text-lg font-bold text-slate-900 mb-3">Process Simulation &
+                            <h4 class="font-heading text-lg font-bold text-slate-800 mb-3">Process Simulation &
                                 Analytics</h4>
                             <ul class="space-y-2 text-xs text-slate-600 mb-6 font-medium">
                                 <li class="flex items-center gap-2"><i data-lucide="chevron-right"
@@ -542,12 +543,13 @@
         </section>
 
         <!-- SECTION 3: WORLD-CLASS LABORATORIES & INFRASTRUCTURE -->
-        <section id="labs" class="py-20 bg-slate-100 border-b border-slate-200">
+        <section id="labs"
+            class="py-20 bg-gradient-to-br from-slate-100 via-blue-50 to-indigo-50 border-b border-blue-200">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center max-w-3xl mx-auto mb-16">
-                    <h2 class="text-xs font-bold uppercase tracking-widest text-red-600 mb-2">Research & Testing
+                    <h2 class="text-xs font-bold uppercase tracking-widest text-blue-700 mb-2">Research & Testing
                         Infrastructure</h2>
-                    <h3 class="text-3xl sm:text-4xl font-heading font-extrabold text-slate-900">Advanced Laboratory
+                    <h3 class="text-3xl sm:text-4xl font-heading font-extrabold text-slate-800">Advanced Laboratory
                         Facilities</h3>
                     <p class="text-slate-600 text-sm mt-3">Hands-on characterization, analytical chemistry, and
                         simulation suites standard in energy engineering research.</p>
@@ -556,7 +558,7 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
                     <!-- Lab Card 1: Fuel Technology Lab -->
                     <div
-                        class="lg:col-span-2 group bg-white text-slate-900 rounded-2xl overflow-hidden shadow-lg border border-slate-200 transition transform hover:-translate-y-1 flex flex-col">
+                        class="lg:col-span-2 group bg-white text-slate-800 rounded-2xl overflow-hidden shadow-lg border border-slate-200 transition transform hover:-translate-y-1 flex flex-col">
                         <div class="h-40 overflow-hidden relative">
                             <img src="lab_images\furnace.png" alt="Fuel Technology Lab"
                                 class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
@@ -564,17 +566,17 @@
                                 class="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent">
                             </div>
                             <span
-                                class="absolute top-4 left-4 bg-red-600 text-white text-[10px] font-bold px-2 py-1 rounded shadow">Fuel
+                                class="absolute top-4 left-4 bg-gradient-to-r from-blue-700 to-teal-600 text-white text-[10px] font-bold px-2 py-1 rounded shadow">Fuel
                                 Analysis</span>
                         </div>
                         <div class="p-6 flex flex-col flex-grow">
-                            <h4 class="font-heading text-lg font-bold text-slate-900 mb-2">Fuel Technology Lab</h4>
+                            <h4 class="font-heading text-lg font-bold text-slate-800 mb-2">Fuel Technology Lab</h4>
                             <p class="text-xs text-slate-600 leading-relaxed mb-4 font-medium flex-grow">
                                 Core experiments covering Proximate & Ultimate Analysis, Gross Calorific Value (GCV),
                                 Free Swelling & Caking Index, Hardgrove Grindability Index (HGI), and characterization
                                 of solid/liquid fuels including Flash/Fire point and Cloud/Pour point testing.
                             </p>
-                            <div class="text-xs font-bold text-red-600 flex items-center gap-1 mt-auto">
+                            <div class="text-xs font-bold text-blue-700 flex items-center gap-1 mt-auto">
                                 <i data-lucide="microscope" class="w-4 h-4"></i> Fundamental Fuel Analysis
                             </div>
                         </div>
@@ -582,7 +584,7 @@
 
                     <!-- Lab Card 2: Thermochemical Conversion Lab -->
                     <div
-                        class="lg:col-span-2 group bg-white text-slate-900 rounded-2xl overflow-hidden shadow-lg border border-slate-200 transition transform hover:-translate-y-1 flex flex-col">
+                        class="lg:col-span-2 group bg-white text-slate-800 rounded-2xl overflow-hidden shadow-lg border border-slate-200 transition transform hover:-translate-y-1 flex flex-col">
                         <div class="h-40 overflow-hidden relative">
                             <img src="lab_images\fixed_bed_reator.png" alt="Thermochemical Conversion Lab"
                                 class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
@@ -594,14 +596,14 @@
                                 Studies</span>
                         </div>
                         <div class="p-6 flex flex-col flex-grow">
-                            <h4 class="font-heading text-lg font-bold text-slate-900 mb-2">Thermochemical Conversion Lab
+                            <h4 class="font-heading text-lg font-bold text-slate-800 mb-2">Thermochemical Conversion Lab
                             </h4>
                             <p class="text-xs text-slate-600 leading-relaxed mb-4 font-medium flex-grow">
                                 Advanced thermal studies including TGA of biomass/char in inert and oxidizing
                                 environments, ash fusion temperature analysis, flame velocity/shape characterization for
                                 gaseous fuels, and coal plasticity via Giesler Plastometer.
                             </p>
-                            <div class="text-xs font-bold text-orange-600 flex items-center gap-1 mt-auto">
+                            <div class="text-xs font-bold text-teal-700 flex items-center gap-1 mt-auto">
                                 <i data-lucide="flame" class="w-4 h-4"></i> Thermal & Combustion Studies
                             </div>
                         </div>
@@ -609,7 +611,7 @@
 
                     <!-- Lab Card 3: Processing of Liquid and Gaseous Fuels Lab -->
                     <div
-                        class="lg:col-span-2 group bg-white text-slate-900 rounded-2xl overflow-hidden shadow-lg border border-slate-200 transition transform hover:-translate-y-1 flex flex-col">
+                        class="lg:col-span-2 group bg-white text-slate-800 rounded-2xl overflow-hidden shadow-lg border border-slate-200 transition transform hover:-translate-y-1 flex flex-col">
                         <div class="h-40 overflow-hidden relative">
                             <img src="lab_images\bomb.png" alt="Liquid and Gaseous Fuels Lab"
                                 class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
@@ -622,14 +624,14 @@
                                 Analysis</span>
                         </div>
                         <div class="p-6 flex flex-col flex-grow">
-                            <h4 class="font-heading text-lg font-bold text-slate-900 mb-2">Processing of Liquid &
+                            <h4 class="font-heading text-lg font-bold text-slate-800 mb-2">Processing of Liquid &
                                 Gaseous Fuels Lab</h4>
                             <p class="text-xs text-slate-600 leading-relaxed mb-4 font-medium flex-grow">
                                 Comprehensive petroleum and gas evaluation involving Reid vapor pressure, Aniline point,
                                 Cetane/Octane numbers, ASTM distillation, carbon residue (Conradson/Ramsbottom),
                                 Bomb/Junkers calorimetry, and Gas Chromatography.
                             </p>
-                            <div class="text-xs font-bold text-amber-600 flex items-center gap-1 mt-auto">
+                            <div class="text-xs font-bold text-cyan-700 flex items-center gap-1 mt-auto">
                                 <i data-lucide="droplets" class="w-4 h-4"></i> Petroleum & Gas Analytics
                             </div>
                         </div>
@@ -637,7 +639,7 @@
 
                     <!-- Lab Card 4: Energy Technology Lab -->
                     <div
-                        class="lg:col-start-2 lg:col-span-2 group bg-white text-slate-900 rounded-2xl overflow-hidden shadow-lg border border-slate-200 transition transform hover:-translate-y-1 flex flex-col">
+                        class="lg:col-start-2 lg:col-span-2 group bg-white text-slate-800 rounded-2xl overflow-hidden shadow-lg border border-slate-200 transition transform hover:-translate-y-1 flex flex-col">
                         <div class="h-40 overflow-hidden relative">
                             <img src="lab_images\energy_tech.png" alt="Energy Technology Lab"
                                 class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
@@ -649,7 +651,7 @@
                                 Energy</span>
                         </div>
                         <div class="p-6 flex flex-col flex-grow">
-                            <h4 class="font-heading text-lg font-bold text-slate-900 mb-2">Energy Technology Lab</h4>
+                            <h4 class="font-heading text-lg font-bold text-slate-800 mb-2">Energy Technology Lab</h4>
                             <p class="text-xs text-slate-600 leading-relaxed mb-4 font-medium flex-grow">
                                 State-of-the-art experiments on coke making, char combustion timescales, Techno-Economic
                                 Analysis, Life Cycle Assessment (LCA), photovoltaic cell responses, CO2 fixation in
@@ -663,7 +665,7 @@
 
                     <!-- Lab Card 5: CFD Lab -->
                     <div
-                        class="lg:col-span-2 group bg-white text-slate-900 rounded-2xl overflow-hidden shadow-lg border border-slate-200 transition transform hover:-translate-y-1 flex flex-col">
+                        class="lg:col-span-2 group bg-white text-slate-800 rounded-2xl overflow-hidden shadow-lg border border-slate-200 transition transform hover:-translate-y-1 flex flex-col">
                         <div class="h-40 overflow-hidden relative">
                             <img src="lab_images\cfd_lab.png" alt="CFD of Thermal and Fluid Systems Lab"
                                 class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
@@ -675,7 +677,7 @@
                                 & CFD</span>
                         </div>
                         <div class="p-6 flex flex-col flex-grow">
-                            <h4 class="font-heading text-lg font-bold text-slate-900 mb-2">CFD of Thermal & Fluid
+                            <h4 class="font-heading text-lg font-bold text-slate-800 mb-2">CFD of Thermal & Fluid
                                 Systems Lab</h4>
                             <p class="text-xs text-slate-600 leading-relaxed mb-4 font-medium flex-grow">
                                 Comprehensive numerical modeling utilizing FVM to solve 1-D/2-D steady and unsteady
@@ -693,11 +695,12 @@
         </section>
 
         <!-- SECTION 4: PLACEMENT ANALYTICS & STATS -->
-        <section id="stats" class="py-20 bg-slate-50 border-b border-slate-200">
+        <section id="stats"
+            class="py-20 bg-gradient-to-tr from-blue-100 via-slate-100 to-teal-50 border-b border-blue-200">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center max-w-3xl mx-auto mb-16">
-                    <h2 class="text-xs font-bold uppercase tracking-widest text-red-600 mb-2">Placement Analytics</h2>
-                    <h3 class="text-3xl sm:text-4xl font-heading font-extrabold text-slate-900">Domain Distribution &
+                    <h2 class="text-xs font-bold uppercase tracking-widest text-blue-700 mb-2">Placement Analytics</h2>
+                    <h3 class="text-3xl sm:text-4xl font-heading font-extrabold text-slate-800">Domain Distribution &
                         Career Impact</h3>
                     <p class="text-slate-600 text-sm mt-3">Postgraduate recruitment across core oil & gas PSUs, global
                         energy consultancies, clean hydrogen pioneers, and EPC firms.</p>
@@ -705,32 +708,32 @@
 
                 <div class="grid grid-cols-1 md:grid-cols-4 gap-6 text-center">
                     <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200 shadow-sm">
-                        <div class="text-4xl font-black text-red-600 font-heading mb-1">45%</div>
-                        <div class="text-xs font-extrabold text-slate-900 uppercase tracking-wider">Oil & Gas / PSUs
+                        <div class="text-4xl font-black text-blue-700 font-heading mb-1">45%</div>
+                        <div class="text-xs font-extrabold text-slate-800 uppercase tracking-wider">Oil & Gas / PSUs
                         </div>
                         <p class="text-[11px] text-slate-500 mt-2 font-medium">Process engineering, refinery CDU/VDU
                             modeling, and pipeline operations.</p>
                     </div>
 
                     <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200 shadow-sm">
-                        <div class="text-4xl font-black text-orange-600 font-heading mb-1">25%</div>
-                        <div class="text-xs font-extrabold text-slate-900 uppercase tracking-wider">Clean Tech & Green
+                        <div class="text-4xl font-black text-teal-700 font-heading mb-1">25%</div>
+                        <div class="text-xs font-extrabold text-slate-800 uppercase tracking-wider">Clean Tech & Green
                             H₂</div>
                         <p class="text-[11px] text-slate-500 mt-2 font-medium">Biomass gasification, electrolyzers,
                             biofuels, and SAF aviation fuels.</p>
                     </div>
 
                     <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200 shadow-sm">
-                        <div class="text-4xl font-black text-amber-600 font-heading mb-1">20%</div>
-                        <div class="text-xs font-extrabold text-slate-900 uppercase tracking-wider">Energy Advisory &
+                        <div class="text-4xl font-black text-cyan-700 font-heading mb-1">20%</div>
+                        <div class="text-xs font-extrabold text-slate-800 uppercase tracking-wider">Energy Advisory &
                             ESG</div>
                         <p class="text-[11px] text-slate-500 mt-2 font-medium">Techno-economic modeling, carbon markets,
                             and LCA sustainability auditing.</p>
                     </div>
 
                     <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200 shadow-sm">
-                        <div class="text-4xl font-black text-rose-600 font-heading mb-1">10%</div>
-                        <div class="text-xs font-extrabold text-slate-900 uppercase tracking-wider">EPC & Simulation
+                        <div class="text-4xl font-black text-indigo-700 font-heading mb-1">10%</div>
+                        <div class="text-xs font-extrabold text-slate-800 uppercase tracking-wider">EPC & Simulation
                         </div>
                         <p class="text-[11px] text-slate-500 mt-2 font-medium">Plant layout, process safety, CFD
                             analysis, and utility optimization.</p>
@@ -740,14 +743,15 @@
         </section>
 
         <!-- SECTION 5: GRADUATING BATCH DIRECTORY -->
-        <section id="students" class="py-20 bg-slate-100 border-b border-slate-200">
+        <section id="students"
+            class="py-20 bg-gradient-to-br from-slate-100 via-blue-50 to-indigo-50 border-b border-blue-200">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center max-w-3xl mx-auto mb-12">
                     <div
-                        class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-red-100 border border-red-200 text-red-700 text-xs font-bold tracking-wide uppercase mb-3">
-                        <i data-lucide="users" class="w-4 h-4 text-red-600"></i> M.Tech Batch 2025–2027
+                        class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-red-100 border border-blue-200 text-red-700 text-xs font-bold tracking-wide uppercase mb-3">
+                        <i data-lucide="users" class="w-4 h-4 text-blue-700"></i> M.Tech Batch 2025–2027
                     </div>
-                    <h2 class="text-3xl sm:text-4xl font-heading font-extrabold text-slate-900">Graduating Candidate
+                    <h2 class="text-3xl sm:text-4xl font-heading font-extrabold text-slate-800">Graduating Candidate
                         Directory</h2>
                     <p class="text-slate-600 text-sm mt-3">Click on any profile to view full thesis details, software
                         proficiencies, GATE credentials, and contact links.</p>
@@ -762,13 +766,13 @@
                             class="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400"></i>
                         <input type="text" id="studentSearchInput" onkeyup="filterStudents()"
                             placeholder="Search candidate, skill, software, thesis..."
-                            class="w-full pl-10 pr-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 text-slate-900 font-medium">
+                            class="w-full pl-10 pr-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 text-slate-800 font-medium">
                     </div>
 
                     <!-- Category Filter Buttons -->
                     <div class="flex flex-wrap items-center gap-2 w-full md:w-auto" id="filterButtons">
                         <button onclick="filterDomain('all', this)"
-                            class="filter-btn active bg-red-600 text-white text-xs font-bold px-3.5 py-2 rounded-xl transition shadow">All
+                            class="filter-btn active bg-gradient-to-r from-blue-700 to-teal-600 text-white text-xs font-bold px-3.5 py-2 rounded-xl transition shadow">All
                             Candidates</button>
                         <button onclick="filterDomain('greenh2', this)"
                             class="filter-btn bg-slate-100 hover:bg-slate-200 text-slate-600 text-xs font-bold px-3.5 py-2 rounded-xl transition border border-slate-200">Green
@@ -795,86 +799,139 @@
         </section>
 
         <!-- SECTION 6: RECRUITERS ECOSYSTEM WALL -->
-        <section id="recruiters" class="py-20 bg-slate-50 border-b border-slate-200">
+        <section id="recruiters"
+            class="py-20 bg-gradient-to-tr from-blue-100 via-slate-100 to-teal-50 border-b border-blue-200">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center max-w-3xl mx-auto mb-16">
-                    <h2 class="text-xs font-bold uppercase tracking-widest text-orange-600 mb-2">Industry Ecosystem</h2>
-                    <h3 class="text-3xl sm:text-4xl font-heading font-extrabold text-slate-900">Key Recruiters &
+                    <h2 class="text-xs font-bold uppercase tracking-widest text-teal-700 mb-2">Industry Ecosystem</h2>
+                    <h3 class="text-3xl sm:text-4xl font-heading font-extrabold text-slate-800">Key Recruiters &
                         Industry Partners</h3>
                     <p class="text-slate-600 text-sm mt-3">Prominent energy organizations hiring IIT (ISM) Dhanbad
                         talent.</p>
                 </div>
 
                 <div
-                    class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 text-center font-bold text-slate-700 text-xs sm:text-sm">
+                    class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 text-center font-bold text-slate-700 text-xs sm:text-sm">
+
                     <div
-                        class="bg-slate-50 p-5 rounded-xl border border-slate-200 hover:border-red-500 transition shadow-sm">
-                        IndianOil (IOCL)</div>
+                        class="bg-white p-5 rounded-xl border border-blue-100 hover:border-blue-500 hover:shadow-md hover:-translate-y-1 transition-all flex flex-col items-center justify-center min-h-[120px]">
+                        <img src="https://logo.clearbit.com/vedantalimited.com" alt="Vedanta"
+                            class="h-10 object-contain mb-2" onerror="this.style.display='none'" />
+                        <span>Vedanta</span>
+                    </div>
+
                     <div
-                        class="bg-slate-50 p-5 rounded-xl border border-slate-200 hover:border-red-500 transition shadow-sm">
-                        ONGC</div>
+                        class="bg-white p-5 rounded-xl border border-blue-100 hover:border-blue-500 hover:shadow-md hover:-translate-y-1 transition-all flex flex-col items-center justify-center min-h-[120px]">
+                        <img src="https://logo.clearbit.com/tatasteel.com" alt="Tata Steel"
+                            class="h-10 object-contain mb-2" onerror="this.style.display='none'" />
+                        <span>Tata Steel</span>
+                    </div>
+
                     <div
-                        class="bg-slate-50 p-5 rounded-xl border border-slate-200 hover:border-red-500 transition shadow-sm">
-                        GAIL (India)</div>
+                        class="bg-white p-5 rounded-xl border border-blue-100 hover:border-blue-500 hover:shadow-md hover:-translate-y-1 transition-all flex flex-col items-center justify-center min-h-[120px]">
+                        <img src="https://logo.clearbit.com/ril.com" alt="Reliance Industries"
+                            class="h-10 object-contain mb-2" onerror="this.style.display='none'" />
+                        <span>Reliance Industries</span>
+                    </div>
+
                     <div
-                        class="bg-slate-50 p-5 rounded-xl border border-slate-200 hover:border-red-500 transition shadow-sm">
-                        BPCL</div>
+                        class="bg-white p-5 rounded-xl border border-blue-100 hover:border-blue-500 hover:shadow-md hover:-translate-y-1 transition-all flex flex-col items-center justify-center min-h-[120px]">
+                        <img src="https://logo.clearbit.com/bp.com" alt="bp" class="h-10 object-contain mb-2"
+                            onerror="this.style.display='none'" />
+                        <span>bp</span>
+                    </div>
+
                     <div
-                        class="bg-slate-50 p-5 rounded-xl border border-slate-200 hover:border-red-500 transition shadow-sm">
-                        Reliance Industries</div>
+                        class="bg-white p-5 rounded-xl border border-blue-100 hover:border-blue-500 hover:shadow-md hover:-translate-y-1 transition-all flex flex-col items-center justify-center min-h-[120px]">
+                        <img src="https://logo.clearbit.com/gmdcltd.com" alt="GMDC" class="h-10 object-contain mb-2"
+                            onerror="this.style.display='none'" />
+                        <span>GMDC</span>
+                    </div>
+
                     <div
-                        class="bg-slate-50 p-5 rounded-xl border border-slate-200 hover:border-red-500 transition shadow-sm">
-                        Vedanta / Cairn</div>
+                        class="bg-white p-5 rounded-xl border border-blue-100 hover:border-blue-500 hover:shadow-md hover:-translate-y-1 transition-all flex flex-col items-center justify-center min-h-[120px]">
+                        <img src="https://logo.clearbit.com/irel.co.in" alt="IREL (India) Limited"
+                            class="h-10 object-contain mb-2" onerror="this.style.display='none'" />
+                        <span>IREL (India) Limited</span>
+                    </div>
+
                     <div
-                        class="bg-slate-50 p-5 rounded-xl border border-slate-200 hover:border-red-500 transition shadow-sm">
-                        TotalEnergies</div>
+                        class="bg-white p-5 rounded-xl border border-blue-100 hover:border-blue-500 hover:shadow-md hover:-translate-y-1 transition-all flex flex-col items-center justify-center min-h-[120px]">
+                        <img src="https://logo.clearbit.com/amns.in" alt="AM/NS India" class="h-10 object-contain mb-2"
+                            onerror="this.style.display='none'" />
+                        <span>AM/NS India</span>
+                    </div>
+
                     <div
-                        class="bg-slate-50 p-5 rounded-xl border border-slate-200 hover:border-red-500 transition shadow-sm">
-                        Saudi Aramco</div>
+                        class="bg-white p-5 rounded-xl border border-blue-100 hover:border-blue-500 hover:shadow-md hover:-translate-y-1 transition-all flex flex-col items-center justify-center min-h-[120px]">
+                        <img src="https://logo.clearbit.com/pwc.com" alt="PwC" class="h-10 object-contain mb-2"
+                            onerror="this.style.display='none'" />
+                        <span>PwC</span>
+                    </div>
+
                     <div
-                        class="bg-slate-50 p-5 rounded-xl border border-slate-200 hover:border-red-500 transition shadow-sm">
-                        bp</div>
+                        class="bg-white p-5 rounded-xl border border-blue-100 hover:border-blue-500 hover:shadow-md hover:-translate-y-1 transition-all flex flex-col items-center justify-center min-h-[120px]">
+                        <img src="https://logo.clearbit.com/terex.com" alt="TEREX" class="h-10 object-contain mb-2"
+                            onerror="this.style.display='none'" />
+                        <span>TEREX</span>
+                    </div>
+
                     <div
-                        class="bg-slate-50 p-5 rounded-xl border border-slate-200 hover:border-red-500 transition shadow-sm">
-                        ExxonMobil</div>
+                        class="bg-white p-5 rounded-xl border border-blue-100 hover:border-blue-500 hover:shadow-md hover:-translate-y-1 transition-all flex flex-col items-center justify-center min-h-[120px]">
+                        <img src="https://logo.clearbit.com/jsw.in" alt="JSW" class="h-10 object-contain mb-2"
+                            onerror="this.style.display='none'" />
+                        <span>JSW</span>
+                    </div>
+
                     <div
-                        class="bg-slate-50 p-5 rounded-xl border border-slate-200 hover:border-red-500 transition shadow-sm">
-                        Honeywell</div>
+                        class="bg-white p-5 rounded-xl border border-blue-100 hover:border-blue-500 hover:shadow-md hover:-translate-y-1 transition-all flex flex-col items-center justify-center min-h-[120px]">
+                        <img src="https://logo.clearbit.com/ceew.in" alt="CEEW" class="h-10 object-contain mb-2"
+                            onerror="this.style.display='none'" />
+                        <span>CEEW</span>
+                    </div>
+
                     <div
-                        class="bg-slate-50 p-5 rounded-xl border border-slate-200 hover:border-red-500 transition shadow-sm">
-                        Engineers India (EIL)</div>
+                        class="bg-white p-5 rounded-xl border border-blue-100 hover:border-blue-500 hover:shadow-md hover:-translate-y-1 transition-all flex flex-col items-center justify-center min-h-[120px]">
+                        <img src="https://logo.clearbit.com/eriez.com" alt="ERIEZ" class="h-10 object-contain mb-2"
+                            onerror="this.style.display='none'" />
+                        <span>ERIEZ</span>
+                    </div>
+
                     <div
-                        class="bg-slate-50 p-5 rounded-xl border border-slate-200 hover:border-red-500 transition shadow-sm">
-                        Wood Mackenzie</div>
+                        class="bg-white p-5 rounded-xl border border-blue-100 hover:border-blue-500 hover:shadow-md hover:-translate-y-1 transition-all flex flex-col items-center justify-center min-h-[120px]">
+                        <img src="https://logo.clearbit.com/larsentoubro.com" alt="Larsen & Toubro"
+                            class="h-10 object-contain mb-2" onerror="this.style.display='none'" />
+                        <span>Larsen & Toubro</span>
+                    </div>
+
                     <div
-                        class="bg-slate-50 p-5 rounded-xl border border-slate-200 hover:border-red-500 transition shadow-sm">
-                        BloombergNEF</div>
+                        class="bg-white p-5 rounded-xl border border-blue-100 hover:border-blue-500 hover:shadow-md hover:-translate-y-1 transition-all flex flex-col items-center justify-center min-h-[120px]">
+                        <img src="https://logo.clearbit.com/jindalsteelpower.com" alt="Jindal Steel & Power"
+                            class="h-10 object-contain mb-2" onerror="this.style.display='none'" />
+                        <span>Jindal Steel & Power</span>
+                    </div>
+
                     <div
-                        class="bg-slate-50 p-5 rounded-xl border border-slate-200 hover:border-red-500 transition shadow-sm">
-                        BCG</div>
-                    <div
-                        class="bg-slate-50 p-5 rounded-xl border border-slate-200 hover:border-red-500 transition shadow-sm">
-                        EY India</div>
-                    <div
-                        class="bg-slate-50 p-5 rounded-xl border border-slate-200 hover:border-red-500 transition shadow-sm">
-                        JSW Energy</div>
-                    <div
-                        class="bg-slate-50 p-5 rounded-xl border border-slate-200 hover:border-red-500 transition shadow-sm">
-                        Nayara Energy</div>
+                        class="bg-white p-5 rounded-xl border border-blue-100 hover:border-blue-500 hover:shadow-md hover:-translate-y-1 transition-all flex flex-col items-center justify-center min-h-[120px]">
+                        <img src="https://logo.clearbit.com/thriveni.com" alt="Thriveni Earthmovers"
+                            class="h-10 object-contain mb-2" onerror="this.style.display='none'" />
+                        <span>Thriveni Earthmovers</span>
+                    </div>
+
                 </div>
             </div>
         </section>
 
         <!-- SECTION 7: CONTACT Us -->
-        <section id="contact" class="py-20 bg-slate-100 text-slate-900 border-b border-slate-200">
+        <section id="contact" class="py-20 bg-slate-100 text-slate-800 border-b border-slate-200">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <!-- Heading Section -->
                 <div class="max-w-3xl mb-12">
                     <div
-                        class="inline-flex items-center gap-2 px-3 py-1 bg-red-100 border border-red-200 text-red-700 rounded-full text-xs font-bold uppercase tracking-wider mb-4">
+                        class="inline-flex items-center gap-2 px-3 py-1 bg-red-100 border border-blue-200 text-red-700 rounded-full text-xs font-bold uppercase tracking-wider mb-4">
                         <i data-lucide="building" class="w-3.5 h-3.5"></i> Career Development Centre
                     </div>
-                    <h2 class="text-3xl sm:text-4xl font-heading font-extrabold text-slate-900 mb-4">Connect with Our
+                    <h2 class="text-3xl sm:text-4xl font-heading font-extrabold text-slate-800 mb-4">Connect with Our
                         Placement Team</h2>
                     <p class="text-slate-600 text-sm leading-relaxed font-medium">
                         We welcome campus recruitment teams, energy PSUs, energy firms, clean tech startups, power
@@ -885,59 +942,68 @@
 
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
                     <div class="lg:col-span-6">
-                        <div class="space-y-4">
+                        <div class="flex flex-col justify-between h-full space-y-4 sm:space-y-6">
                             <div
-                                class="flex items-start gap-3 bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
-                                <i data-lucide="user-check" class="w-5 h-5 text-red-600 shrink-0 mt-0.5"></i>
+                                class="flex items-start gap-4 bg-white p-6 sm:p-7 rounded-2xl border border-blue-100 shadow-md hover:border-blue-400 hover:shadow-lg transition-all">
+                                <i data-lucide="user-check" class="w-6 h-6 text-blue-700 shrink-0 mt-0.5"></i>
                                 <div>
-                                    <div class="text-xs font-extrabold text-slate-900">Training and Placement Officer
+                                    <div class="text-sm sm:text-base font-extrabold text-slate-800">Training and
+                                        Placement Officer
                                     </div>
-                                    <div class="text-xs text-slate-600 mt-0.5 font-bold">Munish Sharma</div>
-                                    <div class="text-xs text-slate-500">Email: tpo@iitism.ac.in | Tel: +91-9466287805
+                                    <div class="text-sm text-slate-600 mt-1 font-bold">Munish Sharma</div>
+                                    <div class="text-sm text-slate-500 mt-1">Email: tpo@iitism.ac.in <br
+                                            class="sm:hidden" /><span class="hidden sm:inline">|</span> Tel:
+                                        +91-9466287805
                                     </div>
                                 </div>
                             </div>
 
                             <div
-                                class="flex items-start gap-3 bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
-                                <i data-lucide="building-2" class="w-5 h-5 text-orange-600 shrink-0 mt-0.5"></i>
+                                class="flex items-start gap-4 bg-white p-6 sm:p-7 rounded-2xl border border-blue-100 shadow-md hover:border-blue-400 hover:shadow-lg transition-all">
+                                <i data-lucide="building-2" class="w-6 h-6 text-teal-700 shrink-0 mt-0.5"></i>
                                 <div>
-                                    <div class="text-xs font-extrabold text-slate-900">Placement Office</div>
-                                    <div class="text-xs text-slate-600 mt-0.5 font-bold">Career Development Centre (CDC)
+                                    <div class="text-sm sm:text-base font-extrabold text-slate-800">Placement Office
                                     </div>
-                                    <div class="text-xs text-slate-500">Email: cdc@iitism.ac.in | Tel: +91-97714 90999
+                                    <div class="text-sm text-slate-600 mt-1 font-bold">Career Development Centre (CDC)
+                                    </div>
+                                    <div class="text-sm text-slate-500 mt-1">Email: cdc@iitism.ac.in <br
+                                            class="sm:hidden" /><span class="hidden sm:inline">|</span> Tel: +91-97714
+                                        90999
                                     </div>
                                 </div>
                             </div>
 
                             <div
-                                class="flex items-start gap-3 bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
-                                <i data-lucide="graduation-cap" class="w-5 h-5 text-indigo-600 shrink-0 mt-0.5"></i>
+                                class="flex items-start gap-4 bg-white p-6 sm:p-7 rounded-2xl border border-blue-100 shadow-md hover:border-blue-400 hover:shadow-lg transition-all">
+                                <i data-lucide="graduation-cap" class="w-6 h-6 text-indigo-600 shrink-0 mt-0.5"></i>
                                 <div>
-                                    <div class="text-xs font-extrabold text-slate-900">Faculty-in-Charge, Placement &
+                                    <div class="text-sm sm:text-base font-extrabold text-slate-800">Faculty-in-Charge,
+                                        Placement &
                                         Internship, FMME</div>
-                                    <div class="text-xs text-slate-600 mt-0.5 font-bold">Prof. Madhumanti Bhattacharyya
+                                    <div class="text-sm text-slate-600 mt-1 font-bold">Prof. Madhumanti Bhattacharyya
                                     </div>
-                                    <div class="text-xs text-slate-500">Email: madhumanti@iitism.ac.in | Tel:
+                                    <div class="text-sm text-slate-500 mt-1">Email: madhumanti@iitism.ac.in <br
+                                            class="sm:hidden" /><span class="hidden sm:inline">|</span> Tel:
                                         +91-9830189594</div>
                                 </div>
                             </div>
 
                             <div
-                                class="flex items-start gap-3 bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
-                                <i data-lucide="users" class="w-5 h-5 text-teal-600 shrink-0 mt-0.5"></i>
+                                class="flex items-start gap-4 bg-white p-6 sm:p-7 rounded-2xl border border-blue-100 shadow-md hover:border-blue-400 hover:shadow-lg transition-all">
+                                <i data-lucide="users" class="w-6 h-6 text-teal-600 shrink-0 mt-0.5"></i>
                                 <div class="w-full">
-                                    <div class="text-xs font-extrabold text-slate-900 mb-2">Student Coordinators</div>
-                                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    <div class="text-sm sm:text-base font-extrabold text-slate-800 mb-3">Student
+                                        Coordinators</div>
+                                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
                                         <div>
-                                            <div class="text-xs text-slate-600 font-bold">Ashutosh Thakur</div>
-                                            <div class="text-xs text-slate-500">Tel: +91-9821499217</div>
-                                            <div class="text-xs text-slate-500 truncate">25mt0099@iitism.ac.in</div>
+                                            <div class="text-sm text-slate-600 font-bold">Ashutosh Thakur</div>
+                                            <div class="text-sm text-slate-500 mt-0.5">Tel: +91-9821499217</div>
+                                            <div class="text-sm text-slate-500 truncate">25mt0099@iitism.ac.in</div>
                                         </div>
                                         <div>
-                                            <div class="text-xs text-slate-600 font-bold">Rahul Sarkar</div>
-                                            <div class="text-xs text-slate-500">Tel: +91-7488235970</div>
-                                            <div class="text-xs text-slate-500 truncate">25MT0381@iitism.ac.in</div>
+                                            <div class="text-sm text-slate-600 font-bold">Rahul Sarkar</div>
+                                            <div class="text-sm text-slate-500 mt-0.5">Tel: +91-7488235970</div>
+                                            <div class="text-sm text-slate-500 truncate">25MT0381@iitism.ac.in</div>
                                         </div>
                                     </div>
                                 </div>
@@ -948,7 +1014,7 @@
 
                     <!-- Quick JNF Request Form -->
                     <div class="lg:col-span-6 bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-xl">
-                        <h3 class="font-heading text-xl font-bold text-slate-900 mb-2">Contact Us
+                        <h3 class="font-heading text-xl font-bold text-slate-800 mb-2">Contact Us
                         </h3>
                         <p class="text-xs text-slate-500 mb-6 font-medium">Fill in your organization details to receive
                             the official Job Notification Form (JNF) and send your query.</p>
@@ -958,36 +1024,36 @@
                                 <label class="block text-slate-700 font-bold mb-1">Company / Organization Name</label>
                                 <input type="text" name="company" required
                                     placeholder="e.g. Indian Oil Corporation Ltd. / Reliance"
-                                    class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 text-slate-900 focus:border-red-500 focus:ring-1 focus:ring-red-500 focus:outline-none font-medium">
+                                    class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 text-slate-800 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 focus:outline-none font-medium">
                             </div>
 
                             <div>
                                 <label class="block text-slate-700 font-bold mb-1">HR / Contact Person</label>
                                 <input type="text" name="hrName" required placeholder="Full Name"
-                                    class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 text-slate-900 focus:border-red-500 focus:ring-1 focus:ring-red-500 focus:outline-none font-medium">
+                                    class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 text-slate-800 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 focus:outline-none font-medium">
                             </div>
 
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                 <div>
                                     <label class="block text-slate-700 font-bold mb-1">Official Email</label>
                                     <input type="email" name="email" required placeholder="hr@company.com"
-                                        class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 text-slate-900 focus:border-red-500 focus:ring-1 focus:ring-red-500 focus:outline-none font-medium">
+                                        class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 text-slate-800 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 focus:outline-none font-medium">
                                 </div>
                                 <div>
                                     <label class="block text-slate-700 font-bold mb-1">Contact Number</label>
                                     <input type="tel" name="phone" required placeholder="+91 XXXXXXXXXX"
-                                        class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 text-slate-900 focus:border-red-500 focus:ring-1 focus:ring-red-500 focus:outline-none font-medium">
+                                        class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 text-slate-800 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 focus:outline-none font-medium">
                                 </div>
                             </div>
 
                             <div>
                                 <label class="block text-slate-700 font-bold mb-1">Your Query</label>
                                 <textarea rows="3" name="query" required placeholder="Type your query here..."
-                                    class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 text-slate-900 focus:border-red-500 focus:ring-1 focus:ring-red-500 focus:outline-none font-medium resize-y"></textarea>
+                                    class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 text-slate-800 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 focus:outline-none font-medium resize-y"></textarea>
                             </div>
 
                             <button type="submit"
-                                class="w-full py-3 bg-red-600 hover:bg-red-700 text-white font-bold rounded-xl transition shadow-lg shadow-red-200 text-xs uppercase tracking-wider">
+                                class="w-full py-3 bg-gradient-to-r from-blue-700 to-teal-600 hover:from-blue-800 hover:to-teal-700 text-white font-bold rounded-xl transition shadow-lg shadow-blue-900/20 text-xs uppercase tracking-wider">
                                 Send Your Query
                             </button>
                         </form>
@@ -1008,19 +1074,19 @@
             <div
                 class="bg-red-100 border border-red-300 p-4 rounded-2xl text-red-800 text-xs flex items-center justify-between no-print shadow-sm">
                 <div class="flex items-center gap-2">
-                    <i data-lucide="book-open" class="w-4 h-4 text-red-600"></i>
+                    <i data-lucide="book-open" class="w-4 h-4 text-blue-700"></i>
                     <span class="font-bold">Official Multi-Page Placement Booklet View (Formatted for A4 Printing & PDF
                         Download)</span>
                 </div>
                 <button onclick="triggerPdfExport()"
-                    class="bg-red-600 hover:bg-red-700 text-white font-bold px-4 py-2 rounded-xl transition shadow">
+                    class="bg-gradient-to-r from-blue-700 to-teal-600 hover:from-blue-800 hover:to-teal-700 text-white font-bold px-4 py-2 rounded-xl transition shadow">
                     Export as PDF Booklet
                 </button>
             </div>
 
             <!-- BOOKLET PAGE 1: FRONT COVER -->
             <div
-                class="book-page bg-gradient-to-br from-slate-50 via-white to-slate-100 text-slate-900 rounded-2xl p-10 flex flex-col justify-between border border-slate-300 min-h-[1000px] book-shadow relative overflow-hidden">
+                class="book-page bg-gradient-to-br from-slate-50 via-white to-slate-100 text-slate-800 rounded-2xl p-10 flex flex-col justify-between border border-slate-300 min-h-[1000px] book-shadow relative overflow-hidden">
                 <div
                     class="absolute top-0 left-0 right-0 h-3 bg-gradient-to-r from-red-600 via-orange-500 to-amber-500">
                 </div>
@@ -1031,7 +1097,7 @@
                         <img src="ISM logo.png" alt="IIT ISM Logo" class="w-24 h-24 sm:w-32 sm:h-32 object-contain"
                             onerror="this.src='https://upload.wikimedia.org/wikipedia/en/thumb/e/e9/Indian_Institute_of_Technology_%28Indian_School_of_Mines%29%2C_Dhanbad_Logo.png/220px-Indian_Institute_of_Technology_%28Indian_School_of_Mines%29%2C_Dhanbad_Logo.png'">
                         <div>
-                            <h2 class="font-serifHeading text-xl font-bold tracking-wider text-slate-900">INDIAN
+                            <h2 class="font-serifHeading text-xl font-bold tracking-wider text-slate-800">INDIAN
                                 INSTITUTE OF TECHNOLOGY</h2>
                             <p class="text-xs text-red-700 font-bold tracking-widest uppercase">DHANBAD • ESTABLISHED
                                 1926</p>
@@ -1045,9 +1111,9 @@
 
                 <!-- Main Cover Title -->
                 <div class="my-12">
-                    <p class="text-xs font-extrabold uppercase tracking-widest text-red-600 mb-3">PLACEMENT BROCHURE
+                    <p class="text-xs font-extrabold uppercase tracking-widest text-blue-700 mb-3">PLACEMENT BROCHURE
                         2025–2026</p>
-                    <h1 class="font-serifHeading text-5xl font-black text-slate-900 leading-none tracking-tight mb-4">
+                    <h1 class="font-serifHeading text-5xl font-black text-slate-800 leading-none tracking-tight mb-4">
                         FUEL & ENERGY <br>
                         <span
                             class="text-transparent bg-clip-text bg-gradient-to-r from-red-600 via-orange-600 to-amber-500">ENGINEERING</span>
@@ -1062,7 +1128,7 @@
                 <div
                     class="border-t border-slate-300 pt-6 flex items-center justify-between text-xs text-slate-500 font-medium">
                     <div>
-                        <div class="font-bold text-slate-900">M.Tech Postgraduates</div>
+                        <div class="font-bold text-slate-800">M.Tech Postgraduates</div>
                         <div>Career Development Centre (CDC)</div>
                     </div>
                     <div class="text-right">
@@ -1074,7 +1140,7 @@
 
             <!-- BOOKLET PAGE 2: LEADERSHIP DESK & LEGACY -->
             <div
-                class="book-page bg-white text-slate-900 rounded-2xl p-10 flex flex-col justify-between border border-slate-300 min-h-[1000px] book-shadow">
+                class="book-page bg-white text-slate-800 rounded-2xl p-10 flex flex-col justify-between border border-slate-300 min-h-[1000px] book-shadow">
                 <div>
                     <div class="flex items-center justify-between border-b border-slate-200 pb-4 mb-8">
                         <span class="text-xs font-bold text-red-700 uppercase tracking-widest">Page 02 • Institutional
@@ -1082,11 +1148,11 @@
                         <span class="text-xs text-slate-400 font-medium">IIT (ISM) Dhanbad</span>
                     </div>
 
-                    <h2 class="font-serifHeading text-2xl font-bold text-slate-900 mb-6">Leadership Desk & Legacy</h2>
+                    <h2 class="font-serifHeading text-2xl font-bold text-slate-800 mb-6">Leadership Desk & Legacy</h2>
 
                     <div class="space-y-6 text-xs text-slate-600 leading-relaxed font-medium">
                         <div class="p-5 bg-slate-50 rounded-2xl border border-slate-200">
-                            <h3 class="font-heading text-sm font-bold text-slate-900 mb-2">About IIT (ISM) Dhanbad</h3>
+                            <h3 class="font-heading text-sm font-bold text-slate-800 mb-2">About IIT (ISM) Dhanbad</h3>
                             <p>
                                 Founded in 1926 as the Indian School of Mines and converted into an Institute of
                                 National Importance under the IIT framework, IIT (ISM) Dhanbad has been at the forefront
@@ -1095,8 +1161,8 @@
                             </p>
                         </div>
 
-                        <div class="p-5 bg-red-50/60 rounded-2xl border border-red-200">
-                            <h3 class="font-heading text-sm font-bold text-slate-900 mb-1">Message from Department Head
+                        <div class="p-5 bg-red-50/60 rounded-2xl border border-blue-200">
+                            <h3 class="font-heading text-sm font-bold text-slate-800 mb-1">Message from Department Head
                             </h3>
                             <p class="text-[11px] text-red-800 font-bold mb-3">Dept. of Fuel, Minerals & Metallurgical
                                 Engineering</p>
@@ -1111,11 +1177,11 @@
 
                         <div class="grid grid-cols-2 gap-4 pt-4">
                             <div class="p-4 bg-slate-50 border border-slate-100 rounded-xl shadow-sm">
-                                <div class="font-bold text-slate-900 text-sm">100% GATE Intake</div>
+                                <div class="font-bold text-slate-800 text-sm">100% GATE Intake</div>
                                 <div class="text-[11px] text-slate-500 mt-0.5">Top percentile nationwide selection</div>
                             </div>
                             <div class="p-4 bg-slate-50 border border-slate-100 rounded-xl shadow-sm">
-                                <div class="font-bold text-slate-900 text-sm">1-Year R&D Thesis</div>
+                                <div class="font-bold text-slate-800 text-sm">1-Year R&D Thesis</div>
                                 <div class="text-[11px] text-slate-500 mt-0.5">Industry-aligned master's research</div>
                             </div>
                         </div>
@@ -1130,7 +1196,7 @@
 
             <!-- BOOKLET PAGE 3: ACADEMIC CURRICULUM -->
             <div
-                class="book-page bg-white text-slate-900 rounded-2xl p-10 flex flex-col justify-between border border-slate-300 min-h-[1000px] book-shadow">
+                class="book-page bg-white text-slate-800 rounded-2xl p-10 flex flex-col justify-between border border-slate-300 min-h-[1000px] book-shadow">
                 <div>
                     <div class="flex items-center justify-between border-b border-slate-200 pb-4 mb-8">
                         <span class="text-xs font-bold text-orange-700 uppercase tracking-widest">Page 03 • Academic
@@ -1138,12 +1204,12 @@
                         <span class="text-xs text-slate-400 font-medium">Coursework Structure</span>
                     </div>
 
-                    <h2 class="font-serifHeading text-2xl font-bold text-slate-900 mb-6">Coursework & Technical
+                    <h2 class="font-serifHeading text-2xl font-bold text-slate-800 mb-6">Coursework & Technical
                         Specializations</h2>
 
                     <div class="grid grid-cols-2 gap-6 text-xs mb-6">
                         <div class="p-4 bg-slate-50 rounded-xl border border-slate-200 shadow-sm">
-                            <h3 class="font-bold text-slate-900 mb-2 text-sm">Semester I & II (Core Subjects)</h3>
+                            <h3 class="font-bold text-slate-800 mb-2 text-sm">Semester I & II (Core Subjects)</h3>
                             <ul class="space-y-1.5 text-slate-600 font-medium">
                                 <li>• Advanced Petroleum Refining Engineering</li>
                                 <li>• Combustion & Thermal Plant Engineering</li>
@@ -1155,7 +1221,7 @@
                         </div>
 
                         <div class="p-4 bg-slate-50 rounded-xl border border-slate-200 shadow-sm">
-                            <h3 class="font-bold text-slate-900 mb-2 text-sm">Semester III & IV (Master's Thesis)</h3>
+                            <h3 class="font-bold text-slate-800 mb-2 text-sm">Semester III & IV (Master's Thesis)</h3>
                             <ul class="space-y-1.5 text-slate-600 font-medium">
                                 <li>• Year-long Experimental & Computational Project</li>
                                 <li>• Green Hydrogen Electrolyzer Thermal Analysis</li>
@@ -1167,7 +1233,7 @@
                     </div>
 
                     <div
-                        class="p-4 bg-red-50 rounded-xl border border-red-200 text-xs text-slate-700 font-medium shadow-sm">
+                        class="p-4 bg-red-50 rounded-xl border border-blue-200 text-xs text-slate-700 font-medium shadow-sm">
                         <strong class="text-red-900 block mb-1">Software & Computational Tools Mastery:</strong>
                         Aspen Plus • Aspen HYSYS • ANSYS Fluent (CFD) • MATLAB • OpenLCA (Life Cycle Assessment) •
                         COMSOL Multiphysics
@@ -1182,7 +1248,7 @@
 
             <!-- BOOKLET PAGE 4: R&D LABS & TESTING FACILITIES -->
             <div
-                class="book-page bg-white text-slate-900 rounded-2xl p-10 flex flex-col justify-between border border-slate-300 min-h-[1000px] book-shadow">
+                class="book-page bg-white text-slate-800 rounded-2xl p-10 flex flex-col justify-between border border-slate-300 min-h-[1000px] book-shadow">
                 <div>
                     <div class="flex items-center justify-between border-b border-slate-200 pb-4 mb-8">
                         <span class="text-xs font-bold text-amber-700 uppercase tracking-widest">Page 04 •
@@ -1190,19 +1256,19 @@
                         <span class="text-xs text-slate-400 font-medium">R&D Facilities</span>
                     </div>
 
-                    <h2 class="font-serifHeading text-2xl font-bold text-slate-900 mb-6">Advanced Testing &
+                    <h2 class="font-serifHeading text-2xl font-bold text-slate-800 mb-6">Advanced Testing &
                         Characterization Labs</h2>
 
                     <div class="space-y-4 text-xs font-medium">
                         <div class="p-4 bg-slate-50 rounded-xl border border-slate-200 shadow-sm">
-                            <h3 class="font-bold text-slate-900 text-sm">1. Fuel Testing & Calorimetry Suite</h3>
+                            <h3 class="font-bold text-slate-800 text-sm">1. Fuel Testing & Calorimetry Suite</h3>
                             <p class="text-slate-600 mt-1">Bomb Calorimeters, Proximate/Ultimate Analyzers, Flash & Fire
                                 Point Testing, Kinematic Viscometers for ASTM-standard liquid and solid fuel
                                 characterization.</p>
                         </div>
 
                         <div class="p-4 bg-slate-50 rounded-xl border border-slate-200 shadow-sm">
-                            <h3 class="font-bold text-slate-900 text-sm">2. Central Analytical Instrumentation Facility
+                            <h3 class="font-bold text-slate-800 text-sm">2. Central Analytical Instrumentation Facility
                             </h3>
                             <p class="text-slate-600 mt-1">Gas Chromatography-Mass Spectrometry (GC-MS),
                                 Thermogravimetric Analysis (TGA-DSC), FTIR Spectrometer, Powder XRD, and Scanning
@@ -1210,7 +1276,7 @@
                         </div>
 
                         <div class="p-4 bg-slate-50 rounded-xl border border-slate-200 shadow-sm">
-                            <h3 class="font-bold text-slate-900 text-sm">3. Process Simulation & CFD Workstations</h3>
+                            <h3 class="font-bold text-slate-800 text-sm">3. Process Simulation & CFD Workstations</h3>
                             <p class="text-slate-600 mt-1">High-performance computing cluster running licensed chemical
                                 process flowsheeting and fluid mechanics modeling tools.</p>
                         </div>
@@ -1225,7 +1291,7 @@
 
             <!-- BOOKLET PAGE 5: CANDIDATE DIRECTORY (PART 1) -->
             <div
-                class="book-page bg-white text-slate-900 rounded-2xl p-10 flex flex-col justify-between border border-slate-300 min-h-[1000px] book-shadow">
+                class="book-page bg-white text-slate-800 rounded-2xl p-10 flex flex-col justify-between border border-slate-300 min-h-[1000px] book-shadow">
                 <div>
                     <div class="flex items-center justify-between border-b border-slate-200 pb-4 mb-6">
                         <span class="text-xs font-bold text-red-700 uppercase tracking-widest">Page 05 • Candidate
@@ -1233,7 +1299,7 @@
                         <span class="text-xs text-slate-400 font-medium">M.Tech Batch 2025–2027</span>
                     </div>
 
-                    <h2 class="font-serifHeading text-2xl font-bold text-slate-900 mb-6">Graduating Student Profiles
+                    <h2 class="font-serifHeading text-2xl font-bold text-slate-800 mb-6">Graduating Student Profiles
                         (1/3)</h2>
 
                     <div id="bookletGrid1" class="grid grid-cols-2 gap-4 text-xs">
@@ -1249,7 +1315,7 @@
 
             <!-- BOOKLET PAGE 6: CANDIDATE DIRECTORY (PART 2) -->
             <div
-                class="book-page bg-white text-slate-900 rounded-2xl p-10 flex flex-col justify-between border border-slate-300 min-h-[1000px] book-shadow">
+                class="book-page bg-white text-slate-800 rounded-2xl p-10 flex flex-col justify-between border border-slate-300 min-h-[1000px] book-shadow">
                 <div>
                     <div class="flex items-center justify-between border-b border-slate-200 pb-4 mb-6">
                         <span class="text-xs font-bold text-red-700 uppercase tracking-widest">Page 06 • Candidate
@@ -1257,7 +1323,7 @@
                         <span class="text-xs text-slate-400 font-medium">M.Tech Batch 2025–2027</span>
                     </div>
 
-                    <h2 class="font-serifHeading text-2xl font-bold text-slate-900 mb-6">Graduating Student Profiles
+                    <h2 class="font-serifHeading text-2xl font-bold text-slate-800 mb-6">Graduating Student Profiles
                         (2/3)</h2>
 
                     <div id="bookletGrid2" class="grid grid-cols-2 gap-4 text-xs">
@@ -1273,7 +1339,7 @@
 
             <!-- BOOKLET PAGE 7: CANDIDATE DIRECTORY (PART 3) -->
             <div
-                class="book-page bg-white text-slate-900 rounded-2xl p-10 flex flex-col justify-between border border-slate-300 min-h-[1000px] book-shadow">
+                class="book-page bg-white text-slate-800 rounded-2xl p-10 flex flex-col justify-between border border-slate-300 min-h-[1000px] book-shadow">
                 <div>
                     <div class="flex items-center justify-between border-b border-slate-200 pb-4 mb-6">
                         <span class="text-xs font-bold text-red-700 uppercase tracking-widest">Page 07 • Candidate
@@ -1281,7 +1347,7 @@
                         <span class="text-xs text-slate-400 font-medium">M.Tech Batch 2025–2027</span>
                     </div>
 
-                    <h2 class="font-serifHeading text-2xl font-bold text-slate-900 mb-6">Graduating Student Profiles
+                    <h2 class="font-serifHeading text-2xl font-bold text-slate-800 mb-6">Graduating Student Profiles
                         (3/3)</h2>
 
                     <div id="bookletGrid3" class="grid grid-cols-2 gap-4 text-xs">
@@ -1297,7 +1363,7 @@
 
             <!-- BOOKLET PAGE 8: RECRUITER WALL & PLACEMENT PROCEDURE -->
             <div
-                class="book-page bg-white text-slate-900 rounded-2xl p-10 flex flex-col justify-between border border-slate-300 min-h-[1000px] book-shadow">
+                class="book-page bg-white text-slate-800 rounded-2xl p-10 flex flex-col justify-between border border-slate-300 min-h-[1000px] book-shadow">
                 <div>
                     <div class="flex items-center justify-between border-b border-slate-200 pb-4 mb-6">
                         <span class="text-xs font-bold text-orange-700 uppercase tracking-widest">Page 08 • Recruitment
@@ -1305,7 +1371,7 @@
                         <span class="text-xs text-slate-400 font-medium">CDC Guidelines</span>
                     </div>
 
-                    <h2 class="font-serifHeading text-2xl font-bold text-slate-900 mb-6">Prominent Recruiters & Process
+                    <h2 class="font-serifHeading text-2xl font-bold text-slate-800 mb-6">Prominent Recruiters & Process
                     </h2>
 
                     <div class="grid grid-cols-3 gap-3 text-center text-xs font-extrabold text-slate-800 mb-6">
@@ -1323,7 +1389,7 @@
                     </div>
 
                     <div class="p-4 bg-slate-50 rounded-xl border border-slate-200 text-xs shadow-sm">
-                        <h3 class="font-bold text-slate-900 mb-2">Campus Recruitment Procedure:</h3>
+                        <h3 class="font-bold text-slate-800 mb-2">Campus Recruitment Procedure:</h3>
                         <ol class="list-decimal list-inside space-y-1 text-slate-700 font-medium">
                             <li>Recruiter submits Job Notification Form (JNF) via email or CDC portal.</li>
                             <li>Pre-Placement Talk (PPT) scheduled online or on-campus in Dhanbad.</li>
@@ -1340,28 +1406,28 @@
 
             <!-- BOOKLET PAGE 9: BACK COVER & CONTACTS -->
             <div
-                class="book-page bg-slate-50 text-slate-900 rounded-2xl p-10 flex flex-col justify-between border border-slate-300 min-h-[1000px] book-shadow">
+                class="book-page bg-slate-50 text-slate-800 rounded-2xl p-10 flex flex-col justify-between border border-slate-300 min-h-[1000px] book-shadow">
                 <div class="border-b border-slate-300 pb-6">
-                    <span class="text-xs font-bold text-red-600 uppercase tracking-widest">Back Cover</span>
-                    <h2 class="font-serifHeading text-3xl font-bold text-slate-900 mt-2">Career Development Centre</h2>
+                    <span class="text-xs font-bold text-blue-700 uppercase tracking-widest">Back Cover</span>
+                    <h2 class="font-serifHeading text-3xl font-bold text-slate-800 mt-2">Career Development Centre</h2>
                     <p class="text-xs text-slate-600 font-bold mt-1">Indian Institute of Technology (ISM) Dhanbad</p>
                 </div>
 
                 <div class="my-auto space-y-6 text-xs text-slate-700 font-medium">
                     <div class="p-4 bg-white rounded-xl border border-slate-200 shadow-sm">
-                        <strong class="text-slate-900 block mb-1">Head of Department:</strong>
+                        <strong class="text-slate-800 block mb-1">Head of Department:</strong>
                         Prof. (Dr.) A. K. Singh<br>
                         Email: hod_fme@iitism.ac.in | Tel: +91 (326) 223-5240
                     </div>
 
                     <div class="p-4 bg-white rounded-xl border border-slate-200 shadow-sm">
-                        <strong class="text-slate-900 block mb-1">Career Development Centre (CDC):</strong>
+                        <strong class="text-slate-800 block mb-1">Career Development Centre (CDC):</strong>
                         Executive Officer / Training & Placement Officer<br>
                         Email: placement@iitism.ac.in / cdc@iitism.ac.in
                     </div>
 
                     <div class="p-4 bg-white rounded-xl border border-slate-200 shadow-sm">
-                        <strong class="text-slate-900 block mb-1">Postal Address:</strong>
+                        <strong class="text-slate-800 block mb-1">Postal Address:</strong>
                         Dept. of Fuel, Minerals & Metallurgical Engineering,<br>
                         IIT (ISM) Dhanbad - 826004, Jharkhand, India.
                     </div>
@@ -1380,21 +1446,21 @@
     <div id="studentBioModal"
         class="fixed inset-0 bg-slate-900/40 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4 no-print">
         <div
-            class="bg-white border border-slate-200 text-slate-900 rounded-3xl max-w-lg w-full p-6 relative shadow-2xl space-y-4">
+            class="bg-white border border-slate-200 text-slate-800 rounded-3xl max-w-lg w-full p-6 relative shadow-2xl space-y-4">
             <button onclick="closeStudentBio()"
-                class="absolute top-4 right-4 text-slate-400 hover:text-slate-900 transition">
+                class="absolute top-4 right-4 text-slate-400 hover:text-slate-800 transition">
                 <i data-lucide="x" class="w-5 h-5"></i>
             </button>
 
             <div class="flex items-center gap-4">
                 <div
-                    class="w-14 h-14 rounded-full bg-red-100 border border-red-300 text-red-600 flex items-center justify-center font-bold text-xl overflow-hidden shrink-0 shadow-sm">
+                    class="w-14 h-14 rounded-full bg-red-100 border border-red-300 text-blue-700 flex items-center justify-center font-bold text-xl overflow-hidden shrink-0 shadow-sm">
                     <img id="modalImage" src="" alt="Student Photo" class="w-full h-full object-cover hidden"
                         onerror="this.style.display='none'; document.getElementById('modalIcon').style.display='block';">
                     <i id="modalIcon" data-lucide="user" class="w-8 h-8"></i>
                 </div>
                 <div>
-                    <h3 id="modalName" class="font-heading text-xl font-bold text-slate-900">Name</h3>
+                    <h3 id="modalName" class="font-heading text-xl font-bold text-slate-800">Name</h3>
                     <p id="modalDegree" class="text-xs text-slate-600 font-bold">B.Tech Degree</p>
                     <span id="modalDomain"
                         class="inline-block mt-1 bg-orange-100 text-orange-800 text-[10px] font-bold px-2 py-0.5 rounded border border-orange-300">
@@ -1404,12 +1470,12 @@
             </div>
 
             <div class="p-3 bg-slate-50 rounded-xl border border-slate-200 space-y-1 shadow-inner">
-                <div class="text-[11px] font-extrabold text-red-600 uppercase">GATE Credentials</div>
+                <div class="text-[11px] font-extrabold text-blue-700 uppercase">GATE Credentials</div>
                 <div id="modalGate" class="text-xs text-slate-700 font-medium">GATE Info</div>
             </div>
 
             <div>
-                <div class="text-xs font-extrabold text-slate-900 mb-1">M.Tech Thesis Research:</div>
+                <div class="text-xs font-extrabold text-slate-800 mb-1">M.Tech Thesis Research:</div>
                 <p id="modalThesis"
                     class="text-xs text-slate-700 font-medium leading-relaxed bg-slate-50 p-3 rounded-xl border border-slate-200 shadow-inner">
                     Thesis Name
@@ -1417,7 +1483,7 @@
             </div>
 
             <div>
-                <div class="text-xs font-extrabold text-slate-900 mb-1">Software & Lab Proficiencies:</div>
+                <div class="text-xs font-extrabold text-slate-800 mb-1">Software & Lab Proficiencies:</div>
                 <p id="modalSkills"
                     class="text-xs text-red-700 font-bold font-mono bg-slate-50 p-2.5 rounded-xl border border-slate-200 shadow-inner">
                     Skills Array
@@ -1430,7 +1496,7 @@
                     <i data-lucide="mail" class="w-4 h-4"></i> Contact Candidate
                 </a>
                 <button id="modalDownloadBtn"
-                    class="py-2 px-4 bg-red-600 hover:bg-red-700 text-white font-bold text-xs rounded-xl transition shadow">
+                    class="py-2 px-4 bg-gradient-to-r from-blue-700 to-teal-600 hover:from-blue-800 hover:to-teal-700 text-white font-bold text-xs rounded-xl transition shadow">
                     Download CV
                 </button>
             </div>
@@ -1446,7 +1512,7 @@
                     class="w-10 h-10 sm:w-12 sm:h-12 object-contain filter grayscale opacity-70"
                     onerror="this.src='https://upload.wikimedia.org/wikipedia/en/thumb/e/e9/Indian_Institute_of_Technology_%28Indian_School_of_Mines%29%2C_Dhanbad_Logo.png/220px-Indian_Institute_of_Technology_%28Indian_School_of_Mines%29%2C_Dhanbad_Logo.png'">
                 <div class="flex flex-col">
-                    <span class="text-slate-900 font-bold">Department of Fuel, Minerals & Metallurgical Engineering •
+                    <span class="text-slate-800 font-bold">Department of Fuel, Minerals & Metallurgical Engineering •
                         IIT
                         (ISM) Dhanbad</span>
                     <span class="text-slate-500 text-[10px] mt-0.5">IIT (ISM), Dhanbad - 826004, Jharkhand, India</span>
@@ -1554,22 +1620,22 @@
                                         ${imageHtml}
                                     </div>
                                     <div>
-                                        <h4 class="font-heading text-base font-bold text-slate-900">${student.name}</h4>
+                                        <h4 class="font-heading text-base font-bold text-slate-800">${student.name}</h4>
                                         <p class="text-[11px] text-slate-600 font-bold">${student.degree}</p>
                                         <span class="inline-block mt-1 bg-slate-50 text-red-700 text-[10px] font-extrabold px-2 py-0.5 rounded-md border ${borderColor}">
-                                            ${student.domainLabel}
+                                            ${student.domain}
                                         </span>
                                     </div>
                                 </div>
                                 <div class="space-y-2 mb-5">
                                     <div>
                                         <p class="text-[10px] font-extrabold uppercase text-slate-500">Core Expertise</p>
-                                        <p class="text-xs text-slate-700 font-bold leading-snug">${student.thesis}</p>
+                                        <p class="text-xs text-slate-700 font-bold leading-snug">${student.domainLabel}</p>
                                     </div>
                                 </div>
                             </div>
                             <div class="pt-4 border-t border-slate-100 flex items-center justify-between no-print">
-                                <span class="text-xs text-red-600 font-bold hover:text-red-500 transition">View Bio</span>
+                                <span class="text-xs text-blue-700 font-bold hover:text-red-500 transition">View Bio</span>
                                 ${resumeButtonHtml}
                             </div>
                         `;
@@ -1587,10 +1653,10 @@
                         let initialText = 'text-slate-600';
                         let bookletBorder = 'border-slate-500';
 
-                        if (student.domain === 'greenh2') { initialBg = 'bg-orange-50'; initialText = 'text-orange-600'; bookletBorder = 'border-orange-500'; }
-                        else if (student.domain === 'oilgas') { initialBg = 'bg-red-50'; initialText = 'text-red-600'; bookletBorder = 'border-red-500'; }
-                        else if (student.domain === 'ccus') { initialBg = 'bg-amber-50'; initialText = 'text-amber-600'; bookletBorder = 'border-amber-500'; }
-                        else if (student.domain === 'modeling') { initialBg = 'bg-rose-50'; initialText = 'text-rose-600'; bookletBorder = 'border-rose-500'; }
+                        if (student.domain === 'greenh2') { initialBg = 'bg-orange-50'; initialText = 'text-teal-700'; bookletBorder = 'border-orange-500'; }
+                        else if (student.domain === 'oilgas') { initialBg = 'bg-red-50'; initialText = 'text-blue-700'; bookletBorder = 'border-red-500'; }
+                        else if (student.domain === 'ccus') { initialBg = 'bg-amber-50'; initialText = 'text-cyan-700'; bookletBorder = 'border-amber-500'; }
+                        else if (student.domain === 'modeling') { initialBg = 'bg-rose-50'; initialText = 'text-indigo-700'; bookletBorder = 'border-rose-500'; }
                         else if (student.domain === 'wte') { initialBg = 'bg-orange-100'; initialText = 'text-orange-700'; bookletBorder = 'border-orange-600'; }
 
                         let bImageHtml = '';
@@ -1610,7 +1676,7 @@
                                 ${bImageHtml}
                             </div>
                             <div>
-                                <h3 class="font-bold text-slate-900 text-sm">${student.name}</h3>
+                                <h3 class="font-bold text-slate-800 text-sm">${student.name}</h3>
                                 <p class="text-[11px] text-slate-600 font-bold">${student.domainLabel}</p>
                                 <p class="text-slate-800 font-bold mt-1">Core: ${student.thesis}</p>
                                 <p class="text-[10px] text-slate-600 mt-1 font-medium">Skills: ${student.skills}</p>
@@ -1643,15 +1709,15 @@
             portal.classList.add('hidden');
             booklet.classList.add('hidden');
 
-            btnPortal.className = "px-3 py-1.5 rounded-lg text-slate-500 hover:text-slate-900 transition-all flex items-center gap-1.5 whitespace-nowrap";
-            btnBooklet.className = "px-3 py-1.5 rounded-lg text-slate-500 hover:text-slate-900 transition-all flex items-center gap-1.5 whitespace-nowrap";
+            btnPortal.className = "px-3 py-1.5 rounded-lg text-slate-500 hover:text-slate-800 transition-all flex items-center gap-1.5 whitespace-nowrap";
+            btnBooklet.className = "px-3 py-1.5 rounded-lg text-slate-500 hover:text-slate-800 transition-all flex items-center gap-1.5 whitespace-nowrap";
 
             if (mode === 'portal') {
                 portal.classList.remove('hidden');
-                btnPortal.className = "px-3 py-1.5 rounded-lg bg-red-600 text-white shadow transition-all flex items-center gap-1.5 whitespace-nowrap";
+                btnPortal.className = "px-3 py-1.5 rounded-lg bg-gradient-to-r from-blue-700 to-teal-600 text-white shadow transition-all flex items-center gap-1.5 whitespace-nowrap";
             } else if (mode === 'booklet') {
                 booklet.classList.remove('hidden');
-                btnBooklet.className = "px-3 py-1.5 rounded-lg bg-red-600 text-white shadow transition-all flex items-center gap-1.5 whitespace-nowrap";
+                btnBooklet.className = "px-3 py-1.5 rounded-lg bg-gradient-to-r from-blue-700 to-teal-600 text-white shadow transition-all flex items-center gap-1.5 whitespace-nowrap";
             }
 
             if (window.lucide) lucide.createIcons();
@@ -1665,7 +1731,7 @@
             document.querySelectorAll('#filterButtons .filter-btn').forEach(btn => {
                 btn.className = "filter-btn bg-slate-100 hover:bg-slate-200 text-slate-600 text-xs font-bold px-3.5 py-2 rounded-xl transition border border-slate-200";
             });
-            btnElement.className = "filter-btn active bg-red-600 text-white text-xs font-bold px-3.5 py-2 rounded-xl transition shadow";
+            btnElement.className = "filter-btn active bg-gradient-to-r from-blue-700 to-teal-600 text-white text-xs font-bold px-3.5 py-2 rounded-xl transition shadow";
             filterStudents();
         }
 
@@ -1720,7 +1786,7 @@
             if (modalDownloadBtn) {
                 if (resumeUrl) {
                     modalDownloadBtn.innerText = "Download CV";
-                    modalDownloadBtn.className = "py-2 px-4 bg-red-600 hover:bg-red-700 text-white font-bold text-xs rounded-xl transition shadow";
+                    modalDownloadBtn.className = "py-2 px-4 bg-gradient-to-r from-blue-700 to-teal-600 hover:from-blue-800 hover:to-teal-700 text-white font-bold text-xs rounded-xl transition shadow";
                     modalDownloadBtn.onclick = () => downloadResume(name, resumeUrl);
                 } else {
                     modalDownloadBtn.innerText = "Request CV";
