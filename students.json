@@ -158,20 +158,20 @@
     {
         "name": "Rahul Sarkar",
         "degree": "M.Tech Fuel & Energy Engg.",
-        "domain": "oilgas",
+        "domain": "Solar & Bio-energy",
         "domainLabel": "Refining & Downstream",
         "thesis": "Unstructured Data Extraction & Processing / ETL pipeline development",
-        "skills": "Python, SQL, PySpark, Databricks, Informatica PowerCenter, AWS, Machine Learning",
+        "skills": "CFD, Python, SQL, PySpark, Databricks,Life Cycle Assesment, ESG reporting, Machine Learning",
         "email": "sarkarr1617@gmail.com",
         "gate": "GATE Qualified / IIT Dhanbad",
         "resume": "resumes/Rahul_Sarkar.pdf",
         "image": "",
-        "keywords": "rahul sarkar catalyst deactivation fcc fluid catalytic cracking process engineering"
+        "keywords": "rahul sarkar cfd data analytics process engineering"
     },
     {
         "name": "Sandeep Kumar",
         "degree": "M.Tech Fuel & Energy Engg.",
-        "domain": "greenh2",
+        "domain": "Green Hydrogen",
         "domainLabel": "Biofuels & Bio-Refineries",
         "thesis": "Criterion for the Onset of Air Core in a Hydrocyclone",
         "skills": "Python, C++, MATLAB, SQL, ANSYS Fluent, OpenFOAM, Life Cycle Assessment (LCA)",
