@@ -956,32 +956,39 @@
                         <form onsubmit="handleRecruiterSubmit(event)" class="space-y-4 text-xs">
                             <div>
                                 <label class="block text-slate-700 font-bold mb-1">Company / Organization Name</label>
-                                <input type="text" required placeholder="e.g. Indian Oil Corporation Ltd. / Reliance"
+                                <input type="text" name="company" required
+                                    placeholder="e.g. Indian Oil Corporation Ltd. / Reliance"
+                                    class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 text-slate-900 focus:border-red-500 focus:ring-1 focus:ring-red-500 focus:outline-none font-medium">
+                            </div>
+
+                            <div>
+                                <label class="block text-slate-700 font-bold mb-1">HR / Contact Person</label>
+                                <input type="text" name="hrName" required placeholder="Full Name"
                                     class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 text-slate-900 focus:border-red-500 focus:ring-1 focus:ring-red-500 focus:outline-none font-medium">
                             </div>
 
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                 <div>
-                                    <label class="block text-slate-700 font-bold mb-1">HR / Contact Person</label>
-                                    <input type="text" required placeholder="Full Name"
+                                    <label class="block text-slate-700 font-bold mb-1">Official Email</label>
+                                    <input type="email" name="email" required placeholder="hr@company.com"
                                         class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 text-slate-900 focus:border-red-500 focus:ring-1 focus:ring-red-500 focus:outline-none font-medium">
                                 </div>
                                 <div>
-                                    <label class="block text-slate-700 font-bold mb-1">Official Email</label>
-                                    <input type="email" required placeholder="hr@company.com"
+                                    <label class="block text-slate-700 font-bold mb-1">Contact Number</label>
+                                    <input type="tel" name="phone" required placeholder="+91 XXXXXXXXXX"
                                         class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 text-slate-900 focus:border-red-500 focus:ring-1 focus:ring-red-500 focus:outline-none font-medium">
                                 </div>
                             </div>
 
                             <div>
                                 <label class="block text-slate-700 font-bold mb-1">Your Query</label>
-                                <textarea rows="3" required placeholder="Type your query here..."
+                                <textarea rows="3" name="query" required placeholder="Type your query here..."
                                     class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 text-slate-900 focus:border-red-500 focus:ring-1 focus:ring-red-500 focus:outline-none font-medium resize-y"></textarea>
                             </div>
 
                             <button type="submit"
                                 class="w-full py-3 bg-red-600 hover:bg-red-700 text-white font-bold rounded-xl transition shadow-lg shadow-red-200 text-xs uppercase tracking-wider">
-                                Contact & Request JNF
+                                Send Your Query
                             </button>
                         </form>
                     </div>
@@ -1756,7 +1763,31 @@
 
         function handleRecruiterSubmit(e) {
             e.preventDefault();
-            alert("Thank you! Your JNF & CV Book request has been submitted to the CDC Placement Cell at IIT (ISM) Dhanbad.");
+            const form = e.target;
+            const submitBtn = form.querySelector('button[type="submit"]');
+
+            const originalBtnText = submitBtn.innerText;
+            submitBtn.innerText = "SUBMITTING...";
+            submitBtn.disabled = true;
+
+            const formData = new FormData(form);
+
+            // Replace with your deployed Google Apps Script Web App URL
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbw9N3CH6wW7bR4xPXpHpbVMEepZv00M1WcAWra9kPKa7cPvwa1xZ0yQ7uTfmH9DlrbY/exec';
+
+            fetch(scriptURL, { method: 'POST', body: formData })
+                .then(response => {
+                    alert("Thank you! Your query has been successfully submitted. You will receive an automated email from our placement coordinators soon.");
+                    form.reset();
+                })
+                .catch(error => {
+                    console.error('Error!', error.message);
+                    alert("Something went wrong with the submission. Please try again or contact us directly via email.");
+                })
+                .finally(() => {
+                    submitBtn.innerText = originalBtnText;
+                    submitBtn.disabled = false;
+                });
         }
 
         // Animate top-right text when campus video is about to end
