@@ -113,7 +113,7 @@
         "email": "Riyaul95@gmail.com",
         "gate": "GATE Qualified / IIT Dhanbad",
         "resume": "resumes/md_riyaul_haque.pdf",
-        "image": "",
+        "image": "student_images/riyaul.png",
         "keywords": "md riyaul haque fuel energy engineering clean energy hydrogen production reforming biomass pyrolysis biochar thermochemical conversion process modeling aspen plus matlab cfd"
     },
     {
@@ -147,7 +147,7 @@
         "degree": "M.Tech Fuel & Energy Engg.",
         "domain": " Computational Fluid Dynamics",
         "domainLabel": "Dry Beneficiation of Coal, CFD, Fluidized Bed Operation, Density based segregation, Sustainability",
-        "thesis": "Hydrodynamics studies of Vibrating Gas Fluidized Bed Separator for coal",
+        "thesis": "Hydrodynamics Studies of a Magnetically assisted Vibrating Gas Fluidized Bed based Novel Method for Dry Beneficiation of Coal",
         "skills": "Python, AutoCAD, CATIA v5, Ansys Fluent, LabVIEW, Computational Fluid Dynamics",
         "email": "25mt0375@iitism.ac.in",
         "gate": "GATE Qualified / IIT Dhanbad",
@@ -184,8 +184,8 @@
     {
         "name": "Saurav Anand",
         "degree": "M.Tech Fuel & Energy Engg.",
-        "domain": "modeling",
-        "domainLabel": "Biomass to Energy, Hydrogen Production and Critical mineral extraction",
+        "domain": "Waste-to-Energy",
+        "domainLabel": "Biomass to Energy, Hydrogen Production and Critical Mineral Extraction",
         "thesis": "Production of hydrogen rich gas from catalytic co-gasification of waste biomass and plastic",
         "skills": "Python, Microsoft Office, Aspen Plus, JupyterLab, Ansys Fluent",
         "email": "25mt0483@iitism.ac.in",
